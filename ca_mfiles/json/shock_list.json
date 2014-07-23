@@ -1,0 +1,6 @@
+{
+	"yoildata" : {
+		"desc" : "Oil production shock",
+		"equations" : [1]
+	}
+}

@@ -1,0 +1,261 @@
+{
+	"theta_k": {
+		"latex": "\\theta_{k}",
+		"val": "0.495048943",
+		"desc": "ratio of private capital",
+		"note": "??",
+		"equations": [4]
+	},
+	"theta_S": {
+		"latex": "\\theta_{s}",
+		"val": "0.104951057",
+		"desc": "ratio of public capital",
+		"note": "could also leave it as 0.25: 2007-2012 share of gov gross fixed CF around 39%, assume 0.65=theta_k+theta_S",
+		"equations": [3]
+	},
+	"gamma": {
+		"latex": "\\gamma",
+		"val": "1.333333333",
+		"desc": "risk aversion rate",
+		"note": "van der Ploeg (2012), no reason to change",
+		"equations": [1]
+	},
+	"delta_k": {
+		"latex": "\\delta_{k}",
+		"val": "0.55",
+		"desc": "depreciation rate of private capital",
+		"note": "van der Ploeg (2012), no reason to change",
+		"equations": [4]
+	},
+	"delta_S": {
+		"latex": "\\delta_{s}",
+		"val": "0.55",
+		"desc": "depreciation rate of public capital",
+		"note": "van der Ploeg (2012), no reason to change",
+		"equations": [3]
+	},
+	"rbar": {
+		"latex": "\\bar{r}",
+		"val": "0.055",
+		"desc": "world interest rate",
+		"note": "world interest rate",
+		"equations": []
+	},
+	"g_n": {
+		"latex": "g_{n}",
+		"val": "0.016340206",
+		"desc": "population growth rate",
+		"note": "average population growth 2007-2012",
+		"equations": [2]
+	},
+	"g_a": {
+		"latex": "g_{a}",
+		"val": "0.024170034",
+		"desc": "technology growth rate",
+		"note": "long-term growth rate minus population growth",
+		"equations": [2]
+	},
+	"e_k": {
+		"latex": "e_{k}",
+		"val": "0.4",
+		"desc": "efficiency of private capital",
+		"note": "calibration",
+		"equations": []
+	},
+	"e_S": {
+		"latex": "e_{s}",
+		"val": "0.4",
+		"desc": "efficiency of public capital",
+		"note": "calibration",
+		"equations": []
+	},
+	"dbar": {
+		"latex": "\\bar{d}",
+		"val": "0",
+		"desc": "steady state debt",
+		"note": "gross external debt (SS)",
+		"equations": [8]
+	},
+	"xi": {
+		"latex": "\\varkapp",
+		"val": "0.7",
+		"desc": "Habit persistence parameter",
+		"note": "??",
+		"equations": [1]
+	},
+	"rho1": {
+		"latex": "\\rho_{1}",
+		"val": "1.89",
+		"desc": "Interest rate-debt elasticity",
+		"note": "Regression coeffieicent from van der Ploeg (2012)",
+		"equations": [8]
+	},
+	"psi": {
+		"latex": "\\psi",
+		"val": "0.13",
+		"desc": "between 0 and 1",
+		"note": "??",
+		"equations": []
+	},
+	"rho2": {
+		"latex": "\\rho_{2}",
+		"val": "0",
+		"desc": "Additional parameter on risk-premium",
+		"note": "??",
+		"equations": [8]
+	},
+	"yoilvalue": {
+		"latex": "yoil_{ss}",
+		"val": "0",
+		"desc": "steady state oil income",
+		"note": "average Oil GDP as % of GDP",
+		"equations": []
+	},
+	"omega": {
+		"latex": "\\omega",
+		"val": "0",
+		"desc": "leverage coefficient on oil reserves",
+		"note": "as in initial calibration, adjust according to target moments and scenario",
+		"equations": []
+	},
+	"Abar": {
+		"latex": "\\bar{A}",
+		"val": "0.982",
+		"desc": "??",
+		"note": "??",
+		"equations": []
+	},
+	"phi_k0": {
+		"latex": "phi_{k0}",
+		"val": "0.25",
+		"desc": "initial values",
+		"note": "",
+		"equations": [7]
+	},
+	"phi_s0": {
+		"latex": "phi_{s0}",
+		"val": "0.25",
+		"desc": "initial values",
+		"note": "",
+		"equations": [6]
+	},
+	"c_0": {
+		"latex": "c_{0}",
+		"val": "0.437337766",
+		"desc": "NCP in % of GDP in 2012",
+		"note": "in 2012",
+		"equations": [10]
+	},
+	"c_1": {
+		"latex": "c_{1}",
+		"val": "0.437337766",
+		"desc": "NCP in % of GDP",
+		"note": "in 2012",
+		"equations": [10]
+	},
+	"inv_0": {
+		"latex": "inv_{0}",
+		"val": "0.305376032",
+		"desc": "Investment in % of GDP in 2011",
+		"note": "gross  fixed capital formation as % of GDP in 2012",
+		"equations": [10]
+	},
+	"gov_0": {
+		"latex": "gov_{0}",
+		"val": "0.27402574",
+		"desc": "Gov consumption in % of GDP",
+		"note": "in 2012",
+		"equations": [10]
+	},
+	"gov_exp_0": {
+		"latex": "gov_exp_{0}",
+		"val": "0.383226919",
+		"desc": "Gov total expenditure in % of GDP",
+		"note": "in 2011",
+		"equations": [10]
+	},
+	"gov_inv_0": {
+		"latex": "gov_{1}",
+		"val": "0.109201179",
+		"desc": "public investment in % of GDP in 2011",
+		"note": "gov gross fixed capital formation in 2012",
+		"equations": [10]
+	},
+	"gov_1": {
+		"latex": "gov_{1}",
+		"val": "0.255988005",
+		"desc": "Gov consumption in % of GDP",
+		"note": "in 2012",
+		"equations": []
+	},
+	"gov_exp_1": {
+		"latex": "gov_exp_{1}",
+		"val": "0.365189184",
+		"desc": "Gov total expenditure in % of GDP",
+		"note": "in 2012",
+		"equations": []
+	},
+	"gov_inv_1": {
+		"latex": "gov_inv_{1}",
+		"val": "0.109201179",
+		"desc": "public investment in % of GDP",
+		"note": "gov gross fixed capital formation in 2012",
+		"equations": []
+	},
+	"ynon_0": {
+		"latex": "ynon_{0}",
+		"val": "0.586863782",
+		"desc": "non-oil GDP in % of GDP in 2011",
+		"note": "in 2012",
+		"equations": [10]
+	},
+	"yoil_0": {
+		"latex": "yoil_{0}",
+		"val": "0.413136218",
+		"desc": "oil production in % of GDP",
+		"note": "in 2012",
+		"equations": [10]
+	},
+	"d_0": {
+		"latex": "d_{0}",
+		"val": "0.131392812",
+		"desc": "debt in percent of GDP 2011",
+		"note": "debt in percent of GDP 2011",
+		"equations": []
+	},
+	"ca_0": {
+		"latex": "ca_{0}",
+		"val": "0.138238656",
+		"desc": "current account in % of GDP in 2011",
+		"note": "in 2012",
+		"equations": [9]
+	},
+	"k_0": {
+		"latex": "k_{0}",
+		"val": "1.395146087",
+		"desc": "private capital to GDP ratio in 2011",
+		"note": "see tab 'capital accum' for 2011 value, alternatively, take 2007 value (0.561) from Gupta et al. (2012), fixed capital formation plus change in inventories accumulated",
+		"equations": []
+	},
+	"s_0": {
+		"latex": "s_{0}",
+		"val": "0.295772891",
+		"desc": "public capital in to GDP  ratio in 2011",
+		"note": "see tab 'capital accum' for 2011 value, gross fixed capital accumulation, assumin depreciation is zero, alternatively, take 2007 value (0.828) from Gupta et al. (2012) which, however seems a bit too high,",
+		"equations": []
+	},
+	"cost_k0": {
+		"latex": "cosk_{k0}",
+		"val": "0.4",
+		"desc": "cost overrun ratio private investments",
+		"note": "in 2011; same as CEMAC application",
+		"equations": []
+	},
+	"cost_s0": {
+		"latex": "cost_{s0}",
+		"val": "0.4",
+		"desc": "cost overrun ratio public investments",
+		"note": "in 2011; same as CEMAC application",
+		"equations": []
+	}
+}

@@ -128,7 +128,7 @@ app.get('/getEqnList', function(req, res) {
 app.get('/getParamList', function(req, res) {
     var fname = __dirname + '/' + req.query.model
 	+ '_mfiles/json/param_list.json';
-   fs.readFile(fname, 'utf8', function (err, data) {
+    fs.readFile(fname, 'utf8', function (err, data) {
 	if (err) {
 	    console.log('error: ' = err); }
 	data = JSON.parse(data);
