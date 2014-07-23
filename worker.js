@@ -22,8 +22,8 @@ oc_command.on('exit', function (code) {
     
     // python script will save results
     var py_command = spawn(
-	'python', [fpath + 'save_results.sh', 
-		   fpath + model,
+	'python', [fpath + 'save_results.py', 
+		   model,
 		   fpath + 'plot_vars.mat'] )
     
 });
