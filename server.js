@@ -7,6 +7,9 @@ var io = require('socket.io')(http);
 // add static files to path
 app.use(express.static(__dirname + '/public'));
 
+// set port to listen to
+app.set('port', (process.env.PORT || 8080));
+
 // main method to display app
 app.get('/', function(req, res){
   res.sendfile('index.html');
