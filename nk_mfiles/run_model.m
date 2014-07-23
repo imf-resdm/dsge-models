@@ -17,6 +17,3 @@ set_params_imp;
 
 # run model
 eval(["dynare " model_name ".mod noclearall"]);
-
-# make JSON file with results
-jsonify_results([model_name "_results"]);

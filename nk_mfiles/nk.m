@@ -180,7 +180,7 @@ set_shocks(0,11, 1, 0);
 set_shocks(0,12, 1, 0);
 set_shocks(0,13, 1, 0);
 set_shocks(0,14, 1, 0);
-set_shocks(0,15, 1, 0);
+set_shocks(0,15, 1, 1);
 set_shocks(0,16, 1, 0);
 set_shocks(0,17, 1, 0);
 set_shocks(0,18, 1, 0);

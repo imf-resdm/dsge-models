@@ -183,3 +183,11 @@ The rank condition is verified.
 -----------------------------------------------------
 MODEL SIMULATION:
 
+
+Simulation concluded successfully after 3 iterations.
+Total time of simulation        :     30.339
+Convergency obtained.
+-----------------------------------------------------
+
+Total computing time : 0h00m31s
+Note: 1 warning(s) encountered in the preprocessor

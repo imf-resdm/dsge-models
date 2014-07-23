@@ -21,10 +21,18 @@ oc_command.on('exit', function (code) {
 //    console.log('child process exited with code ' + code);*/
     
     // python script will save results
+
     var py_command = spawn(
-	'python', [fpath + 'save_results.py', 
-		   model,
-		   fpath + 'plot_vars.mat'] )
+	'python', [ fpath + 'save_results.py', 
+		    __dirname, model ] )
+
+    py_command.stdout.on('data', function (data) {
+	console.log('stdout: ' + data);
+    });
+
+    py_command.stderr.on('data', function (data) {
+	console.log('stderr: ' + data);
+    });
     
 });
 
