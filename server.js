@@ -43,6 +43,6 @@ app.get('/runWorker', function(req, res) {
 });
 
 // listen through port to test app
-http.listen(8080, function(){
+http.listen(process.env.PORT || 8080, function(){
     console.log('listening on port 8080');
 });
