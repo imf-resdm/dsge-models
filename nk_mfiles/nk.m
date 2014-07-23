@@ -166,7 +166,7 @@ end;
 % SHOCKS instructions
 %
 make_ex_;
-set_shocks(0,1, 1, 0);
+set_shocks(0,1, 1, 1);
 set_shocks(0,2, 1, 0);
 set_shocks(0,3, 1, 0);
 set_shocks(0,4, 1, 0);
@@ -196,7 +196,7 @@ set_shocks(0,27, 1, 0);
 set_shocks(0,28, 1, 0);
 set_shocks(0,29, 1, 0);
 set_shocks(0,30, 1, 0);
-set_shocks(0,1, 4, 0);
+set_shocks(0,1, 4, 1);
 set_shocks(0,2, 4, 0);
 set_shocks(0,3, 4, 0);
 set_shocks(0,4, 4, 0);

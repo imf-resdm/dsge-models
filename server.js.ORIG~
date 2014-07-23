@@ -1,0 +1,259 @@
+// comment comment
+
+var spawn         = require('child_process').spawn;
+var fs            = require('fs');
+var express       = require('express');
+var bodyParser    = require('body-parser');
+var ipfilter      = require(__dirname + '/ipfilter.js');
+var modFileWriter = require(__dirname + '/modFileWriter.js');
+var app           = express();
+
+// socket.io
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
+
+// whitelist my IP address
+/*var ip_white = ['206.229.236.122', // IMF 'guest' network
+		'134.113..'];  // IMF LAN
+app.use(ipfilter(ip_white, {
+    log: true,
+    range: true,
+    mode: 'allow',
+    errorMessage: 'IMF staff only, or \'YOU SHALL NOT PASS\''
+}));*/
+
+app.use(bodyParser.json());
+app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/dsf_mfiles'));
+app.use(express.static(__dirname + '/nk_mfiles'));
+
+app.set('port', (process.env.PORT || 8080));
+buf = fs.readFileSync('index.html');
+app.get('/', function(req, res) {
+	res.send(buf.toString());
+});
+
+// socket.io test
+io.on('connection', function(socket){
+  console.log('a user connected');
+});
+
+// run model with worker
+app.get('/runWorker', function(req, res) {
+
+    var args = [req.query.model];
+    var worker = require('child_process').
+	fork(__dirname + '/worker', [args]);
+
+    res.end();
+
+    /*worker.stdout.on('data', function (data) {
+	console.log('stdout: ' + data);
+    });*/
+
+    /*res.writeHead(200);
+
+    worker.on('message', function(m) {
+	res.write('_testcb(\'ok\')', 'utf8');
+        res.end();
+	
+	//console.log( String(m) );
+	//res.write(' ');
+	//res.end();
+	//res.write( String(m) );
+	//res.writeContinue();
+    });*/
+
+    // this is called when the worker has finished computing
+    worker.on('close', function() {
+	console.log('--- ALL DONE ---');
+	//	io.sockets.emit('emitted an event');
+    });
+
+});
+
+// run model
+app.get('/runModel', function(req, res) {
+    console.log("running model!");
+
+    // set path for octave files based on model name
+    var fpath = __dirname + '/' + req.query.model + '_mfiles/';
+    
+    // run shell script with model code
+    var oc_command = spawn('octave', [fpath + 'run_model.m']);
+
+    // display output of run_model shell script in console
+    oc_command.stdout.on('data', function (data) {
+	var str = data.toString();
+	console.log(str);
+	res.write(str);
+    });
+
+    oc_command.on("close", function() {
+	
+	var py_command = spawn(
+	    'python', [fpath + 'save_results.sh', 
+		       fpath + req.query.model,
+		       fpath + 'plot_vars.mat'] )
+	
+	py_command.on("close", function() {
+	    res.end();
+	});
+    });
+
+});
+
+// write parameters
+app.post('/writeParams', function(req, res) {
+    console.log("writing parameter file");
+
+    // set path for octave files based on model name
+    var fpath = __dirname + '/' + req.body.model + '_mfiles/';
+
+    // write the param file with JS
+    fs.writeFile(fpath + 'set_params.m', 
+		 modFileWriter.writeParamFile(req.body.paramData), 
+		 function (err) {
+		     if (err) console.log(err);
+		 });
+
+    res.end();
+});
+
+// write shocks
+app.post('/writeShocks', function(req, res) {
+    console.log("writing shock file");
+
+    // set path for octave files based on model name
+    var fpath = __dirname + '/' + req.body.model + '_mfiles/';
+
+    // write the shocks file with JS
+    fs.writeFile(fpath + 'shocks.mod', 
+		 modFileWriter.writeShockFile(req.body.shockData), 
+		 function (err) {
+		     if (err) console.log(err);
+		 });
+
+    res.end();
+});
+
+// write fiscal data
+app.post('/writeDSFfiles', function(req, res) {
+    console.log("writing dsf files");
+
+    // set path for octave files based on model name
+    var fpath = __dirname + '/' + req.body.model + '_mfiles/';
+    
+    fs.writeFile(fpath + 'set_params_fiscal.m', 
+		 modFileWriter.writeFiscalFile(req.body.fiscalData), 
+		 function (err) {
+		     if (err) console.log(err);
+		 });
+    fs.writeFile(fpath + 'dsf.mod', 
+		 modFileWriter.writeModFile(req.body.fiscalData), 
+		 function (err) {
+		     if (err) console.log(err);
+		 });
+    
+    res.end();
+});
+
+// write scenario to json file
+app.post('/saveScenario', function(req, res) {
+  
+    // set the name of the file to save
+    var fname = __dirname + '/' + req.body.model 
+	+ '_mfiles/scenarios/' + req.body.model + '_scenario.json';
+    
+    // save file with JSON'd information
+    fs.writeFile(fname, JSON.stringify(req.body), 
+		 function (err) {
+		     if (err) console.log(err);
+		 });
+
+    res.end();
+});
+
+// send browser data of final results (can be used for plotting)
+app.get('/getResults', function(req, res) {
+    
+    // eventually the file name will be defined by the user
+    var fname = __dirname + '/' + req.query.model 
+	+ '_mfiles/' + req.query.model + '_results.json';
+    fs.readFile(fname, 'utf8', function (err, data) {
+	if (err) {
+	    console.log('error: ' = err); }
+	data = JSON.parse(data);
+	res.json(data);
+    });
+});
+
+
+// send browser scenario data to load
+/*app.get('/loadScenario', function(req, res) {
+
+    var fname = __dirname + '/public/up_scenario.json';
+
+    fs.readFile(fname, 'utf8', function (err, data) {
+	if (err) {
+	    console.log('error: ' = err); }
+	data = JSON.parse(data);
+	res.json(data);
+    });
+}); */
+
+// get request to pull variable data
+app.get('/getVarList', function(req, res) {
+    var fname = __dirname + '/' + req.query.model
+	+ '_mfiles/json/var_list.json';
+    fs.readFile(fname, 'utf8', function (err, data) {
+	if (err) {
+	    console.log('error: ' = err); }
+	data = JSON.parse(data);
+	res.json(data);
+    });
+});
+
+// get request to pull equations
+app.get('/getEqnList', function(req, res) {
+    var fname = __dirname + '/' + req.query.model
+	+ '_mfiles/json/eqn_list.json';
+    fs.readFile(fname, 'utf8', function (err, data) {
+	if (err) {
+	    console.log('error: ' = err); }
+	data = JSON.parse(data);
+	res.json(data);
+    });
+});
+
+// get request to pull parameter data
+app.get('/getParamList', function(req, res) {
+    var fname = __dirname + '/' + req.query.model
+	+ '_mfiles/json/param_list.json';
+   fs.readFile(fname, 'utf8', function (err, data) {
+	if (err) {
+	    console.log('error: ' = err); }
+	data = JSON.parse(data);
+	res.json(data);
+    });
+});
+
+// get request to pull shock data
+app.get('/getShockList', function(req, res) {
+    var fname = __dirname + '/' + req.query.model
+	+ '_mfiles/json/shock_list.json';
+    fs.readFile(fname, 'utf8', function (err, data) {
+	if (err) {
+	    console.log('error: ' = err); }
+	data = JSON.parse(data);
+	res.json(data);
+    });
+});
+
+app.listen(app.get('port'), function() {
+  console.log("Node app is running at localhost:" + app.get('port'));
+});
+
+http.listen(8080, function(){
+    console.log('listening on port 8080');
+});

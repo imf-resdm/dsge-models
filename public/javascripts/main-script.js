@@ -29,13 +29,6 @@ $(function() {
             }
         }
     });
-
-    // socket.io test
-    var socket = io.connect('http://ec2-54-201-118-146.us-west-2.compute.amazonaws.com:8080/');
-    socket.on('news', function (data) {
-	console.log(data);
-	socket.emit('my other event', { my: 'data' });
-    });
     
     /* run model when button is clicked */
     $("#run-btn").click(function() {
@@ -72,10 +65,8 @@ $(function() {
 		url: "/runWorker",
 		type: "GET",
 		data: { model: whichModel },
-		timeout: 60*1000,
 		success: function(data) {
-
-		    hasRun = 1;
+		    /*hasRun = 1;
 		    updatePlots();
 		    
 		    $("#save-scen-li").removeClass("disabled");
@@ -83,24 +74,10 @@ $(function() {
 		    
 		    $("#console-text").append(data);
 		    $("#console-text").scrollTop($("#console-text")[0]
-						 .scrollHeight);
+						 .scrollHeight);*/
 		}
 	    });
 
-	    /*$.get("/runWorker", 
-		  { model: whichModel } )
-		.done( function(data) {
-		    hasRun = 1;
-		    updatePlots();
-		    
-		    $("#save-scen-li").removeClass("disabled");
-		    $("#download-li").removeClass("disabled");
-
-		    $("#console-text").append(data);
-		    $("#console-text").scrollTop($("#console-text")[0]
-						 .scrollHeight);
-		    
-		})*/
 	});
 	
 	// save the current scenario so the user can download it
