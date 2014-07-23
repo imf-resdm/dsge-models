@@ -6,7 +6,7 @@ TT = 30 # how many periods of results to send
 #### 1 - load model results
 
 # load results from mat file and convert to numpy lists
-mat = loadmat(argv[1])
+mat = loadmat(argv[1] + '_results.mat')
 endo_names = mat['M_']['endo_names'].tolist()[0][0]
 endo_simul = mat['oo_']['endo_simul'].tolist()[0][0]
 

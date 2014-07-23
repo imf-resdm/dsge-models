@@ -601,7 +601,7 @@ oo_.dr.eigval = check(M_,options_,oo_);
 % SHOCKS instructions
 %
 make_ex_;
-set_shocks(0,1, 1, 0);
+set_shocks(0,1, 1, 5);
 set_shocks(0,2, 1, 0);
 set_shocks(0,3, 1, 0);
 set_shocks(0,4, 1, 0);
