@@ -1,0 +1,30 @@
+{
+	"iz" : {
+		"desc" : "public investment",
+		"equations" : [27]
+	},
+	"d" : {
+		"desc" : "public domestic debt (de-trended)",
+		"equations" : [30]
+	},
+	"dc" : {
+		"desc" : "public concessional debt",
+		"equations" : [30]
+	},
+	"grants" : {
+		"desc" : "grant revenue",
+		"equations" : [30]
+	},
+	"oilr" : {
+		"desc" : "oil revenue",
+		"equations" : [30]
+	},
+	"hbar" : {
+		"desc" : "VAT rate ceiling",
+		"equations" : [38]
+	},
+	"Tbar" : {
+		"desc" : "government transfers floor",
+		"equations" : [39]
+	}
+}

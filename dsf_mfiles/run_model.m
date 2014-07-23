@@ -1,0 +1,31 @@
+# housekeeping                                                                 
+clear all;
+
+# change working directory to the directory of this file                       
+cur_path = strrep(mfilename("fullpath"), ["/" mfilename()], "");
+eval(["cd " cur_path]);
+
+# add compecon methods to Octave path
+eval(["addpath " cur_path "/compecon"])
+
+# staging/production (i.e. deployed to Heroku) only                           
+# addpath /app/vendor/dynare/matlab                                           
+ 
+# set model name, do not icnlude ".mod"                                        
+model_name = "dsf";
+
+# set and save parameters (both explicit and implicit)                         
+set_params;
+set_params_fiscal;
+set_params_imp;
+
+# find steady state of model
+calc_steady_state;
+
+# run model                                    
+eval(["dynare " model_name ".mod noclearall"]);
+results = "plot_vars";
+save_results;
+
+# housekeeping
+eval(["rmpath " cur_path "/compecon"])

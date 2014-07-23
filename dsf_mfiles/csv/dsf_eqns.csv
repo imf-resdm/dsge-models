@@ -1,0 +1,44 @@
+firm production in tradable sector,"q_{x,t}=A_{x,t}\\left({z^e}_{t-1}\\right)^{\\psi_{x}}\\left(k_{x,t-1}\\right)^{\\alpha_{x}}\\left(L_{x,t}\\right)^{1-\\alpha_{x}}"
+firm production in non-tradable sector,"q_{n,t}=A_{n,t}\\left({z^e}_{t-1}\\right) ^{\\psi_{n}}\\left( k_{n,t-1}\\right)^{\\alpha_{n}}\\left( L_{n,t}\\right)^{1-\\alpha_{n}}"
+firm productivity in tradable sector,"A_{x,t}=a_{x}\\left( \\frac{{q^{I}}_{x,t-1}}{\\bar{q^{I}}_{x}}\\right) ^{\\sigma_{x}}\\left( {k^{I}}_{x,t-1}\\right) ^{\\xi_{x}}"
+firm productivity in non-tradable sector,"A_{n,t}=a_{n}\\left( \\frac{{q^{I}}_{n,t-1}}{\\bar{q^{I}}_{n}}\\right)^{\\sigma_{n}}\\left( {k^{I}}_{n,t-1}\\right) ^{\\xi_{n}}"
+supply price of private capital,"P_{k,t}=P_{mm,t}+a_{k}P_{n,t}"
+supply price of public capital,"P_{z,t}=P_{mm,t}+a_{z}P_{n,t}"
+marginal product of labor in non-tradable sector,"P_{n,t}(1-\\alpha_{n})\\frac{q_{n,t}}{L_{n,t}}=w_{t}"
+marginal product of labor in tradable sector,"P_{x,t}(1-\\alpha_{x})\\frac{q_{x,t}}{L_{x,t}}=w_{t}"
+marginal product of capital in non-tradable sector,"P_{n,t}\\alpha_{n}\\frac{q_{n,t}}{k_{n,t-1}}=r_{n,t}"
+marginal product of capital in tradable sector,"P_{x,t}\\alpha_{x}\\frac{q_{x,t}}{k_{x,t-1}}=r_{x,t}"
+constant elasticity of substitution consumption basket,"{c^{i}}_{t}=\\left[ \\rho_{x}^{\\frac{1}{\\epsilon }}\\left( {c^{i}}_{x,t}\\right) ^{\\frac{\\epsilon-1}{\\epsilon}}+\\rho_{m}^{\\frac{1}{\\epsilon }}\\left({c^{i}}_{m,t}\\right) ^{\\frac{\\epsilon-1}{\\epsilon}}+(\\rho_{n})^{\\frac{1}{\\epsilon }}\\left( {c^{i}}_{n,t}\\right) ^{\\frac{\\epsilon -1}{\\epsilon }}\\right]^{^{\\frac{\\epsilon }{\\epsilon -1}}}\\text{ \\ \\ \\ for }i=\\mathfrak{s},\\mathfrak{h}"
+relative consumer price index,"P_{t}=\\left[ \\rho_{x}P_{x,t}^{1-\\epsilon }+\\rho_{m}P_{m,t}^{1-\\epsilon }+\\rho_{n}P_{n,t}^{1-\\epsilon }\\right] ^{^{\\frac{1}{1-\\epsilon }}}"
+demand function for goods,"{c^{i}}_{j,t}=\\rho _{j}\\left( \\frac{P_{j,t}}{P_{t}}\\right) ^{-\\epsilon} {c^{i}}_{t}\\text{ \\ for $j=x,m,n$ and $i=\\mathfrak{s},\\mathfrak{h}$ }"
+household (savers) budget constraint,"P_{t}{b^{\\mathfrak{s}}}_{t}-{b^{\\mathfrak{s}\\ast}}_{t} = r_{x,t} {k^{\\mathfrak{s}}}_{x,t-1} + r_{n,t-1} {k^{\\mathfrak{s}}}_{n,t-1} + w_{t}L_{t}^{\\mathfrak{s}}+ \\frac{\\mathcal{R}_{t}}{1+a} +\\frac{\\mathcal{T}_{t}}{1+a}-\\frac{1+{r^{\\ast}}_{t-1}}{1+g} {b^{\\mathfrak{s}\\ast}}_{t-1} \\\\ +\\frac{1+r_{t-1}}{1+g} P_{t} {b^{\\mathfrak{s}}}_{t-1} - P_{k,t}\\left( {i^{\\mathfrak{s}}}_{x,t} +{i^{\\mathfrak{s}}}_{n,t} + {AC^{\\mathfrak{s}}}_{x,t} + {AC^{\\mathfrak{s}}}_{n,t}\\right) - P_{t}{c^{\\mathfrak{s}}_{t}}(1+h_{t})-\\mu {z^{e}}_{t-1}-\\mathcal{P^{\\mathfrak{s}}}_{t} - {\\Phi^{\\mathfrak{s}}}_{t}"
+accumulation of tradable sector capital,"(1+g) {k^{\\mathfrak{s}}}_{x,t} = {i^{\\mathfrak{s}}}_{x,t}+(1-\\delta_{x}) {k^{\\mathfrak{s}}}_{x,t-1} "
+accumulation of non-tradable sector capital,"(1+g) {k^{\\mathfrak{s}}}_{n,t} = {i^{\\mathfrak{s}}}_{n,t}+(1-\\delta_{n}) {k^{\\mathfrak{s}}}_{n,t-1} "
+capital adjustment costs,"{AC^{\\mathfrak{s}}}_{j,t} \\equiv \\frac{v}{2}\\left( \\frac{{i^{\\mathfrak{s}}}_{j,t}}{{k^{\\mathfrak{s}}}_{j,t-1}}-\\delta_{j} -g\\right) ^{2} {k^{\\mathfrak{s}}}_{j,t-1}, \\text{ \\ for \\ } j=x,n"
+portfolio adjustment costs,\\mathcal{P^{\\mathfrak{s}}}_{t} \\equiv \\frac{\\eta}{2}({b^{\\mathfrak{s}\\ast}}_{t} - \\bar{b^{\\mathfrak{s}\\ast}})^{2}
+household (savers) first-order condition (modified consumption Euler equation),{c^{\\mathfrak{s}}}_{t}={c^{\\mathfrak{s}}}_{t+1}\\left( \\beta \\frac{1+r_{t}}{1+g}\\frac{1+h_{t}}{1+h_{t+1}}\\right) ^{-\\tau }
+household (savers) first-order condition (equalizes real interest rate on domestic bonds and foreign private bonds),(1+r_{t})\\frac{P_{t+1}}{P_{t}}=\\frac{1+{r^{\\ast}}_{t}}{\\left[ 1-\\eta ({b^{\\mathfrak{s}\\ast}}_{t}-\\bar{b^{\\mathfrak{s}\\ast}})\\right] }
+household (savers) first-order condition (equalizes return on capital in tradable sector with real interest rate),"\\frac{r_{x,t+1}}{P_{k,t+1}}+1-\\delta_{x} +v{\\Upsilon^{\\mathfrak{s}}}_{x,t+1} \\left( \\frac{{i^{\\mathfrak{s}}}_{x,t+1}}{{k^{\\mathfrak{s}}}_{x,t}}+1-\\delta_{x}\\right) -\\frac{v}{2}\\left( {\\Upsilon^{\\mathfrak{s}}}_{x,t+1}\\right)^{2}\\\\ =(1+r_{t})\\frac{P_{t+1}}{P_{t}}\\frac{P_{k,t}}{P_{k,t+1}}\\left(1+v{\\Upsilon^{\\mathfrak{s}}}_{x,t}\\right)"
+household (savers) first-order condition (equalizes return on capital in non-tradable sector with real interest rate),"\\frac{r_{n,t+1}}{P_{k,t+1}}+1-\\delta_{n} +v{\\Upsilon^{\\mathfrak{s}}}_{n,t+1} \\left( \\frac{{i^{\\mathfrak{s}}}_{n,t+1}}{{k^{\\mathfrak{s}}}_{n,t}}+1-\\delta_{n}\\right) -\\frac{v}{2}\\left( {\\Upsilon^{\\mathfrak{s}}}_{n,t+1}\\right)^{2}\\\\ =(1+r_{t})\\frac{P_{t+1}}{P_{t}}\\frac{P_{k,t}}{P_{k,t+1}}\\left(1+v{\\Upsilon^{\\mathfrak{s}}}_{n,t}\\right)"
+capital adjustment costs term,"{\\Upsilon^{\\mathfrak{s}}}_{j,t}=\\left( \\frac{{i^{\\mathfrak{s}}}_{j,t}}{{k^{\\mathfrak{s}}}_{j,t-1}}-\\delta_{j} -g\\right) \\text{ \\ for $j=x,n$ \\ }"
+private demand for foreign debt,\\eta ({b^{\\mathfrak{s}\\ast}}_{t}-\\bar{b}^{\\mathfrak{s}\\ast})=1-\\frac{1+{r^{\\ast}}_{t}}{(1+r_{t})\\frac{P_{t+1}}{P_{t}}}
+real interest rate on private external debt,"{r^{\\ast}}_{t}=r_{dc,t}+\\mathfrak{u}"
+household (non-savers) budget constraint,(1+h_{t})P_{t} {c^{\\mathfrak{h}}}_{t}=w_{t}L^{\\mathfrak{h}}+\\frac{a}{1+a}(\\mathcal{R}_{t}+\\mathcal{T}_{t})
+accumulation of public capital,"(1+g)z_{t}=(1-\\delta_{z} )z_{t-1}+i_{z,t}"
+conversion of public capital into effective public capital,"z_{t}^{e}=\\bar{s}\\bar{z}+s(z_{t}-\\bar{z}), \\text{ \\ with $\\bar{s}\\in\\lbrack 0,1]$ \\ and \\ $s\\in \\lbrack 0,1]$ }"
+accumulation of effective public capital,"(1+g) {z^{e}}_{t}=(1-\\delta_{z} ){z^{e}}_{t-1}+s(i_{z,t}-\\bar{\\imath}_{z})+\\bar{s}\\bar{\\imath}_{z}"
+government budget constraint,"P_{t}\\Delta b_{t}+\\Delta d_{c,t}+\\Delta d_{t} = \\frac{r_{t-1}-g}{1+g}P_{t}b_{t-1}+\\frac{r_{d,t-1}-g}{1+g}d_{t-1}+\\frac{r_{dc,t-1}-g}{1+g}d_{c,t-1}\\\\ + P_{z,t}\\mathbb{I}_{z,t}+\\mathcal{T}_{t}-h_{t}P_{t}c_{t}-\\mathcal{G}_{t}-\\mathcal{N}_{t}-\\mu {z^{e}}_{t-1}"
+real interest rate on public external debt,"r_{dc,t}=r^{f}+\\upsilon _{g}e^{\\eta _{g}\\left( \\frac{d_{t}+d_{c,t}}{y_{t}}-\\frac{\\bar{d}+\\bar{d}_{c}}{\\bar{y}}\\right) }"
+cost overruns from absorptive capacity constraints,"\\mathbb{I}_{z,t}=\\mathcal{H}_{t}(i_{z,t}-\\bar{\\imath}_{z})+\\bar{\\imath}_{z}"
+absorptive capacity constraints,"\\mathcal{H}_{t}=\\left( 1+\\frac{i_{z,t}}{z_{t-1}}-\\delta -g\\right)^{\\phi }"
+fiscal gap,"\\mathfrak{Gap}_{t}=\\frac{1+r_{d}}{1+g}d_{t-1}-d_{t}+\\frac{r_{dc,t-1}-g}{1+g}dc_{t-1}+\\frac{r_{t-1}-g}{1+g}P_{t}b_{t-1} \\\\ + P_{z,t}\\mathbb{I}_{t}+\\mathcal{T}_{o}-h_{o}P_{t}c_{t}-\\mathcal{G}_{t}-\\mathcal{N}_{t}-\\mu {z^{e}}_{t-1}"
+fiscal gap (alternate formulation),"\\mathfrak{Gap}_{t}=P_{t}\\Delta b_{t}+\\Delta d_{c,t}+(h_{t}-h_{o})P_{t}c_{t}-(\\mathcal{T}_{t}-\\mathcal{T}_{o})"
+target VAT rate,h_{t}^{\\text{target}} = h_{o}+(1-\\lambda )\\frac{\\mathfrak{Gap}_{t}}{P_{t}c_{t}}
+target government transfers level,\\mathcal{T}_{t}^{\\text{target}}=\\mathcal{T}_{o}-\\lambda \\mathfrak{Gap}_{t}
+VAT rate reaction function,"h_{t}=Min\\left\\{ h_{t}^{r},h^{u}\\right\\}"
+government transfers reaction function,"\\mathcal{T}_{t}=Max\\left\\{ \\mathcal{T}_{t}^{r},\\mathcal{T}^{l}\\right\\}"
+fiscal rule for VAT rate,"h_{t}^{r}=h_{t-1}+\\lambda _{1}({\\small h}_{t}^{\\text{target}}-h_{t-1})+\\lambda _{2}\\frac{(x_{t-1}-x^{\\text{target}})}{y_{t}},\\quad \\text{with}\\quad \\text{ }\\lambda _{1},\\lambda _{2}>0"
+fiscal rule for government transfers,"\\mathcal{T}_{t}^{r}=\\mathcal{T}_{t-1}+\\lambda _{3}(\\mathcal{T}_{t}^{\\text{target}}-\\mathcal{T}_{t-1})-\\lambda _{4}(x_{t-1}-x^{\\text{target}}),\\quad \\text{with}\\quad \\text{ }\\lambda _{3},\\lambda _{4}>0"
+market-clearing condition for labor,L_{x}+L_{n}=L
+market-clearing condition for non-tradable goods,"q_{n,t}=\\rho _{n}\\left( \\frac{P_{n,t}}{P_{t}}\\right) ^{-\\epsilon}c_{t}+a_{k}\\left( i_{x,t}+i_{n,t}+AC_{x,t}+AC_{n,t}\\right) +a_{z}\\mathbb{I}_{z,t}"
+sum of budget constraints (net foreign debt equals national spending less national income),"d_{t}-d_{t-1}+d_{c,t}-d_{c,t-1}+{b^{\\ast}}_{t}-{b^{\\ast}}_{t-1} = \\frac{r_{d}-g}{1+g}d_{t-1}+\\frac{r_{dc,t-1}-g}{1+g}d_{c,t-1}+\\frac{{r^{\\ast}}_{t-1}-g}{1+g}{b^{\\ast}}_{t-1} \\\\ + \\mathcal{P}_{t}+P_{z,t}\\mathbb{I}_{z,t}+P_{k,t}\\left(i_{x,t}+i_{n,t}+AC_{x,t}+AC_{n,t}\\right) \\\\+ P_{t}c_{t}-P_{n,t}q_{n,t}-P_{x,t}q_{x,t}-\\mathcal{R}_{t}-\\mathcal{G}_{t}-\\mathcal{N}_{t}"

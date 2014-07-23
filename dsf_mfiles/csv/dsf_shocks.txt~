@@ -1,0 +1,11 @@
+iz	public investment	27
+d	public domestic debt (de-trended)	30
+dc	public concessional debt	30
+grants	grant revenue	30
+oilr	oil revenue	30
+hbar	VAT rate ceiling	38
+Tbar	government transfers floor	39
+remit	remittances	"14,26"
+px	tradable sector price index	12
+pm	imported goods price index	12
+pmm	imported machines price index	"5,6"

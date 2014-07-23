@@ -1,27 +1,18 @@
-var express = require('express');
+var express      = require('express');
 var childProcess = require('child_process');
-var fs = require('fs');
-var bodyParser = require('body-parser');
-var modWriter = require(__dirname + '/mod-writer.js');
-var app = express();
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
+var fs           = require('fs');
+var bodyParser   = require('body-parser');
+var modWriter    = require(__dirname + '/mod-writer.js');
+var app          = express();
+var http         = require('http').Server(app);
+var io           = require('socket.io')(http);
 
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/public'));
-//app.set('port', (process.env.PORT || 8080));
 
-// main method to display app
 app.get('/', function(req, res){
   res.sendfile('index.html');
 });
-
-// socket.io set up connection
-/*io.on('connection', function(socket){
-  socket.on('chat message', function(msg){
-    io.emit('chat message', msg);
-  });
-});*/
 
 /*************************************************************
 ************************* AJAX CALLS *************************
