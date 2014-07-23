@@ -1,0 +1,10 @@
+{
+    "e" : {
+	"desc" : "Technology",
+	"equations" : [10]
+    },
+    "em" : {
+	"desc" : "Money supply",
+	"equations" : [6]
+    }
+}

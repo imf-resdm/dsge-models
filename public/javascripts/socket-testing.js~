@@ -1,0 +1,7 @@
+$(function() {
+
+    $('#run').click(function() {
+	alert('clicked run');
+    });
+
+});

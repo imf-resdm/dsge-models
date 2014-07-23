@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <title>Debt/Investment/Growth Model</title>
+    
+    <!-- jquery -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    
+    <!-- CSS libraries -->
+    <link href="/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="jquery-handsontable/dist/jquery.handsontable.full.css"> <!-- handsontable -->
+    
+    <!-- my css files -->
+    <link href="css/style.css" rel="stylesheet">    
+
+    <!-- declare model name -->
+    <script>var whichModel = "dsf";</script>
+    
+  </head>
+ 
+  <body>
+
+    <div class="container" id="main-container">
+      
+      <!-- LIST OF TABS -->
+      <ul class="nav nav-tabs" role="tablist" id="tabs">
+	<li class="active"><a href="#params" role="tab" data-toggle="tab">
+	    Parameters</a></li>
+	<li><a href="#fiscal" role="tab" data-toggle="tab">
+	    Fiscal Settings</a></li>
+	<li><a href="#shocks" role="tab" data-toggle="tab">Shocks</a></li>
+	<li><a id="res-tab-li" href="#results" role="tab" data-toggle="tab">
+	    Results</a></li>
+	<li class="dropdown">
+	  <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+	    Actions <span class="caret"></span>
+	  </a>
+	  <ul class="dropdown-menu" role="menu">
+	    <li role="presentation" class="drop-li">
+	      <a role="menuitem" id="run-btn">
+		Run model
+	    </a></li>
+	    <!-- cheap hack: I want the load div to act like a form, so I hide
+	      the form and make clicking on the div tigger a form click. this
+	      may not work in all browsers (but in works in Chrome!) -->
+	    <li role="presentation" class="drop-li" id="load-scen-btn">
+	      <a role="menuitem">Load a scenario</a></li>
+	    <form method="post" action="/uploadFile">
+	      <input type="file" name="myFile" id="myFile" 
+		     style="display:none">
+	    </form>
+	    <li role="presentation" class="disabled drop-li" 
+		id="save-scen-li">
+	      <a role="menuitem" href="scenarios/nk_scenario.json" 
+		 download="scenario.json">
+		Save this scenario
+	    </a></li>
+	    <li role="presentation" class="disabled drop-li" 
+		id="download-li">
+	      <a role="menuitem" href="nk_results.json" 
+		 download="results.json">
+		Download results
+	    </a></li>
+	  </ul>
+	</li>
+	<li><a href="#console" role="tab" data-toggle="tab">Console</a></li>
+      </ul>
+      
+      <!-- TAB CONTENT DIV -->
+      <div class="tab-content">
+	
+	<!-- PARAMS TAB -->
+	<div class="tab-pane active" id="params">
+	  <h3>Parameterize the model.</h3>
+            <p>Click on a parameter for more information and to see which model equations it appears in.</p>
+
+	  <div class="row">
+            <div class="col-md-6" id="param-tab-west">
+              <table id="param-table" class="table table-hover"></table>
+            </div>
+            <div id="scroller-anchor">
+	      <div class="col-md-6" id="param-tab-east">
+		Click on a parameter for more information.
+              </div>
+	    </div>
+          </div>
+	</div>
+	<script type="text/javascript"> 
+	  $(function() {
+	  moveScroller();
+	  });
+	</script> 
+	
+	<!-- load the table dynamically using param_list.json as input -->
+        <script type="text/javascript" src="javascripts/makeParamTable.js">
+        </script>
+	
+	<!-- FISCAL TAB -->
+	<div class="tab-pane" id="fiscal">
+	  <h3>Fiscal adjustment settings.</h3>
+          <p>Specify the method of closing the fiscal gap.</p>
+	  <div id="fiscal-div">
+	    <div class="row">
+              <div class="col-md-6">
+		<div class="row">
+		  <div class="col-md-12">
+		    <h4>Type of borrowing</h4>
+		    <p>The government can pay for public investment with one of concessional, commercial, or domestic debt. If concessional, you must specify the path in the "Shocks" tab.</p>
+		    <div class="btn-group-vertical half-width" id="debt-btns"
+			 data-toggle="buttons">
+		      <label class="btn btn-default active">
+			<input type="radio" name="debt-options" 
+			       id="debt-exog" value="exog" checked>
+			<div class="text-left">
+			  Concessional borrowing (exogenous)
+			</div>
+		      </label>
+		      <label class="btn btn-default">
+			<input type="radio" name="debt-options" 
+			       id="debt-comm" value="comm"> 
+			<div class="text-left">
+			  Commercial borrowing (endogenous)
+			</div>
+		      </label>
+		      <label class="btn btn-default">
+			<input type="radio" name="debt-options" 
+			       id="debt-dom" value="dom"> 
+			<div class="text-left">
+			  Domestic borrowing (endogenous)
+			</div>
+		      </label>
+		    </div>
+		  </div>
+		  <div class="col-md-12">
+		    <h4>Share of adjustment on taxes vs. transfers</h4>
+		    <p>Control how much of the fiscal gap is closed with taxes or with transfers. Setting \(\lambda=1\) puts the entire adjustment on the tax rate; \(\lambda=0\) puts it entirely on the transfer level.</p>
+		    <div class="input-group" id="lambda-input">
+		      <span class="input-group-addon">\(\lambda\)</span>
+		      <input type="text" class="form-control" 
+			     id="lambda-val" value="0.50">
+		    </div>
+		  </div>
+		</div>
+	      </div>
+              <div class="col-md-6">
+		<h4>Speed of adjustment</h4>
+		<p>The speed of the fiscal adjustment is governed by these four parameters (see equations below for details). PUT SOME INTUITION HERE.</p>
+		<div class="input-group lambda-div" id="lambda1-input">
+		  <span class="input-group-addon">
+		    \(\lambda_1\)</span>
+		  <input type="text" class="form-control" id="lambda1-val" 
+			 value="0.25">
+		</div>
+		<div class="input-group lambda-div" id="lambda2-input">
+		  <span class="input-group-addon">
+		    \(\lambda_2\)</span>
+		  <input type="text" class="form-control" id="lambda2-val" 
+			 value="0.02">
+		</div>
+		<div class="input-group lambda-div" id="lambda3-input">
+		  <span class="input-group-addon">
+		    \(\lambda_3\)</span>
+		  <input type="text" class="form-control" id="lambda3-val"
+			 value="0.25">
+		</div>
+		<div class="input-group lambda-div" id="lambda4-input">
+		  <span class="input-group-addon">
+		    \(\lambda_4\)</span>
+		  <input type="text" class="form-control" id="lambda4-val"
+			 value="0.02">
+		</div>
+	      </div>
+	    </div>
+	    <div class="row">
+              <div class="col-md-6" id="tax-settings">
+		<h4>Tax settings</h4>
+		<p>If the selected debt type is endogenous, you can put a hard cap on the tax rate. You can also use a staggered cap, which must be specified in the "Shocks" tab.</p>
+		<div class="row">
+		  <div class="col-md-6">
+		    <div class="btn-group-vertical half-width" id="tax-btns"
+			 data-toggle="buttons">
+		      <label class="btn btn-default active tax-gp disabled">
+			<input type="radio" name="tax-options" 
+			       id="tax-ceiling" value="hbar" checked>
+			<div class="text-left">Hard ceiling on tax rate</div>
+		      </label>
+		      <label class="btn btn-default tax-gp disabled">
+			<input type="radio" name="tax-options" 
+			       id="tax-stag" value="hstag"> 
+			<div class="text-left">
+			  Staggered ceiling on tax rate
+			</div>
+		      </label>
+		    </div>
+		  </div>
+		  <div class="col-md-6">
+		    <div class="input-group half-width">
+		      <span class="input-group-addon">
+			\(h_t^{u}\)</span>
+		      <input type="text" class="form-control" disabled="true"
+			     id="hbar-input" value="0.25">
+		    </div>
+		  </div>
+		</div>
+	      </div>
+              <div class="col-md-6">
+		<h4>Transfer settings</h4>
+		<p>If the selected debt type is endogenous, you can put a hard floor on the transfer level. You can also use a staggered floor, which must be specified in the "Shocks" tab.</p>
+		<div class="row">
+		  <div class="col-md-6">
+		    <div class="btn-group-vertical half-width" id="trans-btns"
+			 data-toggle="buttons">
+		      <label class="btn btn-default active trans-gp disabled">
+			<input type="radio" name="trans-options" 
+			       id="trans-floor" value="Tbar" checked>
+			<div class="text-left">
+			  Hard floor on transfers
+			</div>
+		      </label>
+		      <label class="btn btn-default trans-gp disabled">
+			<input type="radio" name="trans-options" 
+			       id="trans-stag" value="Tstag"> 
+			<div class="text-left">
+			  Staggered floor on transfers
+			</div>
+		      </label>
+		    </div>
+		  </div>
+		  <div class="col-md-6">
+		    <div class="input-group half-width">
+		      <span class="input-group-addon" id="Tbar-addon">
+			\(\mathcal{T}_t^{l}\)</span>
+		      <input type="text" class="form-control" disabled="true" 
+			     id="Tbar-input" value="0.10">
+		    </div>
+		  </div>
+		</div>
+	      </div>
+	    </div>
+	    <div class="row">
+              <div class="col-md-6">
+		<h4>Tax adjustment equations</h4>
+		reaction function for VAT rate
+		<p class="jax-holder">
+		  \(h_t^{target}=h_o + (1-\lambda) \frac{\mathfrak{Gap}_t}
+		  {P_t c_t} \)</p>
+		fiscal rule for VAT rate
+		<p class="jax-holder">
+		  \(h_t^r = h_{t-1} + \lambda_1 (h_t^{target}-h_{t-1}) + 
+		  \lambda_2 \frac{(x_{t-1} - x^{target})}{y_t}\)</p>
+	      </div>
+	      <div class="col-md-6">
+		<h4>Transfer adjustment equations</h4>
+		reaction function for government transfers
+		<p class="jax-holder">
+		  \(\mathcal{T}_t^{target}=\mathcal{T}_o 
+		  + \lambda \mathfrak{Gap_t}\)</p>
+		fiscal rule for government transfers
+		<p class="jax-holder">
+		\(\mathcal{T}_t^r = \mathcal{T}_{t-1} 
+		+ \lambda_3 (T_t^{target}-\mathcal{T}_{t-1}) - 
+		\lambda_4(x_{t-1}-x^{target}) \)</p>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<!-- SHOCKS TAB -->
+	<div class="tab-pane" id="shocks">
+	  <h3>Specify shocks.</h3>
+          <p>Set the path of the model's exogenous variables.</p>
+	  <div id="shockTables"></div>
+	  <script type="text/javascript" src="javascripts/makeShockTables.js">
+	  </script>
+	</div>
+	
+	<!-- RESULTS TAB -->
+	<div class="tab-pane" id="results">
+	  <h3>View results.</h3>
+          <p>Different series can be displayed by selecting them from the dropdown menu above each plot.</p>
+	  <div id="flot-grid"></div>
+	</div> <!-- close results -->
+
+	<!-- CONSOLE TAB -->
+	<div class="tab-pane" id="console">
+	  <h3>Take a look at the console.</h3>
+            <p>This can help debug any errors that you may have.</p>
+	    <div id="console-text"></div>
+	</div><!-- close console tab -->
+      </div> <!-- close tab-content -->
+    </div> <!-- close container -->
+    
+     <!-- bootstrap -->
+     <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- handsontable -->
+    <script type="text/javascript" src="jquery-handsontable/dist/jquery.handsontable.full.js"></script> 
+
+    <!-- flot -->
+    <script type="text/javascript" src="flot/jquery.flot.js"></script> 
+
+    <!-- mathjax -->
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+     
+    <!-- my own libraries -->
+    <script type="text/javascript" src="javascripts/makePlots.js"></script>
+    <script type="text/javascript" src="javascripts/script.js"></script> 
+    <script src="/javascripts/fupload-script.js"></script>
+    <script src="/javascripts/scroll-script.js"></script>
+    <script src="/javascripts/fiscal-script.js"></script>
+    
+  </body>
+</html>

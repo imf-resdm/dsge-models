@@ -1,0 +1,34 @@
+Starting Dynare (version 4.4.1).
+Starting preprocessing of the model file ...
+Found 10 equation(s).
+Evaluating expressions...done
+Computing static model derivatives:
+ - order 1
+Computing dynamic model derivatives:
+ - order 1
+Processing outputs ...done
+Preprocessing completed.
+Starting MATLAB/Octave computing.
+
+STEADY-STATE RESULTS:
+
+n   		 0
+w   		 0
+mc  		 0
+int 		 0
+r   		 0
+dm  		 0
+m   		 0
+a   		 0
+pi  		 0
+y   		 0
+-----------------------------------------------------
+MODEL SIMULATION:
+
+
+Simulation concluded successfully after 1 iterations.
+Total time of simulation        :      1.214
+Convergency obtained.
+-----------------------------------------------------
+
+Total computing time : 0h00m01s

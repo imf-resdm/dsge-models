@@ -1,0 +1,58 @@
+.lambda-div {
+    margin-bottom: 10px;
+}
+
+.jax-holder {
+    margin-left: 3em;
+}
+
+#console-text {
+    background-color: #EEEEEE;
+    color: #000000;
+    font-family: "Courier New", Courier, monospace;
+    padding: 20px;
+    white-space: pre;
+    height: 500px;
+    overflow-y: scroll;
+}
+
+.drop-li {
+    cursor: pointer;
+}
+
+.menu-holder {
+    /*padding: 10px 0px 0px 0px; /* top right bottom left */
+}
+
+.shock-header {
+    border-top: 1px #D3D3D3 dotted;
+    padding: 10px 0px 10px 0px;
+}
+
+.temp-shock-holder {
+    margin: 5px 0px 5px 0px;
+}
+
+.perm-shock-holder {
+    padding: 5px 0px 15px 0px;
+    float: left;
+}
+
+.plot-container {
+    /*border: 1px dashed red; 
+    box-sizing: border-box;
+    padding: 0px 30px 30px 30px; /* top right bottom left */
+}
+
+.plot-holder {
+    /* border: 1px dashed blue; */
+    width: 100%;
+    height: 100%;
+    /*padding: 0px 0px 100px 0px;
+    font-size: 14px;
+    line-height: 1.2em;*/
+}
+
+.plot-row {
+    margin: 10px 0px 50px 0px;
+}

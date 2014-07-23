@@ -1,0 +1,21 @@
+{
+    "New Keynesian Phillips curve" : "\\tilde{\\pi}_t = \\frac{(1-\\phi)(1-\\phi\\beta)}{\\phi}\\tilde{mc}_t + \\beta E_t \\tilde{\\pi}_{t+1}",
+    
+    "labor demand" : "\\tilde{mc}_t = \\tilde{m}_t - \\tilde{a}_t",
+    
+    "labor supply" : "\\frac{n^\\ast}{1-n^\\ast} \\tilde{n}_t = -\\tilde{y}_t + \\tilde{w}_t",
+    
+    "consumption Euler equation + GDP identity" : "-\\tilde{y}_t = \\tilde{r}_t - E_t \\tilde{y}_{t+1}",
+    
+    "money demand" : "-\\nu\\tilde{m}_t = -\\tilde{y}_t + \\left( \\frac{1}{i^\\ast} - \\frac{1}{1+i^\\ast} \\right) \\tilde{i}_t",
+    
+    "money supply" : "\\Delta\\tilde{m}_t + \\tilde{\\pi}_t = \\rho_m\\Delta\\tilde{m}_{t-1} + \\rho_m\\tilde{\\pi}_{t-1} + \\varepsilon_t^m",
+    
+    "growth in real balances" : "\\Delta\\tilde{m}_t = \\tilde{m}_t - \\tilde{m}_{t-1}",
+    
+    "Fisher relationship" : "\\tilde{r}_t = \\tilde{i}_t - E_t\\tilde{\\pi}_{t+1}",
+    
+    "aggregate production function" : "\\tilde{y}_t = \\tilde{a}_t + \\tilde{n}_t",
+    
+    "technology process" : "\\tilde{a}_t = \\rho \\tilde{a}_{t-1} + \\varepsilon_t"
+}

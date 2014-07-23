@@ -1,0 +1,41 @@
+# Created by Octave 3.8.1, Wed Jul 23 00:12:25 2014 UTC <ubuntu@ip-172-31-34-29>
+# name: beta
+# type: scalar
+0.99
+
+
+# name: rho
+# type: scalar
+0.9
+
+
+# name: torn
+# type: scalar
+1
+
+
+# name: v
+# type: scalar
+1
+
+
+# name: phi
+# type: scalar
+0.83
+
+
+# name: rhom
+# type: scalar
+0.5
+
+
+# name: nstar
+# type: scalar
+0.2
+
+
+# name: istar
+# type: scalar
+0.01010101010101017
+
+

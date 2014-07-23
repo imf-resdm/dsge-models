@@ -1,0 +1,50 @@
+function [] = jsonify_results(results)
+# ---------------------------------------------------------------------
+# function [] = jsonify_results(results)
+# Makes a JSON file from the results of a Dynare simulation. Currently
+# the results are stored in a file called model_results.json.
+#
+# format of JSON file will be like this:
+# {
+# "Y" : [1.0 1.0 1.0 1.0], 
+# "C" : [2.0 2.0 2.0 2.0],
+# "K" : [3.0 3.0 3.0 3.0]  // !! this line cannot end with a comma !!
+# }
+#
+# INPUTS
+#  results - string of the model results (for a mod file called 
+#  "rbc.mod" the results will usually be called "rbc_results")
+# ---------------------------------------------------------------------
+  
+  # set the length of the simulation to include in the JSON
+  NN = 40;
+  
+  # load results and pull required data structures
+  eval(['load ' results]);
+  varnames = M_.endo_names;
+  simul_results = oo_.endo_simul;
+  
+  # make JSON file
+  fname = [results ".json"];
+  fid = fopen(fname, "w+");
+  fprintf(fid, "%s", ["{", "\n"]);
+  
+  json = "";
+  for ii=1:length(varnames)
+    key = ["\"", strtrim(varnames(ii,:)), "\" : ["];
+    val = "";
+    for jj=1:NN
+      val = [val, num2str(simul_results(ii, jj)), ", "];
+    end
+    val(end) = ''; # get rid of trailing comma
+    val(end) = "]";
+    json = [json, key, val, "," "\n"];
+  #fprintf(fid, "%s", [key, val, ",", "\n"]);
+  end
+  json(end-1) = ''; # get rid of trailing comma again
+  fprintf(fid, "%s", json);
+  fprintf(fid, "%s", "}");
+  
+  fclose(fid);
+  
+end

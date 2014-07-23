@@ -1,0 +1,12 @@
+{
+    "n"   : "labor supply",
+    "w"   : "wage", 
+    "mc"  : "real marginal cost",
+    "int" : "nominal interest rate",
+    "r"   : "real interest rate",
+    "dm"  : "real money growth",
+    "m"   : "real money supply",
+    "a"   : "technology",
+    "pi"  : "inflation",
+    "y"   : "output"
+}

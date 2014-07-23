@@ -1,0 +1,57 @@
+{
+    "beta": {
+	"latex": "\\beta",
+	"val": "0.99",
+	"desc": "household discount factor",
+	"note": "high value implies that households are very patient",
+	"equations": [1]
+    },
+    
+    "rho": {
+	"latex": "\\rho",
+	"val": "0.9",
+	"desc": "technology process persistence",
+	"note": "determines how persistent temporary shocsk to technology are",
+	"equations": [10]
+    },
+    
+    "torn": {
+	"latex": "\\xi",
+	"val": "1",
+	"desc": "labor supply elasticity",
+	"note": "governs the curvature of flow utility with respect to leisure",
+	"equations": [3]
+    },
+    
+    "v": {
+	"latex": "\\nu",
+	"val": "1",
+	"desc": "money demand elasticity",
+	"note": "governs the curvature of utility with respect to real balances",
+	"equations": [5]
+    },
+    
+    "phi": {
+	"latex": "\\phi",
+	"val": "0.83",
+	"desc": "Calvo price stickiness parameter",
+	"note": "low values of \\(\\phi\\) imply low degrees of nominal rigidity",
+	"equations": [1]
+    },
+    
+    "rhom": {
+	"latex": "\\rho_m",
+	"val": "0.5",
+	"desc": "money supply process persistence",
+	"note": "determines how persistent temporary shocsk to money supply are",
+	"equations": [6]
+    },
+    
+    "nstar": {
+	"latex": "n^{\\ast}",
+	"val": "0.2",
+	"desc": "steady state labor supply",
+	"note": "pins down the steady state of the model",
+	"equations": [3]
+    }
+}
