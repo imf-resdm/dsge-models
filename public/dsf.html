@@ -52,7 +52,7 @@
 	    </form>
 	    <li role="presentation" class="disabled drop-li" 
 		id="save-scen-li">
-	      <a role="menuitem" href="scenarios/nk_scenario.json" 
+	      <a role="menuitem" href="scenarios/dsf_scenario.json" 
 		 download="scenario.json">
 		Save this scenario
 	    </a></li>
@@ -109,21 +109,21 @@
 		    <p>The government can pay for public investment with one of concessional, commercial, or domestic debt. If concessional, you must specify the path in the "Shocks" tab.</p>
 		    <div class="btn-group-vertical half-width" id="debt-btns"
 			 data-toggle="buttons">
-		      <label class="btn btn-default active">
+		      <label class="btn btn-default active" id="lab-exog">
 			<input type="radio" name="debt-options" 
 			       id="debt-exog" value="exog" checked>
 			<div class="text-left">
 			  Concessional borrowing (exogenous)
 			</div>
 		      </label>
-		      <label class="btn btn-default">
+		      <label class="btn btn-default" id="lab-comm">
 			<input type="radio" name="debt-options" 
 			       id="debt-comm" value="comm"> 
 			<div class="text-left">
 			  Commercial borrowing (endogenous)
 			</div>
 		      </label>
-		      <label class="btn btn-default">
+		      <label class="btn btn-default" id="lab-dom">
 			<input type="radio" name="debt-options" 
 			       id="debt-dom" value="dom"> 
 			<div class="text-left">
@@ -180,12 +180,14 @@
 		  <div class="col-md-6">
 		    <div class="btn-group-vertical half-width" id="tax-btns"
 			 data-toggle="buttons">
-		      <label class="btn btn-default active tax-gp disabled">
+		      <label class="btn btn-default active tax-gp disabled"
+			     id="hbar-lab">
 			<input type="radio" name="tax-options" 
 			       id="tax-ceiling" value="hbar" checked>
 			<div class="text-left">Hard ceiling on tax rate</div>
 		      </label>
-		      <label class="btn btn-default tax-gp disabled">
+		      <label class="btn btn-default tax-gp disabled"
+			     id="hstag-lab">
 			<input type="radio" name="tax-options" 
 			       id="tax-stag" value="hstag"> 
 			<div class="text-left">

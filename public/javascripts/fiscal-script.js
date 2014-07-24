@@ -1,8 +1,8 @@
-$(function() {
+// variables to keep track of whether hbar and Tbar fiels are on or off
+var hbarOFF = false;
+var TbarOFF = false;
 
-    // variables to keep track of whether hbar and Tbar fiels are on or off
-    var hbarOFF = false;
-    var TbarOFF = false;
+$(function() {
 
     /* set the size of all input elements to be the same as the debt button
        group. can only do this after the tab is visible, otherwise the width of

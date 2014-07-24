@@ -6,7 +6,7 @@ var hasRun = 0;
 
 $(function() {
 
-    alert("hasRun = " + hasRun);
+    alert("hasRun = " + hasRun); // DEBUGGING ONLY
     
     /* a robust way to handle errors  */
     $.ajaxSetup({
@@ -41,7 +41,9 @@ $(function() {
 		data: JSON.stringify({ model: whichModel,
 				       paramData: getParamData() }),
 		contentType: "application/json",
-		success: function() {}
+		success: function() {},
+		failure: function() { 
+		    alert('error while writing parameters'); }
 	    }),
 	    $.ajax({
 		url: "/writeShocks",
@@ -49,7 +51,9 @@ $(function() {
 		data: JSON.stringify({ model : whichModel,
 				       shockData : getShockData() }),
 		contentType: "application/json",
-		success: function() {}
+		success: function() {},
+		failure: function() { 
+		    alert('error while writing shocks'); }
 	    }),
 	    $.ajax({
 		url: "/writeDSFfiles",
@@ -57,7 +61,9 @@ $(function() {
 		data: JSON.stringify({ model: whichModel,
 				       fiscalData: getFiscalData() }),
 		contentType: "application/json",
-		success: function() {}
+		success: function() {},
+		failure: function() { 
+		    alert('error while writing shocks'); }
 	    })
 	).done( function() {
 	    
@@ -65,32 +71,35 @@ $(function() {
 		url: "/runWorker",
 		type: "GET",
 		data: { model: whichModel },
-		success: function(data) {
-		    /*hasRun = 1;
-		    updatePlots();
-		    
-		    $("#save-scen-li").removeClass("disabled");
-		    $("#download-li").removeClass("disabled");
-		    
-		    $("#console-text").append(data);
-		    $("#console-text").scrollTop($("#console-text")[0]
-						 .scrollHeight);*/
-		}
+		success: function() {},
+		failure: function() { 
+		    alert('error while running model'); }
 	    });
 
 	});
 	
-	// save the current scenario so the user can download it
-	$.ajax({
+	/* for the DFS model, save the fiscal settings, otherwise just save
+	   the regular settings */
+	if (whichModel == 'dsf') {
+	    var data = { model      : whichModel,
+			 paramData  : getParamData(),
+			 fiscalData : getFiscalData(),
+			 shockData  : getShockData()
+		       };
+	}
+	else {
+	    var data = { model      : whichModel,
+			 paramData  : getParamData(),
+			 shockData  : getShockData()
+		       };
+	}
+	
+	$.ajax({	    
 	    url: "/saveScenario",
 	    type: "POST",
-	    data: JSON.stringify({ model      : whichModel,
-				   paramData  : getParamData(),
-				   fiscalData : getFiscalData(),
-				   shockData  : getShockData()
-				 }),
+	    data: JSON.stringify(data),
 	    contentType: "application/json",
-	    success: function() {},
+	    success: function() { alert('scenario saved'); },
 	    failure: function() {}
 	});
 	

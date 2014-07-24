@@ -1,10 +1,10 @@
 {
-	"b" : "public external debt",
+	"b" : "public domestic debt",
 	"bstar" : "private external debt",
 	"c" : "private consumption",
 	"cad" : "current account deficit",
-	"d" : "public domestic debt (de-trended)",
-	"dc" : "public concessional debt",
+	"d" : "public concessional debt",
+	"dc" : "public commercial debt",
 	"ddc" : "domestic and concessional debt",
 	"dplot" : "public domestic debt",
 	"e" : "consumption by savers",

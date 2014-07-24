@@ -1,6 +1,6 @@
 Starting Dynare (version 4.4.1).
 Starting preprocessing of the model file ...
-WARNING: some exogenous (e_hbar0, e_hbar1, e_hbar2, e_Tbar0, e_Tbar1, e_Tbar2, dc_target) are declared but not used in the model. This may lead to crashes or unexpected behaviour.
+WARNING: some exogenous (e_dc0, e_dc1, e_dc2) are declared but not used in the model. This may lead to crashes or unexpected behaviour.
 Found 41 equation(s).
 Evaluating expressions...done
 Computing static model derivatives:
@@ -131,12 +131,12 @@ ans =
    0.0000e+00
    0.0000e+00
    0.0000e+00
-  -1.0658e-14
+   6.6613e-15
   -3.5527e-15
    0.0000e+00
    0.0000e+00
-  -7.1054e-15
    0.0000e+00
+  -7.1054e-15
    0.0000e+00
    0.0000e+00
    0.0000e+00
@@ -153,25 +153,27 @@ EIGENVALUES:
 
                0                0                0
                0               -0                0
-               0                0                0
-               0                0                0
-       1.457e-21        1.457e-21                0
-        2.44e-17        -2.44e-17                0
-        0.006254         0.006254                0
-           0.228           -0.228                0
-          0.8815           0.8815                0
+               0               -0                0
+               0               -0                0
+       4.456e-36        4.456e-36                0
+       1.688e-10        1.688e-10                0
+       1.688e-10       -1.688e-10                0
+          0.5093          -0.5093                0
+            0.75             0.75                0
+          0.8839           0.8839                0
+          0.9003           0.8891           0.1413
+          0.9003           0.8891          -0.1413
           0.9325           0.9325                0
           0.9788           0.9788                0
           0.9852           0.9852                0
-          0.9852           0.9852                0
                1                1                0
            1.087            1.087                0
-           1.229            1.229                0
-           36.47            36.47                0
-       4.754e+21        4.754e+21                0
-        7.64e+21         7.64e+21                0
-       7.245e+22        7.245e+22                0
-             Inf             -Inf                0
+           1.228            1.228                0
+           30.99            30.99                0
+       3.969e+15        3.969e+15                0
+       2.731e+35       -2.731e+35                0
+       3.543e+35       -3.543e+35                0
+        2.05e+37         2.05e+37                0
              Inf             -Inf                0
 
 
@@ -184,10 +186,10 @@ The rank condition is verified.
 MODEL SIMULATION:
 
 
-Simulation concluded successfully after 3 iterations.
-Total time of simulation        :     30.339
+Simulation concluded successfully after 4 iterations.
+Total time of simulation        :     44.277
 Convergency obtained.
 -----------------------------------------------------
 
-Total computing time : 0h00m31s
+Total computing time : 0h00m45s
 Note: 1 warning(s) encountered in the preprocessor

@@ -90,13 +90,12 @@ app.post('/writeDSFfiles', function(req, res) {
 
 /* write scenario json to server file */
 app.post('/saveScenario', function(req, res) {
-    var fname = __dirname + '/' + req.body.model 
-	+ '_mfiles/scenarios/' + req.body.model + '_scenario.json';
+    var fname = __dirname + '/public/scenarios/' 
+	+ req.body.model + '_scenario.json';
     fs.writeFile(fname, JSON.stringify(req.body), 
 		 function (err) {
 		     if (err) console.log(err);
 		 });
-
     res.end();
 });
 
