@@ -1,0 +1,23 @@
+load params.mat;
+
+rho3   = exp(-rho1*dbar)+rho2*dbar;
+beta   = 1/(1+rbar+(psi/rho1^2)*(1-rho3+dbar*(rho1-rho2)));
+g      = (1+g_n)*(1 + g_a)-1;
+y_0    = 1;
+To     = 0;
+dbar   = -0.0;
+coef   = 1;
+offss  = 1;
+vv_0   = 0; 
+gov_0  = gov_exp_0 - gov_inv_0;  
+invk_0 = inv_0 - gov_inv_0;     
+invs_0 = gov_inv_0;             
+r_0    = rbar+(psi/(rho1^2))*(exp(rho1*(d_0-dbar-omega*vv_0))-rho2*(d_0-dbar-omega*vv_0)-rho3);
+govt_c = gov_0/c_0;             
+kappa  = (govt_c)^gamma; 
+phi_k0 = 0.25;  
+phi_s0 = 0.25; 
+
+phi_k = fsolve('costoverrun', phi_k0, optimset('Display','iter'), cost_k0, delta_k, e_k, g, invk_0, k_0);
+#phi_s = fsolve('costoverrun', phi_s0, optimset('Display','iter'), cost_s0, delta_s, e_s, g, invs_0, s_0);
+

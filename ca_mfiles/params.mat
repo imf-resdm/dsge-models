@@ -1,0 +1,186 @@
+# Created by Octave 3.8.1, Tue Jul 29 12:04:35 2014 UTC <ubuntu@ip-172-31-34-29>
+# name: theta_k
+# type: scalar
+0.495048943
+
+
+# name: theta_S
+# type: scalar
+0.104951057
+
+
+# name: gamma
+# type: scalar
+1.333333333
+
+
+# name: delta_k
+# type: scalar
+0.55
+
+
+# name: delta_S
+# type: scalar
+0.55
+
+
+# name: rbar
+# type: scalar
+0.055
+
+
+# name: g_n
+# type: scalar
+0.016340206
+
+
+# name: g_a
+# type: scalar
+0.024170034
+
+
+# name: e_k
+# type: scalar
+0.4
+
+
+# name: e_S
+# type: scalar
+0.4
+
+
+# name: dbar
+# type: scalar
+0
+
+
+# name: xi
+# type: scalar
+0.7
+
+
+# name: rho1
+# type: scalar
+1.89
+
+
+# name: psi
+# type: scalar
+0.13
+
+
+# name: rho2
+# type: scalar
+0
+
+
+# name: yoilvalue
+# type: scalar
+0
+
+
+# name: omega
+# type: scalar
+0
+
+
+# name: Abar
+# type: scalar
+0.982
+
+
+# name: phi_k0
+# type: scalar
+0.25
+
+
+# name: phi_s0
+# type: scalar
+0.25
+
+
+# name: c_0
+# type: scalar
+0.437337766
+
+
+# name: c_1
+# type: scalar
+0.437337766
+
+
+# name: inv_0
+# type: scalar
+0.305376032
+
+
+# name: gov_0
+# type: scalar
+0.27402574
+
+
+# name: gov_exp_0
+# type: scalar
+0.383226919
+
+
+# name: gov_inv_0
+# type: scalar
+0.109201179
+
+
+# name: gov_1
+# type: scalar
+0.255988005
+
+
+# name: gov_exp_1
+# type: scalar
+0.365189184
+
+
+# name: gov_inv_1
+# type: scalar
+0.109201179
+
+
+# name: ynon_0
+# type: scalar
+0.586863782
+
+
+# name: yoil_0
+# type: scalar
+0.413136218
+
+
+# name: d_0
+# type: scalar
+0.131392812
+
+
+# name: ca_0
+# type: scalar
+0.138238656
+
+
+# name: k_0
+# type: scalar
+1.395146087
+
+
+# name: s_0
+# type: scalar
+0.295772891
+
+
+# name: cost_k0
+# type: scalar
+0.4
+
+
+# name: cost_s0
+# type: scalar
+0.4
+
+
