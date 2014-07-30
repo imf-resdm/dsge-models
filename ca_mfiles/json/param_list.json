@@ -1,35 +1,35 @@
 {
 	"theta_k": {
 		"latex": "\\theta_{k}",
-		"val": "0.495048943",
+		"val": "0.5",
 		"desc": "ratio of private capital",
 		"note": "??",
 		"equations": [4]
 	},
-	"theta_S": {
+	"theta_s": {
 		"latex": "\\theta_{s}",
-		"val": "0.104951057",
+		"val": "0.14",
 		"desc": "ratio of public capital",
 		"note": "could also leave it as 0.25: 2007-2012 share of gov gross fixed CF around 39%, assume 0.65=theta_k+theta_S",
 		"equations": [3]
 	},
 	"gamma": {
 		"latex": "\\gamma",
-		"val": "1.333333333",
+		"val": "1.33",
 		"desc": "risk aversion rate",
 		"note": "van der Ploeg (2012), no reason to change",
 		"equations": [1]
 	},
 	"delta_k": {
 		"latex": "\\delta_{k}",
-		"val": "0.55",
+		"val": "0.055",
 		"desc": "depreciation rate of private capital",
 		"note": "van der Ploeg (2012), no reason to change",
 		"equations": [4]
 	},
-	"delta_S": {
+	"delta_s": {
 		"latex": "\\delta_{s}",
-		"val": "0.55",
+		"val": "0.055",
 		"desc": "depreciation rate of public capital",
 		"note": "van der Ploeg (2012), no reason to change",
 		"equations": [3]
@@ -43,14 +43,14 @@
 	},
 	"g_n": {
 		"latex": "g_{n}",
-		"val": "0.016340206",
+		"val": "0.016",
 		"desc": "population growth rate",
 		"note": "average population growth 2007-2012",
 		"equations": [2]
 	},
 	"g_a": {
 		"latex": "g_{a}",
-		"val": "0.024170034",
+		"val": "0.021",
 		"desc": "technology growth rate",
 		"note": "long-term growth rate minus population growth",
 		"equations": [2]
@@ -62,7 +62,7 @@
 		"note": "calibration",
 		"equations": []
 	},
-	"e_S": {
+	"e_s": {
 		"latex": "e_{s}",
 		"val": "0.4",
 		"desc": "efficiency of public capital",
@@ -77,7 +77,7 @@
 		"equations": [8]
 	},
 	"xi": {
-		"latex": "\\varkapp",
+		"latex": "\\varkappa",
 		"val": "0.7",
 		"desc": "Habit persistence parameter",
 		"note": "??",
@@ -111,6 +111,13 @@
 		"note": "average Oil GDP as % of GDP",
 		"equations": []
 	},
+	"f_0": {
+		"latex": "f_{0}",
+		"val": "-0.131",
+		"desc": "initial value of something ??",
+		"note": "??",
+		"equations": []
+	},
 	"omega": {
 		"latex": "\\omega",
 		"val": "0",
@@ -118,128 +125,93 @@
 		"note": "as in initial calibration, adjust according to target moments and scenario",
 		"equations": []
 	},
-	"Abar": {
-		"latex": "\\bar{A}",
-		"val": "0.982",
-		"desc": "??",
-		"note": "??",
-		"equations": []
-	},
-	"phi_k0": {
-		"latex": "phi_{k0}",
-		"val": "0.25",
-		"desc": "initial values",
-		"note": "",
-		"equations": [7]
-	},
-	"phi_s0": {
-		"latex": "phi_{s0}",
-		"val": "0.25",
-		"desc": "initial values",
-		"note": "",
-		"equations": [6]
-	},
 	"c_0": {
 		"latex": "c_{0}",
-		"val": "0.437337766",
+		"val": "0.435",
 		"desc": "NCP in % of GDP in 2012",
 		"note": "in 2012",
 		"equations": [10]
 	},
 	"c_1": {
 		"latex": "c_{1}",
-		"val": "0.437337766",
+		"val": "0.435",
 		"desc": "NCP in % of GDP",
 		"note": "in 2012",
 		"equations": [10]
 	},
 	"inv_0": {
 		"latex": "inv_{0}",
-		"val": "0.305376032",
+		"val": "0.305",
 		"desc": "Investment in % of GDP in 2011",
 		"note": "gross  fixed capital formation as % of GDP in 2012",
 		"equations": [10]
 	},
-	"gov_0": {
-		"latex": "gov_{0}",
-		"val": "0.27402574",
-		"desc": "Gov consumption in % of GDP",
-		"note": "in 2012",
-		"equations": [10]
-	},
 	"gov_exp_0": {
 		"latex": "gov_exp_{0}",
-		"val": "0.383226919",
+		"val": "0.383",
 		"desc": "Gov total expenditure in % of GDP",
 		"note": "in 2011",
 		"equations": [10]
 	},
 	"gov_inv_0": {
 		"latex": "gov_{1}",
-		"val": "0.109201179",
+		"val": "0.109",
 		"desc": "public investment in % of GDP in 2011",
 		"note": "gov gross fixed capital formation in 2012",
 		"equations": [10]
 	},
 	"gov_1": {
 		"latex": "gov_{1}",
-		"val": "0.255988005",
+		"val": "0.109",
 		"desc": "Gov consumption in % of GDP",
 		"note": "in 2012",
 		"equations": []
 	},
 	"gov_exp_1": {
 		"latex": "gov_exp_{1}",
-		"val": "0.365189184",
+		"val": "0.383",
 		"desc": "Gov total expenditure in % of GDP",
 		"note": "in 2012",
 		"equations": []
 	},
 	"gov_inv_1": {
 		"latex": "gov_inv_{1}",
-		"val": "0.109201179",
+		"val": "0.109",
 		"desc": "public investment in % of GDP",
 		"note": "gov gross fixed capital formation in 2012",
 		"equations": []
 	},
 	"ynon_0": {
 		"latex": "ynon_{0}",
-		"val": "0.586863782",
+		"val": "0.587",
 		"desc": "non-oil GDP in % of GDP in 2011",
 		"note": "in 2012",
 		"equations": [10]
 	},
 	"yoil_0": {
 		"latex": "yoil_{0}",
-		"val": "0.413136218",
+		"val": "0.413",
 		"desc": "oil production in % of GDP",
 		"note": "in 2012",
 		"equations": [10]
 	},
-	"d_0": {
-		"latex": "d_{0}",
-		"val": "0.131392812",
-		"desc": "debt in percent of GDP 2011",
-		"note": "debt in percent of GDP 2011",
-		"equations": []
-	},
 	"ca_0": {
 		"latex": "ca_{0}",
-		"val": "0.138238656",
+		"val": "0.138",
 		"desc": "current account in % of GDP in 2011",
 		"note": "in 2012",
 		"equations": [9]
 	},
 	"k_0": {
 		"latex": "k_{0}",
-		"val": "1.395146087",
+		"val": "1.395",
 		"desc": "private capital to GDP ratio in 2011",
 		"note": "see tab 'capital accum' for 2011 value, alternatively, take 2007 value (0.561) from Gupta et al. (2012), fixed capital formation plus change in inventories accumulated",
 		"equations": []
 	},
 	"s_0": {
 		"latex": "s_{0}",
-		"val": "0.295772891",
+		"val": "0.294",
 		"desc": "public capital in to GDP  ratio in 2011",
 		"note": "see tab 'capital accum' for 2011 value, gross fixed capital accumulation, assumin depreciation is zero, alternatively, take 2007 value (0.828) from Gupta et al. (2012) which, however seems a bit too high,",
 		"equations": []

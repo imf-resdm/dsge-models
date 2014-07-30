@@ -1,20 +1,14 @@
-c	Habit private consumption
-k	Private capital
-s	Public capital
-invk	Private investment
-invs	Public investment
-d	debt
+y 	total GDP
+c	private consumption
+k	private capital
+s	public capital
 f	foreign assets
-r	Interest Rate
-ca	Current account
-tb	Trade balance ?
-ynon	Non-oil output
-y 	Total GDP
-vv	Net present value of oil output flows
-gov	Habit government consumption
-AC_s	Adjustment cost (public)
-AC_k	Adjustment cost (private)
-govh	Government consumption
-yoil	Oil output
-ch 	Consumption
-T 	Transfers
+ynon	non-oil output
+invk	private investment
+invs	public investment
+r	tnterest rate
+tb	trade balance
+ca	current account
+gov	government consumption
+ch 	private consumption (habit)
+govh	government consumption (habit)

@@ -1,37 +1,33 @@
-theta_k	\\theta_{k}	0.495048943	ratio of private capital 	4	??
-theta_S	\\theta_{s}	0.104951057	ratio of public capital 	3	"could also leave it as 0.25: 2007-2012 share of gov gross fixed CF around 39%, assume 0.65=theta_k+theta_S"
-gamma	\\gamma	1.333333333	risk aversion rate	1	"van der Ploeg (2012), no reason to change"
-delta_k	\\delta_{k}	0.55	depreciation rate of private capital	4	"van der Ploeg (2012), no reason to change"
-delta_S	\\delta_{s}	0.55	depreciation rate of public capital	3	"van der Ploeg (2012), no reason to change"
+theta_k	\\theta_{k}	0.5	ratio of private capital 	4	??
+theta_s	\\theta_{s}	0.14	ratio of public capital 	3	could also leave it as 0.25: 2007-2012 share of gov gross fixed CF around 39%, assume 0.65=theta_k+theta_S
+gamma	\\gamma	1.33	risk aversion rate	1	van der Ploeg (2012), no reason to change
+delta_k	\\delta_{k}	0.055	depreciation rate of private capital	4	van der Ploeg (2012), no reason to change
+delta_s	\\delta_{s}	0.055	depreciation rate of public capital	3	van der Ploeg (2012), no reason to change
 rbar	\\bar{r}	0.055	world interest rate		world interest rate 
-g_n	g_{n}	0.016340206	population growth rate	2	average population growth 2007-2012
-g_a	g_{a}	0.024170034	technology growth rate	2	long-term growth rate minus population growth
+g_n	g_{n}	0.016	population growth rate	2	average population growth 2007-2012
+g_a	g_{a}	0.021	technology growth rate	2	long-term growth rate minus population growth
 e_k	e_{k}	0.4	efficiency of private capital		 calibration
-e_S	e_{s}	0.4	efficiency of public capital		 calibration
+e_s	e_{s}	0.4	efficiency of public capital		 calibration
 dbar	\\bar{d}	0	steady state debt	8	gross external debt (SS)
-xi	\\varkapp	0.7	Habit persistence parameter	1	??
+xi	\\varkappa	0.7	Habit persistence parameter	1	??
 rho1	\\rho_{1}	1.89	Interest rate-debt elasticity	8	Regression coeffieicent from van der Ploeg (2012)
 psi	\\psi	0.13	between 0 and 1		??
 rho2	\\rho_{2}	0	Additional parameter on risk-premium	8	??
 yoilvalue	yoil_{ss}	0	steady state oil income		average Oil GDP as % of GDP 
-omega	\\omega	0	leverage coefficient on oil reserves		"as in initial calibration, adjust according to target moments and scenario"
-Abar	\\bar{A}	0.982	??		??
-phi_k0	phi_{k0}	0.25	initial values	7	
-phi_s0	phi_{s0}	0.25	initial values	6	
-c_0	c_{0}	0.437337766	NCP in % of GDP in 2012	10	in 2012
-c_1	c_{1}	0.437337766	NCP in % of GDP	10	in 2012
-inv_0	inv_{0}	0.305376032	Investment in % of GDP in 2011	10	gross  fixed capital formation as % of GDP in 2012
-gov_0	gov_{0}	0.27402574	Gov consumption in % of GDP	10	in 2012
-gov_exp_0	gov_exp_{0}	0.383226919	Gov total expenditure in % of GDP	10	in 2011
-gov_inv_0	gov_{1}	0.109201179	public investment in % of GDP in 2011	10	gov gross fixed capital formation in 2012
-gov_1	gov_{1}	0.255988005	Gov consumption in % of GDP		in 2012
-gov_exp_1	gov_exp_{1}	0.365189184	Gov total expenditure in % of GDP		in 2012
-gov_inv_1	gov_inv_{1}	0.109201179	public investment in % of GDP		gov gross fixed capital formation in 2012
-ynon_0	ynon_{0}	0.586863782	non-oil GDP in % of GDP in 2011	10	in 2012
-yoil_0	yoil_{0}	0.413136218	oil production in % of GDP	10	in 2012
-d_0	d_{0}	0.131392812	debt in percent of GDP 2011		debt in percent of GDP 2011
-ca_0	ca_{0}	0.138238656	current account in % of GDP in 2011	9	in 2012
-k_0	k_{0}	1.395146087	private capital to GDP ratio in 2011		"see tab 'capital accum' for 2011 value, alternatively, take 2007 value (0.561) from Gupta et al. (2012), fixed capital formation plus change in inventories accumulated"
-s_0	s_{0}	0.295772891	public capital in to GDP  ratio in 2011		"see tab 'capital accum' for 2011 value, gross fixed capital accumulation, assumin depreciation is zero, alternatively, take 2007 value (0.828) from Gupta et al. (2012) which, however seems a bit too high, "
+f_0	f_{0}	-0.131	initial value of something ??		??
+omega	\\omega	0	leverage coefficient on oil reserves		as in initial calibration, adjust according to target moments and scenario
+c_0	c_{0}	0.435	NCP in % of GDP in 2012	10	in 2012
+c_1	c_{1}	0.435	NCP in % of GDP	10	in 2012
+inv_0	inv_{0}	0.305	Investment in % of GDP in 2011	10	gross  fixed capital formation as % of GDP in 2012
+gov_exp_0	gov_exp_{0}	0.383	Gov total expenditure in % of GDP	10	in 2011
+gov_inv_0	gov_{1}	0.109	public investment in % of GDP in 2011	10	gov gross fixed capital formation in 2012
+gov_1	gov_{1}	0.109	Gov consumption in % of GDP		in 2012
+gov_exp_1	gov_exp_{1}	0.383	Gov total expenditure in % of GDP		in 2012
+gov_inv_1	gov_inv_{1}	0.109	public investment in % of GDP		gov gross fixed capital formation in 2012
+ynon_0	ynon_{0}	0.587	non-oil GDP in % of GDP in 2011	10	in 2012
+yoil_0	yoil_{0}	0.413	oil production in % of GDP	10	in 2012
+ca_0	ca_{0}	0.138	current account in % of GDP in 2011	9	in 2012
+k_0	k_{0}	1.395	private capital to GDP ratio in 2011		see tab 'capital accum' for 2011 value, alternatively, take 2007 value (0.561) from Gupta et al. (2012), fixed capital formation plus change in inventories accumulated
+s_0	s_{0}	0.294	public capital in to GDP  ratio in 2011		see tab 'capital accum' for 2011 value, gross fixed capital accumulation, assumin depreciation is zero, alternatively, take 2007 value (0.828) from Gupta et al. (2012) which, however seems a bit too high, 
 cost_k0	cosk_{k0}	0.4	cost overrun ratio private investments		in 2011; same as CEMAC application
 cost_s0	cost_{s0}	0.4	cost overrun ratio public investments		in 2011; same as CEMAC application
