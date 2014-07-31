@@ -1,0 +1,9 @@
+$(function() {
+    
+    $('.model-box').hover(function() { // mouse in
+	$( this ).css('background-color', '#f5f5f5');
+    }, function() { // mouse out
+	$( this ).css('background-color', '#ffffff');
+    });
+    
+});

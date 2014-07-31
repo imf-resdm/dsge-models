@@ -132,13 +132,6 @@
 		"note": "in 2012",
 		"equations": [10]
 	},
-	"c_1": {
-		"latex": "c_{1}",
-		"val": "0.435",
-		"desc": "NCP in % of GDP",
-		"note": "in 2012",
-		"equations": [10]
-	},
 	"inv_0": {
 		"latex": "inv_{0}",
 		"val": "0.305",
@@ -159,27 +152,6 @@
 		"desc": "public investment in % of GDP in 2011",
 		"note": "gov gross fixed capital formation in 2012",
 		"equations": [10]
-	},
-	"gov_1": {
-		"latex": "gov_{1}",
-		"val": "0.109",
-		"desc": "Gov consumption in % of GDP",
-		"note": "in 2012",
-		"equations": []
-	},
-	"gov_exp_1": {
-		"latex": "gov_exp_{1}",
-		"val": "0.383",
-		"desc": "Gov total expenditure in % of GDP",
-		"note": "in 2012",
-		"equations": []
-	},
-	"gov_inv_1": {
-		"latex": "gov_inv_{1}",
-		"val": "0.109",
-		"desc": "public investment in % of GDP",
-		"note": "gov gross fixed capital formation in 2012",
-		"equations": []
 	},
 	"ynon_0": {
 		"latex": "ynon_{0}",

@@ -12,3 +12,5 @@ set_params_imp;
 # run model
 itermax = 20;
 dynare ca.mod noclearall;
+
+

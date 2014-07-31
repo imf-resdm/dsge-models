@@ -1,4 +1,4 @@
-# Created by Octave 3.8.1, Tue Jul 29 17:12:40 2014 UTC <ubuntu@ip-172-31-34-29>
+# Created by Octave 3.8.1, Thu Jul 31 15:21:13 2014 UTC <ubuntu@ip-172-31-34-29>
 # name: tau
 # type: scalar
 0.34
@@ -84,7 +84,7 @@
 0.015
 
 
-# name: rstar
+# name: r_f
 # type: scalar
 0.04
 

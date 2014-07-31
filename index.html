@@ -1,21 +1,60 @@
-<!doctype html>
-
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <title>RES-DM Models</title>
     
+    <title>DSGE Cloud Modeling App</title>
+    
+    <!-- jquery -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    
+    <!-- CSS libraries -->
+    <link href="/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- my css files -->
+    <link href="css/jumbotron.css" rel="stylesheet">    
+
+  </head>
+ 
   <body>
 
-    <h2>IMF Research Department</h2>
-    <h3>Development Macroeconomics Division</h3>
+    <div class="container">
+      <h2>DSGE Cloud Modeling App</h2>
+      <hr>
+      <p>Use this application to run deterministic simulations of some of the DSGE models developed in the Research Department at the International Monetary Fund. You can calibrate each model to a certain country (or group of countries) and use country-specific paths for exogenous variables.</p>
+      
+      <div class="model-box">
+	<h4>Current Account Norm Model</h4>
+	Based on <a target="_blank" href="https://www.imf.org/external/pubs/cat/longres.aspx?sk=40437.0">Current Account Norms in Natural Resource Rich and Capital Scarce Economies</a> by Araujo et al. (2013).
+      </div>
+
+      <div class="model-box">
+	<div class="row">
+	  <div class="col-md-9">
+	    <h4>Debt Investment Growth (DIG) Model</h4>
+	    Based on <a target="_blank" href="https://www.imf.org/external/pubs/cat/longres.aspx?sk=25962.0">Public Investment, Growth, and Debt Sustainability: Putting Together the Pieces</a> by Buffie et al. (2012).
+	  </div>
+	  <div class="col-md-3 vcenter">  
+	    <p><a class="btn btn-default" href="#" role="button">
+		Run this model &raquo;
+	    </a></p>
+	  </div>
+	</div>
+      </div>
+
+      <div class="model-box">
+	<h4>Debt Investment Growth & Natural Resource (DIGNAR) Model</h4>
+	Based on <a target="_blank" href="http://www.imf.org/external/pubs/cat/longres.aspx?sk=41455.0">Debt Sustainability, Public Investment, and Natural Resources in Developing Countries: the DIGNAR Model</a> by Melina et al. (2014).
+      </div>
+
+      <div class="footer">
+	<p>This application was developed as part of a project on macroeconomic policy in low-income countries supported by the UK's Department for International Development.</p>
+        <p>&copy; International Monetary Fund 2014</p>
+      </div>
+      
+    </div> <!-- close container -->
     
-    <ul>
-      <li><a href="nk.html">New Keynesian Model</a></li>
-      <li><a href="ca.html">Current Account Model</a></li>
-      <li><a href="dsf.html">Debt/Investment/Growth Model</a></li>
-    </ul>
-
+     <!-- bootstrap -->
+     <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+ 
   </body>
-
 </html>

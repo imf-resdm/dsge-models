@@ -1,10 +1,10 @@
 var c k s invk invs d f r ca tb ynon y vv gov AC_s AC_k  govh yoil ch T; 
 
-varexo yoildata Adj Abarshock Tdata;
+varexo yoildata Abarshock Tdata;
 
 parameters theta_k theta_s gamma delta_k delta_s beta kappa e_k e_s phi_k
 	   phi_s rbar psi rho1 rho2 rho3 omega dbar g_n g_a g xi Abar yoil_0 
-	   f_0 r_0 d_0 invk_0 invs_0 k_0 s_0 c_0 ca_0 gov_0 coef To;
+	   f_0 r_0 d_0 invk_0 invs_0 k_0 s_0 c_0 ca_0 gov_0 To;
 
 load params.mat;   
 for i=1:length(M_.params)
@@ -15,7 +15,7 @@ end;
 model;
 
 // 1. FOC to d(t)
-0 = (c^(-gamma)-beta*(1+g)*xi*c(+1)^(-gamma)) - beta*(c(+1)^(-gamma)-beta*(1+g)*xi*c(+2)^(-gamma))*(1+r+coef*d*(psi/(rho1^2))*(rho1*exp(rho1*(d-dbar-omega*vv))-rho2)); 
+0 = (c^(-gamma)-beta*(1+g)*xi*c(+1)^(-gamma)) - beta*(c(+1)^(-gamma)-beta*(1+g)*xi*c(+2)^(-gamma))*(1+r+d*(psi/(rho1^2))*(rho1*exp(rho1*(d-dbar-omega*vv))-rho2)); 
 
 // 2. FOC to k(t)
 0 = -(c^(-gamma)-beta*(1+g)*xi*c(+1)^(-gamma))/e_k + beta*((c(+1)^(-gamma)-beta*(1+g)*xi*c(+2)^(-gamma))/e_k)*(1-delta_k) + beta*(c(+1)^(-gamma)-beta*(1+g)*xi*c(+2)^(-gamma))*(Abar*Abarshock)*theta_k*k^(theta_k-1)*s^(theta_s) - (1/(1+g))*(c^(-gamma)-beta*(1+g)*xi*c(+1)^(-gamma))*phi_k*(k/k(-1)-1) - beta*(c(+1)^(-gamma)-beta*(1+g)*xi*c(+2)^(-gamma))*(phi_k/2)*(k(+1)/k-1)^2 + beta*(c(+1)^(-gamma)-beta*(1+g)*xi*c(+2)^(-gamma))*phi_k*(k(+1)/k-1)*(k(+1)/k);

@@ -1,18 +1,20 @@
+T = 500;
 
 eval([results '= struct([]);']);
 
 %Create and save help variables for report
-blag  =[bo b(1:1001)']'; 
-dclag = [dco dc(1:1001)']';
-dlag = [ d_o d(1:1001)']';
-rextlag = [rstar+nu rext(1:1001)']'; 
-rextglag = [rstar+nug rextg(1:1001)']'; 
-rlag =[ro r(1:1001)']';
-bstarlag  =[bstaro bstar(1:1001)']'; 
+blag  =[bo b(1:T)']'; 
+dclag = [dco dc(1:T)']';
+dlag = [ d_o d(1:T)']';
+rstarlag = [r_f+nu rstar(1:T)']'; 
+r_dclag = [r_f+nug r_dc(1:T)']'; 
+rlag =[ro r(1:T)']';
+bstarlag  =[bstaro bstar(1:T)']'; 
 
 cad = d + dc + bstar - (dlag + dclag + bstarlag)./(1+g);
-pfd = p.*(b-blag)+d-dlag+dc-dclag-(r_d-g).*dlag./(1+g)-(rextglag-g).*dclag./(1+g)-(rlag-g).*p.*blag/(1+g);
-publicriskpremium = rextg - rstar;
+pfd = p.*(b-blag)+d-dlag+dc-dclag-(r_d-g).*dlag./(1+g)-(r_dclag-g).*dclag./(1+g)-(rlag-g).*p.*blag/(1+g);
+
+#publicriskpremium = r_dc - r_f;
 
 y = qx+qn;
 k = kx+kn;

@@ -17,13 +17,9 @@ yoilvalue	yoil_{ss}	0	steady state oil income		average Oil GDP as % of GDP
 f_0	f_{0}	-0.131	initial value of something ??		??
 omega	\\omega	0	leverage coefficient on oil reserves		as in initial calibration, adjust according to target moments and scenario
 c_0	c_{0}	0.435	NCP in % of GDP in 2012	10	in 2012
-c_1	c_{1}	0.435	NCP in % of GDP	10	in 2012
 inv_0	inv_{0}	0.305	Investment in % of GDP in 2011	10	gross  fixed capital formation as % of GDP in 2012
 gov_exp_0	gov_exp_{0}	0.383	Gov total expenditure in % of GDP	10	in 2011
 gov_inv_0	gov_{1}	0.109	public investment in % of GDP in 2011	10	gov gross fixed capital formation in 2012
-gov_1	gov_{1}	0.109	Gov consumption in % of GDP		in 2012
-gov_exp_1	gov_exp_{1}	0.383	Gov total expenditure in % of GDP		in 2012
-gov_inv_1	gov_inv_{1}	0.109	public investment in % of GDP		gov gross fixed capital formation in 2012
 ynon_0	ynon_{0}	0.587	non-oil GDP in % of GDP in 2011	10	in 2012
 yoil_0	yoil_{0}	0.413	oil production in % of GDP	10	in 2012
 ca_0	ca_{0}	0.138	current account in % of GDP in 2011	9	in 2012

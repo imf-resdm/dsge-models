@@ -1,8 +1,6 @@
 # find a value of Abar that ensures yss = 1
 # only run this script if the model is (is not?) off steady state
 
-if offss==0;
-
     iter_        = 0;
     maxIter      = 500;
     notConverged = true;
@@ -46,5 +44,3 @@ if offss==0;
       end # end convergence check
 
     end # end while loop
-
-end # end offss check
