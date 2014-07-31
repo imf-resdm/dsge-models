@@ -1,17 +1,17 @@
 
-function [f, xout] = f(x,beta_t,delta_x,delta_n,delta_z,tau,psi_x,psi_n,xi_n,xi_x,alpha_x,alpha_n,g,epsilon,eta,ho,r_do,rstar,s,rho_x,rho_m,a_k,a_z,miu,ro,To,do,bo,zo,P_zo,P_x,P_mm,P_m,a_n,a_x,inc,m,r_dco,incdc,dco,incb,inciz,lambda,eo,eho,s_s,a_ratio,remito,grantso,i_zo,Lo,incgrants,incremit,sigma_x,sigma_n,nu,bstaro,q_no,q_xo,yo,etag,nug)
+function [f, xout] = f(x,beta_t,delta_x,delta_n,delta_z,tau,psi_x,psi_n,xi_n,xi_x,alpha_x,alpha_n,g,epsilon,eta,ho,r_do,rstar,s,rho_x,rho_m,a_k,a_z,miu,ro,To,d_o,bo,zo,P_zo,P_x,P_mm,P_m,a_n,a_x,inc,m,r_dco,incdc,dco,incb,inciz,lambda,eo,eho,s_s,a_ratio,remito,grantso,i_zo,Lo,incgrants,incremit,sigma_x,sigma_n,nu,bstaro,q_no,q_xo,yo,etag,nug)
 
 
 f = zeros(length(x),1);
 
 b = incb*bo;
-d = inc*do;
+d = inc*d_o;
 dc = incdc*dco;
 i_z =i_zo+inciz;
 grants =incgrants*grantso;
 remit =incremit*remito;
 
-DDo = (r_do-g)*do/(1+g) + (ro-g)*bo/(1+g) + (rstar+nug-g)*m*dco/(1+g) + P_zo*i_zo-miu*s_s*zo-grantso;
+DDo = (r_do-g)*d_o/(1+g) + (ro-g)*bo/(1+g) + (rstar+nug-g)*m*dco/(1+g) + P_zo*i_zo-miu*s_s*zo-grantso;
 
 bstar = x(1);
 c = x(2);
@@ -43,13 +43,13 @@ ze = x(26);
 
 
 
-f(1) = 1+r-(1+rstar+nu+nug*exp(etag*(d/y+m*dc/y-do/yo-m*dco/yo)))/(1-eta*(bstar-bstaro));
-f(2) = bstar+d+m*dc - P*c-P_k*(i_x+i_n)-P_z*i_z-(1+r_do)*d/(1+g)-m*(1+rstar+nug*exp(etag*(d/y+m*dc/y-do/yo-m*dco/yo)))*dc/(1+g)-(1+rstar+nu+nug*exp(etag*(d/y+m*dc/y-do/yo-m*dco/yo)))*bstar/(1+g)+y+remit+grants;
+f(1) = 1+r-(1+rstar+nu+nug*exp(etag*(d/y+m*dc/y-d_o/yo-m*dco/yo)))/(1-eta*(bstar-bstaro));
+f(2) = bstar+d+m*dc - P*c-P_k*(i_x+i_n)-P_z*i_z-(1+r_do)*d/(1+g)-m*(1+rstar+nug*exp(etag*(d/y+m*dc/y-d_o/yo-m*dco/yo)))*dc/(1+g)-(1+rstar+nu+nug*exp(etag*(d/y+m*dc/y-d_o/yo-m*dco/yo)))*bstar/(1+g)+y+remit+grants;
 f(3) = c_n-(1-rho_x-rho_m)*P_n^(-epsilon)*(e+eh)/(rho_m*P_m^(1-epsilon)+rho_x*P_x^(1-epsilon)+(1-rho_x-rho_m)*P_n^(1-epsilon));
 f(4) = e+eh-P*c;
 f(5) = (1+h)*eh-a_ratio*w*Lo-(a_ratio/(1+a_ratio))*(T+remit);
-f(6) = h*(e+eh)-ho*(eo+eho)-((r_do-g)*d/(1+g) + (r-g)*P*b/(1+g)+(rstar+nug*exp(etag*(d/y+m*dc/y-do/yo-m*dco/yo))-g)*m*dc/(1+g) + P_z*i_z+T-To-miu*ze-grants-DDo);
-f(7) = T-To+lambda*((r_do-g)*d/(1+g) + (r-g)*P*b/(1+g)+(rstar+nug*exp(etag*(d/y+m*dc/y-do/yo-m*dco/yo))-g)*m*dc/(1+g)+ P_z*i_z+ho*(e+eh-eo-eho)-miu*ze-grants-DDo);  
+f(6) = h*(e+eh)-ho*(eo+eho)-((r_do-g)*d/(1+g) + (r-g)*P*b/(1+g)+(rstar+nug*exp(etag*(d/y+m*dc/y-d_o/yo-m*dco/yo))-g)*m*dc/(1+g) + P_z*i_z+T-To-miu*ze-grants-DDo);
+f(7) = T-To+lambda*((r_do-g)*d/(1+g) + (r-g)*P*b/(1+g)+(rstar+nug*exp(etag*(d/y+m*dc/y-d_o/yo-m*dco/yo))-g)*m*dc/(1+g)+ P_z*i_z+ho*(e+eh-eo-eho)-miu*ze-grants-DDo);  
 f(8) = i_n-(delta_n+g)*k_n;
 f(9) = i_x-(delta_x+g)*k_x;
 f(10) = z-i_z/(delta_z+g);

@@ -3,7 +3,7 @@ var qx qn kx kn lx L_n ix in w rx rn  pk pz pn p h z bstar Rz b d r e eh T ze dc
 
 varexo iz_shock iz_shocka borrowd borrowdneg borrowdnega borrowdc borrowdcneg borrowda borrowdca grants_shock remit f_shock1 f_shock2  px pm pmm;
 
-parameters beta beta_t delta_x delta_n delta_z alpha_k alpha_z tau psi_x psi_n xi_n xi_x omega alpha_x alpha_n g epsilon gama_n gama_x gama_m eta rho_x rho_m R_zo yo phi ho r_do rstar share_bstar share_b share_d fo miu s a_k a_z nu_x nu_n VA_n ro To do bo zo P_zo Lo a_n a_x m r_dco dco lambda lambda1 lambda2 lambda3 lambda4 eo eho s_s grantso remito a_ratio zeo  sigma_x sigma_n nu q_xo q_no bstaro etag nug;
+parameters beta beta_t delta_x delta_n delta_z alpha_k alpha_z tau psi_x psi_n xi_n xi_x omega alpha_x alpha_n g epsilon gama_n gama_x gama_m eta rho_x rho_m R_zo yo phi ho r_do rstar share_bstar share_b share_d fo miu s a_k a_z nu_x nu_n VA_n ro To d_o bo zo P_zo Lo a_n a_x m r_dco dco lambda lambda1 lambda2 lambda3 lambda4 eo eho s_s grantso remito a_ratio zeo  sigma_x sigma_n nu q_xo q_no bstaro etag nug;
 
 load dsa_params.mat;          
 
@@ -32,7 +32,7 @@ cancels out the iz that multiplies Jimz elsewhere in the model.
 */
 #Jimz =(((1+iz/z(-1) - delta_z - g)^phi)*(iz - (delta_z + g)*zo) + (delta_z + g)*zo)/iz; 
 
-#DDo= (r_do-g)*do/(1+g) + (ro-g)*bo/(1+g)+ (rstar+nug-g)*m*dco/(1+g) + P_zo*(delta_z+g)*zo-miu*zeo-grantso;
+#DDo= (r_do-g)*d_o/(1+g) + (ro-g)*bo/(1+g)+ (rstar+nug-g)*m*dco/(1+g) + P_zo*(delta_z+g)*zo-miu*zeo-grantso;
 
 qx = a_x*(qx/q_xo)^sigma_x*(ze(-1)^psi_x)*(kx(-1)^(xi_x + alpha_x))*(lx^(1 - alpha_x));
 
@@ -108,7 +108,7 @@ Rz = (psi_n*pn*qn+psi_x*px*qx)/(pz*ze(-1));
 ze = s_s*zo + s*(z - zo);
 
 
-d = do*g/(1+g) + borrowd + borrowda - borrowdneg - borrowdnega + d(-1)/(1+g);
+d = d_o*g/(1+g) + borrowd + borrowda - borrowdneg - borrowdnega + d(-1)/(1+g);
 
 //dplot is created just to plot the path of actual d, not d deflated by trend growth.
 
@@ -123,7 +123,7 @@ iz=(delta_z+g)*zo+iz_shock + iz_shocka;
 
 ynom = pn*qn + px*qx;
 
-rextg = rstar+nug*exp(etag*(d/ynom+m*dc/ynom-do/yo-m*dco/yo));
+rextg = rstar+nug*exp(etag*(d/ynom+m*dc/ynom-d_o/yo-m*dco/yo));
 
 rext = rextg+nu;
 
@@ -169,13 +169,13 @@ r = r_ini;
 bstar = bstar_ini;  
 Rz = R_z_ini;
 b = bo;
-d = do;
+d = d_o;
 dc = dco;
-dplot = do;
+dplot = d_o;
 //Include the line below if you add exogenous domestic borrowing to this scenario.
 //borrowb = bo*g/(1+g);
 //borrowdc=dco*g/(1+g);
-//borrowd=do*g/(1+g);
+//borrowd=d_o*g/(1+g);
 remit=remito;
 grants=grantso;
 ynom = yo;
@@ -238,7 +238,7 @@ values 0	0	0	0	0	0	0	0 1.0125	1.0125	1.0125	1.0125	1.0125	1.0125	1.0125	1.0125	1
 
 var remit;
 periods 1:1000;
-values remito;
+values 4;
 
 /*
 var f_shock1;

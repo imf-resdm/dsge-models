@@ -72,7 +72,7 @@ rho_x = gama_x;
 rho_m = gama_m;
 bo = share_b*yo;
 bstaro = share_bstar*yo;
-do = share_d*yo;
+d_o = share_d*yo;
 dco = share_dc*yo;
 P_no = 1;
 P_xo = 1;
@@ -94,7 +94,7 @@ zo = izy*yo/(P_zo*(delta_z+g));
 zeo = s_s*zo;
 remito = share_remit*yo;
 grantso = share_grants*yo;
-dploto = do;
+dploto = d_o;
 nug = r_dco-rstar;
 nu = ro-r_dco;
 
@@ -105,11 +105,11 @@ xn0 = [0.5 77 80 8 0.5]';
 
 %%% Use Broyden Method to Solve the System of Equations
 
-x = broyden('calibration',xn0,gama_n,a_k,delta_x,g,alpha_x,r_xo,yo,delta_n,alpha_n,r_no,a_z,delta_z,P_ko,P_zo,do,r_do,m,dco,r_dco,bstaro,rstar,R_zo,zo,remito,grantso,wo,nxpsi,a_ratio,ho,bo,ro,miu,zeo,s_s,nu,nug); 
+x = broyden('calibration',xn0,gama_n,a_k,delta_x,g,alpha_x,r_xo,yo,delta_n,alpha_n,r_no,a_z,delta_z,P_ko,P_zo,d_o,r_do,m,dco,r_dco,bstaro,rstar,R_zo,zo,remito,grantso,wo,nxpsi,a_ratio,ho,bo,ro,miu,zeo,s_s,nu,nug); 
 
 x = real(x);
 
-[f, xcal] = calibration(x,gama_n,a_k,delta_x,g,alpha_x,r_xo,yo,delta_n,alpha_n,r_no,a_z,delta_z,P_ko,P_zo,do,r_do,m,dco,r_dco,bstaro,rstar,R_zo,zo,remito,grantso,wo,nxpsi,a_ratio,ho,bo,ro,miu,zeo,s_s,nu,nug);
+[f, xcal] = calibration(x,gama_n,a_k,delta_x,g,alpha_x,r_xo,yo,delta_n,alpha_n,r_no,a_z,delta_z,P_ko,P_zo,d_o,r_do,m,dco,r_dco,bstaro,rstar,R_zo,zo,remito,grantso,wo,nxpsi,a_ratio,ho,bo,ro,miu,zeo,s_s,nu,nug);
                             
 VA_n  = xcal(1);
 eo    = xcal(2);
@@ -139,7 +139,7 @@ i_zo  = (delta_z+g)*zo;
 %%% that are considered exogenous to the model
 
 
-save dsa_params.mat beta beta_t delta_x delta_n delta_z alpha_k alpha_z tau psi_x psi_n xi_n xi_x omega alpha_x alpha_n g epsilon gama_n gama_x gama_m m eta rho_x rho_m R_zo yo phi ho r_do rstar share_bstar share_b share_d fo s a_k a_z miu nu_x nu_n VA_n ro To do bo zo P_zo Lho a_n a_x m r_dco dco lambda lambda1 lambda2 lambda3 lambda4 eo eho s_s a_ratio izy nxpsi share_remit  share_grants remito  grantso i_zo Lo zeo sigma_x sigma_n nu q_xo q_no bstaro etag nug;
+save dsa_params.mat beta beta_t delta_x delta_n delta_z alpha_k alpha_z tau psi_x psi_n xi_n xi_x omega alpha_x alpha_n g epsilon gama_n gama_x gama_m m eta rho_x rho_m R_zo yo phi ho r_do rstar share_bstar share_b share_d fo s a_k a_z miu nu_x nu_n VA_n ro To d_o bo zo P_zo Lho a_n a_x m r_dco dco lambda lambda1 lambda2 lambda3 lambda4 eo eho s_s a_ratio izy nxpsi share_remit  share_grants remito  grantso i_zo Lo zeo sigma_x sigma_n nu q_xo q_no bstaro etag nug;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -163,11 +163,11 @@ x0 = [ bstaro eo+eho (1-rho_x-rho_m)*(eo+eho) eo eho ho (delta_n+g)*k_no (delta_
 
 %%% Use Broyden Method to Solve the System of Equations
 
-x = broyden('steady_state',x0,beta_t,delta_x,delta_n,delta_z,tau,psi_x,psi_n,xi_n,xi_x,alpha_x,alpha_n,g,epsilon,eta,ho,r_do,rstar,s,rho_x,rho_m,a_k,a_z,miu,ro,To,do,bo,zo,P_zo,P_x,P_mm,P_m,a_n,a_x,inc,m,r_dco,incdc,dco,incb,inciz,lambda,eo,eho,s_s,a_ratio,remito,grantso,i_zo,Lo,incgrants,incremit,sigma_x,sigma_n,nu,bstaro,q_no,q_xo,yo,etag,nug);
+x = broyden('steady_state',x0,beta_t,delta_x,delta_n,delta_z,tau,psi_x,psi_n,xi_n,xi_x,alpha_x,alpha_n,g,epsilon,eta,ho,r_do,rstar,s,rho_x,rho_m,a_k,a_z,miu,ro,To,d_o,bo,zo,P_zo,P_x,P_mm,P_m,a_n,a_x,inc,m,r_dco,incdc,dco,incb,inciz,lambda,eo,eho,s_s,a_ratio,remito,grantso,i_zo,Lo,incgrants,incremit,sigma_x,sigma_n,nu,bstaro,q_no,q_xo,yo,etag,nug);
 
 x = real(x);
 
-[f, xss] = steady_state(x,beta_t,delta_x,delta_n,delta_z,tau,psi_x,psi_n,xi_n,xi_x,alpha_x,alpha_n,g,epsilon,eta,ho,r_do,rstar,s,rho_x,rho_m,a_k,a_z,miu,ro,To,do,bo,zo,P_zo,P_x,P_mm,P_m,a_n,a_x,inc,m,r_dco,incdc,dco,incb,inciz,lambda,eo,eho,s_s,a_ratio,remito,grantso,i_zo,Lo,incgrants,incremit,sigma_x,sigma_n,nu,bstaro,q_no,q_xo,yo,etag,nug);
+[f, xss] = steady_state(x,beta_t,delta_x,delta_n,delta_z,tau,psi_x,psi_n,xi_n,xi_x,alpha_x,alpha_n,g,epsilon,eta,ho,r_do,rstar,s,rho_x,rho_m,a_k,a_z,miu,ro,To,d_o,bo,zo,P_zo,P_x,P_mm,P_m,a_n,a_x,inc,m,r_dco,incdc,dco,incb,inciz,lambda,eo,eho,s_s,a_ratio,remito,grantso,i_zo,Lo,incgrants,incremit,sigma_x,sigma_n,nu,bstaro,q_no,q_xo,yo,etag,nug);
 
 bstar_ini = xss(1);
 c_ini     = xss(2);
@@ -199,7 +199,7 @@ ze_ini    = xss(26);
 R_z_ini  = (psi_x*P_x*q_x_ini+psi_n*P_n_ini*q_n_ini)/(P_z_ini*ze_ini);
 i_z_ini = (delta_z+g)*z_ini;
 b_ini   = bo;
-d_ini   = do;
+d_ini   = d_o;
 dc_ini  = dco;
 
 save steady_state_values.mat b_ini d_ini dc_ini bstar_ini c_ini e_ini eh_ini h_ini i_n_ini i_x_ini i_z_ini k_n_ini k_x_ini L_n_ini L_x_ini P_ini P_k_ini P_n_ini P_z_ini r_ini r_n_ini r_x_ini R_z_ini q_n_ini q_x_ini w_ini z_ini T_ini ze_ini
@@ -228,11 +228,11 @@ x0 = [ bstaro eo+eho (1-rho_x-rho_m)*(eo+eho) eo eho ho (delta_n+g)*k_no (delta_
 
 %%% Use Broyden Method to Solve the System of Equations
 
-x = broyden('steady_state',x0,beta_t,delta_x,delta_n,delta_z,tau,psi_x,psi_n,xi_n,xi_x,alpha_x,alpha_n,g,epsilon,eta,ho,r_do,rstar,s,rho_x,rho_m,a_k,a_z,miu,ro,To,do,bo,zo,P_zo,P_x,P_mm,P_m,a_n,a_x,inc,m,r_dco,incdc,dco,incb,inciz,lambda,eo,eho,s_s,a_ratio,remito,grantso,i_zo,Lo,incgrants,incremit,sigma_x,sigma_n,nu,bstaro,q_no,q_xo,yo,etag,nug);
+x = broyden('steady_state',x0,beta_t,delta_x,delta_n,delta_z,tau,psi_x,psi_n,xi_n,xi_x,alpha_x,alpha_n,g,epsilon,eta,ho,r_do,rstar,s,rho_x,rho_m,a_k,a_z,miu,ro,To,d_o,bo,zo,P_zo,P_x,P_mm,P_m,a_n,a_x,inc,m,r_dco,incdc,dco,incb,inciz,lambda,eo,eho,s_s,a_ratio,remito,grantso,i_zo,Lo,incgrants,incremit,sigma_x,sigma_n,nu,bstaro,q_no,q_xo,yo,etag,nug);
 
 x = real(x);
 
-[f, xss] = steady_state(x,beta_t,delta_x,delta_n,delta_z,tau,psi_x,psi_n,xi_n,xi_x,alpha_x,alpha_n,g,epsilon,eta,ho,r_do,rstar,s,rho_x,rho_m,a_k,a_z,miu,ro,To,do,bo,zo,P_zo,P_x,P_mm,P_m,a_n,a_x,inc,m,r_dco,incdc,dco,incb,inciz,lambda,eo,eho,s_s,a_ratio,remito,grantso,i_zo,Lo,incgrants,incremit,sigma_x,sigma_n,nu,bstaro,q_no,q_xo,yo,etag,nug);
+[f, xss] = steady_state(x,beta_t,delta_x,delta_n,delta_z,tau,psi_x,psi_n,xi_n,xi_x,alpha_x,alpha_n,g,epsilon,eta,ho,r_do,rstar,s,rho_x,rho_m,a_k,a_z,miu,ro,To,d_o,bo,zo,P_zo,P_x,P_mm,P_m,a_n,a_x,inc,m,r_dco,incdc,dco,incb,inciz,lambda,eo,eho,s_s,a_ratio,remito,grantso,i_zo,Lo,incgrants,incremit,sigma_x,sigma_n,nu,bstaro,q_no,q_xo,yo,etag,nug);
 
 bstar_fin = xss(1);
 c_fin     = xss(2);
@@ -264,7 +264,7 @@ ze_fin    = xss(26);
 R_z_fin  = (psi_x*P_x*q_x_fin+psi_n*P_n_fin*q_n_fin)/(P_z_fin*ze_fin);
 i_z_fin = (delta_z+g)*z_fin;
 b_fin   = incb*bo;
-d_fin   = inc*do;
+d_fin   = inc*d_o;
 dc_fin  = incdc*dco;
 grants =incgrants*grantso;
 remit =incremit*remito;
@@ -284,7 +284,7 @@ t=1:1:1000;
 
 blag  =[bo b(1:1001)']'; 
 dclag = [dco dc(1:1001)']';
-dlag = [ do d(1:1001)']';
+dlag = [ d_o d(1:1001)']';
 rextlag = [rstar+nu rext(1:1001)']'; 
 rextglag = [rstar+nug rextg(1:1001)']'; 
 rlag =[ro r(1:1001)']';

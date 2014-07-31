@@ -1,0 +1,146 @@
+# Created by Octave 3.8.1, Thu Jul 31 20:37:06 2014 UTC <ubuntu@ip-172-31-34-29>
+# name: b_fin
+# type: scalar
+20
+
+
+# name: d_fin
+# type: scalar
+50
+
+
+# name: dc_fin
+# type: scalar
+0
+
+
+# name: bstar_fin
+# type: scalar
+-8.093706525580364e-17
+
+
+# name: c_fin
+# type: scalar
+90.94525496470847
+
+
+# name: e_fin
+# type: scalar
+51.3939782856856
+
+
+# name: eh_fin
+# type: scalar
+38.80420084065173
+
+
+# name: h_fin
+# type: scalar
+0.1628731197190534
+
+
+# name: i_n_fin
+# type: scalar
+6.543115026750572
+
+
+# name: i_x_fin
+# type: scalar
+5.075455461315196
+
+
+# name: i_z_fin
+# type: scalar
+4.5
+
+
+# name: k_n_fin
+# type: scalar
+100.663308103855
+
+
+# name: k_x_fin
+# type: scalar
+78.08393017407994
+
+
+# name: L_n_fin
+# type: scalar
+21.73454508729634
+
+
+# name: L_x_fin
+# type: scalar
+30.90882213493532
+
+
+# name: P_fin
+# type: scalar
+0.9917854335822597
+
+
+# name: P_k_fin
+# type: scalar
+1.980948577130022
+
+
+# name: P_n_fin
+# type: scalar
+0.9809485771300221
+
+
+# name: P_z_fin
+# type: scalar
+1.980948577130022
+
+
+# name: r_fin
+# type: scalar
+0.1000000000000001
+
+
+# name: r_n_fin
+# type: scalar
+0.2971422865695035
+
+
+# name: r_x_fin
+# type: scalar
+0.2971422865695035
+
+
+# name: R_z_fin
+# type: scalar
+0.2269404131808812
+
+
+# name: q_n_fin
+# type: scalar
+55.44044766959546
+
+
+# name: q_x_fin
+# type: scalar
+58.00509388864457
+
+
+# name: w_fin
+# type: scalar
+1.125991025557906
+
+
+# name: z_fin
+# type: scalar
+69.23076923076923
+
+
+# name: T_fin
+# type: scalar
+11.93131110129567
+
+
+# name: ze_fin
+# type: scalar
+41.53846153846153
+
+
