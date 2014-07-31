@@ -805,6 +805,7 @@ set_shocks(0,29, 22, 0);
 set_shocks(0,30, 22, 0);
 M_.exo_det_length = 0;
 M_.sigma_e_is_diagonal = 1;
+options_.debug = 1;
 options_.periods = 1000;
 simul();
 save('dsf_results.mat', 'oo_', 'M_', 'options_');

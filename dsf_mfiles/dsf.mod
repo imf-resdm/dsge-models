@@ -5,4 +5,5 @@
 @#include "dsf_main.mod"
 @#include "shocks.mod"
 
+options_.debug = 1;
 simul(periods=1000);
