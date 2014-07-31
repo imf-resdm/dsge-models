@@ -1,6 +1,6 @@
 // declare endogenous variables
-var b bstar d dc dplot e eh GAP grants growth_plot h in ix iz kn kx L_n L_x 
-    netbwconc oilr p pk pn pz qn qx r r_d rstar r_dc rn rx Rz T w ynom z ze;
+var b bstar d dc e eh GAP grants h in ix iz kn kx L_n L_x oilr p pk pn pz 
+    qn qx r r_d rstar r_dc rn rx Rz T w ynom z ze;
 
 // declare exogenous variables
 varexo e_iz0 e_iz1 e_iz2
@@ -96,9 +96,6 @@ rstar = r_dc+nu;
 // nominal GDP
 ynom = pn*qn + px*qx;
 
-// plotting variable to plot the path of actual GDP growth
-growth_plot = (qn-qn(-1))/qn(-1) + (qx-qx(-1))/qx(-1) + g;
-
 // fiscal gap helping variables (note: e+eh=p*c --> total consumption) 
 #DD = ((1+r_d)*d(-1)/(1+g) - d) + ((1+r_dc(-1))*m*dc(-1)/(1+g) - m*dc) + ((1+r(-1))*p*b(-1)/(1+g) - p*b) + (pz*abcap*iz) + To - ho*(e+eh) - (grants+oilr) - miu*ze(-1);
 #DDo = (r_d-g)*d_o/(1+g) + (r_f+nug-g)*m*dco/(1+g) + (ro-g)*bo/(1+g) + P_zo*(delta_z+g)*zo + To - ho*(eo+eho) - (grantso+oilro) - miu*zeo;
@@ -136,8 +133,6 @@ growth_plot = (qn-qn(-1))/qn(-1) + (qx-qx(-1))/qx(-1) + g;
 // set exogenous path of concessional borrowing (not dependent on debt type)
 #uazuaz = yo/ynom;
 d = d_o*g/(1+g) + d(-1)/(1+g) + e_d0/uazuaz + e_d1/uazuaz + e_d2/uazuaz;
-netbwconc = e_d0 + e_d1 + e_d2;
-dplot = e_d0 + e_d1 + e_d2 + dplot(-1); 
 
 // set exogenous path of domestic borrowing
 @#if exogenous || endogenous_commercial
@@ -199,7 +194,6 @@ Rz = R_z_ini;
 b = bo;
 d = d_o;
 dc = dco;
-dplot = d_o;
 //'Include the line below if you add exogenous domestic borrowing to this scenario.
 //'shock0_b = bo*g/(1+g);
 //e_b0 = bo*g/(1+g);
@@ -209,8 +203,6 @@ remit=remito;
 grants=grantso;
 oilr = oilro;
 ynom = yo;
-growth_plot = g;
-netbwconc = 0;
 r_dc =r_f+nug;
 rstar = r_dc+nu;
 px=1;
