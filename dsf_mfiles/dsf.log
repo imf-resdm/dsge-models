@@ -51,6 +51,39 @@ w           		 1
 ynom        		 100
 z           		 46.1538
 ze          		 27.6923
+
+EIGENVALUES:
+         Modulus             Real        Imaginary
+
+               0               -0                0
+               0               -0                0
+       6.026e-17        6.026e-17                0
+       1.138e-09        5.506e-16        1.138e-09
+       1.138e-09        5.506e-16       -1.138e-09
+        0.006254         0.006254                0
+           0.228           -0.228                0
+          0.8815           0.8815                0
+          0.9325           0.9325                0
+          0.9788           0.9788                0
+          0.9852           0.9852                0
+          0.9852           0.9852                0
+          0.9852           0.9852                0
+               1                1                0
+           1.087            1.087                0
+           1.229            1.229                0
+           36.47            36.47                0
+        1.54e+21        -1.54e+21                0
+       7.102e+21        7.102e+21                0
+       9.236e+21        9.236e+21                0
+       7.494e+22       -7.494e+22                0
+             Inf             -Inf                0
+
+
+There are 8 eigenvalue(s) larger than 1 in modulus 
+for 8 forward-looking variable(s)
+
+The rank condition is verified.
+
 -----------------------------------------------------
 MODEL SIMULATION:
 
@@ -59,9 +92,9 @@ Largest absolute residual at iteration 1:      0.000
 
 
 Simulation concluded successfully after 1 iterations.
-Total time of simulation        :      9.966
+Total time of simulation        :     17.508
 Convergency obtained.
 -----------------------------------------------------
 
-Total computing time : 0h00m13s
+Total computing time : 0h00m21s
 Note: 1 warning(s) encountered in the preprocessor

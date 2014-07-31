@@ -224,3 +224,6 @@ end;
 
 // solve for steady state
 steady;
+
+// check solution (esp. rank condition)
+check;

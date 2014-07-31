@@ -589,6 +589,7 @@ if M_.exo_det_nbr > 0;
 	oo_.exo_det_simul = [ones(M_.maximum_lag,1)*oo_.exo_det_steady_state'];
 end;
 steady;
+oo_.dr.eigval = check(M_,options_,oo_);
 %
 % SHOCKS instructions
 %
