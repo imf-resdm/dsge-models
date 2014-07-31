@@ -1,0 +1,8 @@
+## take a JSON file of results and turn it into a CSV file
+
+import json
+
+json_data = open('dsf_results.json')
+data = json.load(json_data)
+
+print data

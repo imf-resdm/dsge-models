@@ -3,6 +3,7 @@
 
 from scipy.io import loadmat
 from sys import argv
+from json import load
 
 TT = 30 # how many periods of results to send
 
@@ -35,4 +36,18 @@ for name, simul in zip(plot_names, plot_simul):
 # write JSON-looking string to file
 f = open(model + '_mfiles/' + model + '_results.json', 'w')
 f.write('{' + json[:-1] + '}')
+f.close()
+
+# pull JSON data into python dict                                              
+json_data = open(fpath + model + '_results.json')
+data = load(json_data)
+json_data.close()
+
+# make string of public directory
+pub_fpath = fpath[:fpath[:-1].rfind('/')] + '/public/'
+
+# create csv file to write to
+f = open(pub_fpath + model + '_results.csv','w')
+for key in data.keys():
+    f.write(str(key) + ', ' + str(data[key])[1:-1] + '\n')
 f.close()

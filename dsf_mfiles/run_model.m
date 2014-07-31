@@ -21,7 +21,7 @@ calc_steady_state;
 # run model
 dynare dsf.mod noclearall;
 results = "plot_vars";
-#save_results;
+make_plot_vars;
 
 # housekeeping
 eval(["rmpath " cur_path "/compecon"])
