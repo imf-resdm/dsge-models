@@ -5,8 +5,4 @@
 @#include "dsf_main.mod"
 @#include "shocks.mod"
 
-// this prints residuals at each iteration
-options_.debug = 1;
-
-// run the simulation
-simul(periods=500);
+simul(periods=1000);

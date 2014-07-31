@@ -54,14 +54,11 @@ ze          		 27.6923
 -----------------------------------------------------
 MODEL SIMULATION:
 
-Largest absolute residual at iteration 1:      0.000
-
-
 
 Simulation concluded successfully after 1 iterations.
-Total time of simulation        :      4.639
+Total time of simulation        :     55.507
 Convergency obtained.
 -----------------------------------------------------
 
-Total computing time : 0h00m06s
+Total computing time : 0h00m56s
 Note: 1 warning(s) encountered in the preprocessor

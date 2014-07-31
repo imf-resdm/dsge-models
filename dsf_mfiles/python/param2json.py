@@ -17,7 +17,7 @@ with open('../csv/dsf_params.txt', 'rb') as fin:
 output = output[:-2]
 output += '\n}';
 
-fout = open('../param_list.json', 'w')
+fout = open('../json/param_list.json', 'w')
 fout.write(output)
 
 fin.close()

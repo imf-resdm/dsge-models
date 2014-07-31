@@ -5,14 +5,14 @@
 import csv
 
 output = '{\n'
-with open('../csv/dsf_vars.csv', 'rb') as fin:
-    reader = csv.reader(fin)
+with open('../csv/dsf_vars.txt', 'rb') as fin:
+    reader = csv.reader(fin, delimiter='\t')
     for row in reader:
         output += ('\t"' + row[0] + '" : "' + row[1] + '",\n')
 output = output[:-2]
 output += '\n}';
 
-fout = open('../var_list.json', 'w')
+fout = open('../json/var_list.json', 'w')
 fout.write(output)
 
 fin.close()

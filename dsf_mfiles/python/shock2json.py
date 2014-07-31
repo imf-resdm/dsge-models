@@ -15,7 +15,7 @@ with open('../csv/dsf_shocks.txt', 'rb') as fin:
 output = output[:-2]
 output += '\n}';
 
-fout = open('../shock_list.json', 'w')
+fout = open('../json/shock_list.json', 'w')
 fout.write(output)
 
 fin.close()
