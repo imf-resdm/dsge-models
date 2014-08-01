@@ -15,17 +15,9 @@
 		"desc" : "public domestic debt (% of GDP)",
 		"equations" : [30]
 	},
-	"int" : {
-		"desc" : "interest repayments (% of GDP)",
-		"equations" : [1]
-	},
 	"grants" : {
 		"desc" : "grant revenue (% of GDP)",
 		"equations" : [30]
-	},
-	"remit" : {
-		"desc" : "remittances (% of GDP)",
-		"equations" : [1]
 	},
 	"oilr" : {
 		"desc" : "oil revenue (% of GDP)",
@@ -38,17 +30,5 @@
 	"Tbar" : {
 		"desc" : "government transfers floor (level)",
 		"equations" : [39]
-	},
-	"px" : {
-		"desc" : "price of traded goods (indexed to 1)",
-		"equations" : [1]
-	},
-	"pm" : {
-		"desc" : "price index of imported goods (indexed to 1)",
-		"equations" : [1]
-	},
-	"pmm" : {
-		"desc" : "price index of imported machines (indexed to 1)",
-		"equations" : [1]
 	}
 }
