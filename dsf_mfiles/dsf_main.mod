@@ -1,21 +1,17 @@
 // declare endogenous variables
-var b bstar d dc e eh GAP grants h int_repayment in ix iz kn kx L_n L_x oilr 
-    p pk pn pz px pm pmm qn qx r r_d remit rstar r_dc rn rx Rz T w ynom z ze;
+var b bstar d dc e eh GAP grants h in ix iz kn kx L_n L_x oilr p pk pn pz 
+    qn qx r r_d rstar r_dc rn rx Rz T w ynom z ze;
 
 // declare exogenous variables
-varexo e_iz0 e_iz1 e_iz2             // public investment to GDP
-       e_d0 e_d1 e_d2                // public concessional debt to GDP
-       e_dc0 e_dc1 e_dc2             // public commercial debt to GDP
-       e_b0 e_b1 e_b2                // public domestic debt to GDP
-       e_grants0 e_grants1 e_grants2 // grants to GDP
-       e_oilr0 e_oilr1 e_oilr2       // natural resource revenue to GDP
-       e_hbar0 e_hbar1 e_hbar2       // moving ceiling on tax rate
-       e_Tbar0 e_Tbar1 e_Tbar2       // moving floor on transfers level
-       e_px0 e_px1 e_px2             // price index of traded sector
-       e_pm0 e_pm1 e_pm2             // price index of imported goods
-       e_pmm0 e_pmm1 e_pmm2          // price index of imported machines
-       e_int0 e_int1 e_int2          // interest repayments as a share of GDP
-       e_remit0 e_remit1 e_remit2;   // remittances to GDP
+varexo e_iz0 e_iz1 e_iz2
+       e_d0 e_d1 e_d2
+       e_dc0 e_dc1 e_dc2
+       e_b0 e_b1 e_b2
+       e_grants0 e_grants1 e_grants2
+       e_oilr0 e_oilr1 e_oilr2
+       e_hbar0 e_hbar1 e_hbar2
+       e_Tbar0 e_Tbar1 e_Tbar2
+       remit px pm pmm dc_target int_repayment0 int_repayment1;    
 
 // declare parameters
 parameters a_k a_n a_ratio a_x a_z alpha_k alpha_n alpha_x alpha_z beta beta_t
@@ -30,7 +26,7 @@ parameters a_k a_n a_ratio a_x a_z alpha_k alpha_n alpha_x alpha_z beta beta_t
 load params.mat;          
 for i=1:length(M_.params)
     deep_parameter_name = M_.param_names(i,:);
-    eval(['M_.params(i) = ' deep_parameter_name ';'])
+    eval(['M_.params(i)  = ' deep_parameter_name ' ;'])
 end   
 
 // specify model equations
@@ -43,11 +39,6 @@ qn = a_n*(qn/q_no)^sigma_n*(ze(-1)^psi_n)*(kn(-1)^(xi_n + alpha_n))*(L_n^(1 - al
 // supply prices of private and public capital
 pk = pmm + a_k*pn;
 pz = pmm + a_z*pn;
-
-// exogenous prices
-px = 1 + e_px0 + e_px1 + e_px2;
-pm = 1 + e_pm0 + e_pm1 + e_pm2;
-pmm = 1 + e_pmm0 + e_pmm1 + e_pmm2;
 
 // CPI (relative) associated with CES consumption basket
 p = (rho_m*pm^(1-epsilon) + rho_x*px^(1-epsilon) + (1-rho_m-rho_x)*pn^(1-epsilon))^(1/(1-epsilon));
@@ -122,8 +113,8 @@ ynom = pn*qn + px*qx;
 #T_target = To - lambda*GAP;
 
 // define rule for tax and trasnfer pahts
-#T_rule = T(-1) + lambda3*(T_target-T(-1)) - lambda4*(dc(-1)-dco);
-#h_rule = h(-1) + lambda1*(h_target-h(-1)) + lambda2*(dc(-1)-dco)/(pn*qn + px*qx);
+#T_rule = T(-1) + lambda3*(T_target-T(-1)) - lambda4*(dc(-1)-dc_target);
+#h_rule = h(-1) + lambda1*(h_target-h(-1)) + lambda2*(dc(-1)-dc_target)/(pn*qn + px*qx);
 
 // specify rule for taxes and transfers based on debt type
 @#if exogenous
@@ -131,7 +122,7 @@ ynom = pn*qn + px*qx;
      h = h_target;
 @#else
      #hbar_staggered = ho + e_hbar0 + e_hbar1 + e_hbar2;	
-     #h_capped = min(h_rule, hbar);	  
+     #h_capped = min(h_rule, hbar);   
      h = theta_hbar*h_capped + (1-theta_hbar)*hbar_staggered;
 
      #Tbar_staggered = To + e_Tbar0 + e_Tbar1 + e_Tbar2;
@@ -161,10 +152,9 @@ iz*uaz = (delta_z+g)*zo + e_iz0 + e_iz1 + e_iz2;
 // set exogenous path of grants and oil revenues
 grants*uazuaz = grantso + e_grants0 + e_grants1 + e_grants2;
 oilr*uazuaz = oilro + e_oilr0 + e_oilr1 + e_oilr2;
-remit*uazuaz = remito + e_remit0 + e_remit1 + e_remit2;
 
 // define interest repayment on concessional debt
-int_repayment = e_int0 + e_int1 + e_int2;
+#int_repayment = int_repayment0 + int_repayment1;
 r_d*d(-1)/(1+g) = int_repayment/uazuaz;
 
 end;
@@ -220,6 +210,7 @@ pm=1;
 pmm=1;
 r_d=0;
 GAP=0;
+dc_target = dco;
 
 end;
 
