@@ -78,8 +78,8 @@ $(function() {
 	var header = "<div class=\"shock-header\"";
 	header += "style=\"clear:left; padding-bottom:5px\">";
 	header += "<span style=\"font-weight:bold;padding-right:1em\">" + 
-	    shock.desc + ":</span>";
-	if (N==1)
+	    shock.desc + "</span>";
+	/*if (N==1)
 	    header += "\\(" + eqnsTex[shock.equations[0]-1] + "\\)</div>"; 
 	else {
 	    header += "\\(" + eqnsTex[shock.equations[0]-1] + "\\)<br>";
@@ -89,7 +89,7 @@ $(function() {
 		    + eqnsTex[shock.equations[i]-1] + "\\),</span>"; }
 	    header += "<span style=\"padding-left:8em;\">\\(" 
 		+ eqnsTex[shock.equations[i]-1] + "\\)</span>";
-	}
+	}*/
 	return header;
     };
     

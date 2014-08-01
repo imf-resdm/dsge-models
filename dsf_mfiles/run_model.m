@@ -1,8 +1,6 @@
 # housekeeping                                                                 
 clear all;
 
-disp('running model!!');
-
 # change working directory to the directory of this file                       
 cur_path = strrep(mfilename("fullpath"), ["/" mfilename()], "");
 eval(["cd " cur_path]);

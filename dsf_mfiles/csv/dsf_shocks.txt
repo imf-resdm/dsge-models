@@ -1,7 +1,13 @@
-iz	public investment	27
-d	public domestic debt (de-trended)	30
-dc	public concessional debt	30
-grants	grant revenue	30
-oilr	oil revenue	30
-hbar	VAT rate ceiling	38
-Tbar	government transfers floor	39
+iz	public investment (% of GDP)	27
+d	public concessional debt (% of GDP)	30
+dc	public commercial debt (% of GDP)	30
+b	public domestic debt (% of GDP)	30
+int	interest repayments (% of GDP)	1
+grants	grant revenue (% of GDP)	30
+remit	remittances (% of GDP)	1
+oilr	oil revenue (% of GDP)	30
+hbar	VAT ceiling (rate)	38
+Tbar	government transfers floor (level)	39
+px	price of traded goods (indexed to 1)	1
+pm	price index of imported goods (indexed to 1)	1
+pmm	price index of imported machines (indexed to 1)	1

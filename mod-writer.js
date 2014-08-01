@@ -71,7 +71,7 @@ exports.writeModFile = function( fiscalData ) {
     
     modFile += "\n@#include \"dsf_main.mod\"\n";
     modFile += "@#include \"shocks.mod\"\n\n";
-    modFile += "options_.debug=1\n";
+    modFile += "options_.debug=1;\n";
     modFile += "simul(periods=750);";
 
     return modFile;

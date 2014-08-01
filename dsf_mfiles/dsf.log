@@ -1,7 +1,7 @@
 Starting Dynare (version 4.4.1).
 Starting preprocessing of the model file ...
-WARNING: some exogenous (e_hbar0, e_hbar1, e_hbar2, e_Tbar0, e_Tbar1, e_Tbar2, dc_target) are declared but not used in the model. This may lead to crashes or unexpected behaviour.
-Found 35 equation(s).
+WARNING: some exogenous (e_hbar0, e_hbar1, e_hbar2, e_Tbar0, e_Tbar1, e_Tbar2) are declared but not used in the model. This may lead to crashes or unexpected behaviour.
+Found 39 equation(s).
 Evaluating expressions...done
 Computing static model derivatives:
  - order 1
@@ -34,10 +34,14 @@ p      		 1
 pk     		 2
 pn     		 1
 pz     		 2
+px     		 1
+pm     		 1
+pmm    		 1
 qn     		 49.4
 qx     		 50.6
 r      		 0.1
 r_d    		 0
+remit  		 4
 rstar  		 0.1
 r_dc   		 0.06
 rn     		 0.3
@@ -54,21 +58,21 @@ EIGENVALUES:
 
                0                0                0
                0                0                0
-       1.319e-16       -1.319e-16                0
-        0.006254         0.006254                0
-           0.228           -0.228                0
-          0.8815           0.8815                0
+       3.447e-16       -3.447e-16                0
+        0.006415         0.006415                0
+          0.2276          -0.2276                0
+          0.8798           0.8798                0
           0.9325           0.9325                0
-          0.9788           0.9788                0
+          0.9792           0.9792                0
           0.9852           0.9852                0
           0.9852           0.9852                0
           0.9852           0.9852                0
-           1.087            1.087                0
-           1.229            1.229                0
-           36.47            36.47                0
-       2.076e+21       -2.076e+21                0
-       3.581e+22        3.581e+22                0
-       7.328e+22       -7.328e+22                0
+           1.089            1.089                0
+           1.231            1.231                0
+           35.91            35.91                0
+       3.946e+21        3.946e+21                0
+       6.876e+22        6.876e+22                0
+       7.455e+22        7.455e+22                0
              Inf              Inf                0
              Inf              Inf                0
 
@@ -78,558 +82,26 @@ for 8 forward-looking variable(s)
 
 The rank condition is verified.
 
-options_ =
-
-  scalar structure containing the fields:
-
-    datafile = 
-    verbosity =  1
-    terminal_condition = 0
-    rplottype = 0
-    smpl = 0
-    dynatol =
-
-      scalar structure containing the fields:
-
-        f =    1.0000e-05
-        x =    1.0000e-05
-
-    slowc =  1
-    timing = 0
-    gstep =
-
-       0.010000
-       1.000000
-
-    scalv =  1
-    debug =  1
-    initval_file = 0
-    Schur_vec_tol =    1.0000e-11
-    qz_criterium = [](0x0)
-    qz_zero_threshold =    1.0000e-06
-    lyapunov_complex_threshold =    1.0000e-15
-    solve_tolf =    6.0555e-06
-    solve_tolx =    3.6669e-11
-    dp =
-
-      scalar structure containing the fields:
-
-        maxit =  3000
-
-    steady =
-
-      scalar structure containing the fields:
-
-        maxit =  10
-
-    simul =
-
-      scalar structure containing the fields:
-
-        maxit =  10
-
-    mode_check =
-
-      scalar structure containing the fields:
-
-        status = 0
-        neighbourhood_size =  0.50000
-        symmetric_plots =  1
-        number_of_points =  20
-        nolik = 0
-
-    threads =
-
-      scalar structure containing the fields:
-
-        kronecker =
-
-          scalar structure containing the fields:
-
-            A_times_B_kronecker_C: 1x1 scalar
-            sparse_hessian_times_B_kronecker_C: 1x1 scalar
-
-        local_state_space_iteration_2 =  1
-
-    jacobian_flag =  1
-    steadystate_flag = 0
-    steadystate_partial = [](0x0)
-    steadystate =
-
-      scalar structure containing the fields:
-
-        nocheck = 0
-
-    ParamSubSet = None
-    dsge_var = 0
-    dsge_varlag =  4
-    bvar_replic =  2000
-    bvar_prior_tau =  3
-    bvar_prior_decay =  0.50000
-    bvar_prior_lambda =  5
-    bvar_prior_mu =  2
-    bvar_prior_omega =  1
-    bvar_prior_flat = 0
-    bvar_prior_train = 0
-    gmhmaxlik =
-
-      scalar structure containing the fields:
-
-        iterations =  3
-        number =  20000
-        nclimb =  200000
-        nscale =  200000
-        target =  0.33333
-
-    nointeractive = 0
-    graphics =
-
-      scalar structure containing the fields:
-
-        nrows =  3
-        ncols =  3
-        line_types = 
-        {
-          [1,1] = b-
-        }
-        line_width =  1
-
-    graph_format = eps
-    nodisplay =  1
-    nograph = 0
-    XTick = [](0x0)
-    XTickLabel = [](0x0)
-    console_mode =  1
-    irf =  40
-    impulse_responses =
-
-      scalar structure containing the fields:
-
-        plot_threshold =    1.0000e-10
-
-    relative_irf = 0
-    ar =  5
-    hp_filter = 0
-    hp_ngrid =  512
-    nomoments = 0
-    nocorr = 0
-    periods = 0
-    noprint = 0
-    SpectralDensity =
-
-      scalar structure containing the fields:
-
-        trigger = 0
-        plot =  1
-        cutoff =  150
-        sdl =  0.010000
-
-    nofunctions = 0
-    ep =
-
-      scalar structure containing the fields:
-
-        debug = 0
-        memory = 0
-        verbosity = 0
-        use_bytecode = 0
-        init = 0
-        maxit =  500
-        periods =  200
-        step =  50
-        check_stability = 0
-        lp =  5
-        fp =  2
-        innovation_distribution = gaussian
-        set_dynare_seed_to_default =  1
-        stack_solve_algo =  4
-        stochastic =
-
-          scalar structure containing the fields:
-
-            method: 0x0 sq_string
-            algo: 1x1 scalar
-            quadrature: 1x1 scalar struct
-            order: 1x1 scalar
-            hybrid_order: 1x1 scalar
-
-
-    bnlms =
-
-      scalar structure containing the fields:
-
-        set_dynare_seed_to_default =  1
-        innovation_distribution = gaussian
-
-    particle =
-
-      scalar structure containing the fields:
-
-        status = 0
-        initialization =  1
-        initial_state_prior_std =  0.10000
-        perturbation =  2
-        number_of_particles =  500
-        smolyak_accuracy =  3
-        pruning = 0
-        algorithm = sequential_importance_particle_filter
-        IS_approximation_method = unscented
-        approximation_method = unscented
-        unscented =
-
-          scalar structure containing the fields:
-
-            alpha: 1x1 scalar
-            beta: 1x1 scalar
-            kappa: 1x1 scalar
-
-        resampling =
-
-          scalar structure containing the fields:
-
-            status: 1x10 sq_string
-            neff_threshold: 1x1 scalar
-            method1: 1x11 sq_string
-            method2: 1x8 sq_string
-            number_of_partitions: 1x1 scalar
-
-        mixture_state_variables =  5
-        mixture_structural_shocks =  1
-        mixture_measurement_shocks =  1
-        liu_west_delta =  0.99000
-        liu_west_chol_sigma_bar =  0.010000
-
-    TeX = 0
-    xls_sheet =  1
-    xls_range = 
-    forecast = 0
-    linear = 0
-    stack_solve_algo = 0
-    markowitz =  0.50000
-    minimal_solving_periods =  1
-    order =  2
-    pruning = 0
-    solve_algo =  2
-    replic =  50
-    simul_replic =  1
-    drop =  100
-    use_qzdiv = 0
-    aim_solver = 0
-    k_order_solver = 0
-    partial_information = 0
-    ACES_solver = 0
-    conditional_variance_decomposition = [](0x0)
-    ramsey_policy = 0
-    timeless = 0
-initial_period = <dates: 1Y>
-    dataset =
-
-      scalar structure containing the fields:
-
-firstobs = <dates: 1Y>
-        lastobs = NaN
-        nobs = NaN
-        xls_sheet = NaN
-        xls_range = NaN
-
-    Harvey_scale_factor =  10
-    MaxNumberOfBytes =  1000000
-    MaximumNumberOfMegaBytes =  111
-    PosteriorSampleSize =  1000
-    analytic_derivation = 0
-    analytic_derivation_mode = 0
-    bayesian_irf = 0
-    bayesian_th_moments = 0
-    diffuse_filter = 0
-    filter_step_ahead = [](0x0)
-    filtered_vars = 0
-    first_obs =  1
-    kalman_algo = 0
-    fast_kalman = 0
-    kalman_tol =    1.0000e-10
-    use_univariate_filters_if_singularity_is_detected =  1
-    riccati_tol =    1.0000e-06
-    lik_algo =  1
-    lik_init =  1
-    load_mh_file = 0
-    logdata = 0
-    loglinear = 0
-    mh_conf_sig =  0.90000
-    prior_interval =  0.90000
-    mh_drop =  0.50000
-    mh_jscale =  0.20000
-    mh_init_scale =  0.40000
-    mh_mode =  1
-    mh_nblck =  2
-    mh_recover = 0
-    mh_replic =  20000
-    recursive_estimation_restart = 0
-    MCMC_jumping_covariance = hessian
-    use_calibration_initialization = 0
-    mode_compute =  4
-    mode_file = 
-    moments_varendo = 0
-    nk =  1
-    noconstant = 0
-    nodiagnostic = 0
-    mh_posterior_mode_estimation = 0
-    prefilter = 0
-    presample = 0
-    prior_trunc =    1.0000e-10
-    smoother = 0
-    student_degrees_of_freedom =  3
-    sub_draws = [](0x0)
-    use_mh_covariance_matrix = 0
-    gradient_method =  2
-    gradient_epsilon =    1.0000e-06
-    posterior_sampling_method = random_walk_metropolis_hastings
-    proposal_distribution = rand_multivariate_normal
-    trace_plot_ma =  200
-    mh_autocorrelation_function_size =  30
-    plot_priors =  1
-    cova_compute =  1
-    parallel = 0
-    parallel_info =
-
-      scalar structure containing the fields:
-
-        isHybridMatlabOctave = 0
-        leaveSlaveOpen = 0
-        RemoteTmpFolder = 
-
-    number_of_grid_points_for_kde =  512
-    conditional_variance_decomposition_dates =
-
-         1     5     9    13    17    37    77   117   157   197
-
-    filter_covariance = 0
-    filter_decomposition = 0
-    selected_variables_only = 0
-    initialize_estimated_parameters_with_the_prior_mode = 0
-    estimation_dll = 0
-    conf_sig =  0.60000
-    homotopy_mode = 0
-    homotopy_steps =  1
-    homotopy_force_continue = 0
-    simplex =
-
-      scalar structure containing the fields:
-
-        tolerance =
-
-          scalar structure containing the fields:
-
-            x: 1x1 scalar
-            f: 1x1 scalar
-
-        maxiter =  5000
-        maxfcallfactor =  500
-        maxfcall = [](0x0)
-
-    cmaes =
-
-      scalar structure containing the fields:
-
-        SaveVariables = off
-        DispFinal = on
-        WarnOnEqualFunctionValues = no
-        DispModulo = 10
-        LogModulo = 0
-        LogTime = 0
-        TolFun =    1.0000e-07
-        TolX =    1.0000e-07
-
-    simpsa =
-
-      scalar structure containing the fields:
-
-        TOLFUN =    1.0000e-04
-        TOLX =    1.0000e-04
-        TEMP_END =  0.10000
-        COOL_RATE =  10
-        INITIAL_ACCEPTANCE_RATIO =  0.95000
-        MIN_COOLING_FACTOR =  0.90000
-        MAX_ITER_TEMP_FIRST =  50
-        MAX_ITER_TEMP_LAST =  2000
-        MAX_ITER_TEMP =  10
-        MAX_ITER_TOTAL =  5000
-        MAX_TIME =  2500
-        MAX_FUN_EVALS =  20000
-        DISPLAY = iter
-
-    prior_mc =  20000
-    prior_analysis_endo_var_list = [](0x0)
-    block = 0
-    use_dll = 0
-    bytecode = 0
-    sylvester_fp = 0
-    sylvester_fixed_point_tol =    1.0000e-12
-    lyapunov_fp = 0
-    lyapunov_db = 0
-    lyapunov_srs = 0
-    lyapunov_fixed_point_tol =    1.0000e-10
-    lyapunov_doubling_tol =    1.0000e-16
-    dr_cycle_reduction = 0
-    dr_cycle_reduction_tol =    1.0000e-07
-    dr_logarithmic_reduction = 0
-    dr_logarithmic_reduction_tol =    1.0000e-12
-    dr_logarithmic_reduction_maxiter =  100
-    initial_date =
-
-      scalar structure containing the fields:
-
-        freq =  1
-        period =  1
-        subperiod = 0
-
-    discretionary_policy = 0
-    discretionary_tol =    1.0000e-07
-    parameter_set = [](0x0)
-    nonlinear_filter = [](0x0)
-    ms =
-
-      scalar structure containing the fields:
-
-        vlistlog = [](0x0)
-        restriction_fname = 0
-        cross_restrictions = 0
-        contemp_reduced_form = 0
-        real_pseudo_forecast = 0
-        dummy_obs = 0
-        ncsk = 0
-        indxgforhat =  1
-        indxgimfhat =  1
-        indxestima =  1
-        indxgdls =  1
-        cms = 0
-        ncms = 0
-        eq_cms =  1
-        banact =  1
-        log_var = [](0x0)
-        Qi = [](0x0)
-        Ri = [](0x0)
-        lower_cholesky = 0
-        upper_cholesky = 0
-        constants_exclusion = 0
-        file_tag = dsf
-        mh_file = 
-        free_param_file = 
-        output_file_tag = 
-        simulation_file_tag = 
-        create_init =  1
-        coefficients_prior_hyperparameters =
-
-           1.00000   1.00000   0.10000   1.20000   1.00000   1.00000
-
-        freq =  4
-        initial_subperiod =  1
-        final_subperiod = 
-        nlags =  1
-        bayesian_prior =  1
-        alpha =  1
-        beta =  1
-        gsig2_lmdm =  2500
-        specification =  2
-        initial_year = 
-        final_year = 
-        convergence_starting_value =  0.0010000
-        convergence_ending_value =    1.0000e-06
-        convergence_increment_value =  0.10000
-        max_iterations_starting_value =  50
-        max_iterations_increment_value =  2
-        max_block_iterations =  100
-        max_repeated_optimization_runs =  10
-        function_convergence_criterion =  0.10000
-        parameter_convergence_criterion =  0.10000
-        number_of_large_perturbations =  5
-        number_of_small_perturbations =  5
-        number_of_posterior_draws_after_perturbation =  1
-        max_number_of_stages =  20
-        random_function_convergence_criterion =  0.10000
-        random_parameter_convergence_criterion =  0.10000
-        mh_replic =  10000
-        thinning_factor =  1
-        drop =  1000
-        adaptive_mh_draws =  30000
-        save_draws = 0
-        proposal_draws =  100000
-        use_mean_center = 0
-        proposal_type =  3
-        proposal_lower_bound =  0.10000
-        proposal_upper_bound =  0.90000
-        filtered_probabilities = 0
-        real_time_smoothed_probabilities = 0
-        horizon =  12
-        percentiles =
-
-           0.16000   0.50000   0.84000
-
-        parameter_uncertainty = 0
-        shock_draws =  10000
-        shocks_per_parameter =  10
-        median = 0
-        regime = 0
-        regimes = 0
-        forecast_data_obs = 0
-        error_bands =  1
-
-    graph_save_formats =
-
-      scalar structure containing the fields:
-
-        eps =  1
-        pdf = 0
-        fig = 0
-
-    risky_steadystate = 0
-    endogenous_prior = 0
-    endogenous_prior_restrictions =
-
-      scalar structure containing the fields:
-
-        irf = {}(0x0)
-
-    osr =
-
-      scalar structure containing the fields:
-
-        tolf =    1.0000e-07
-        maxit =  1000
-        verbose =  2
-
-    gpu = 0
-    convergence =
-
-      scalar structure containing the fields:
-
-        geweke =
-
-          scalar structure containing the fields:
-
-            taper_steps: 1x3 matrix
-            geweke_interval: 1x2 matrix
-
-
-    DynareRandomStreams =
-
-      scalar structure containing the fields:
-
-        algo = state
-        seed = 0
-
-    maxit =  20
-
 -----------------------------------------------------
 MODEL SIMULATION:
 
-Largest absolute residual at iteration 1:      0.000
+Largest absolute residual at iteration 1:      2.000
+
+
+Largest absolute residual at iteration 2:      0.043
+
+
+Largest absolute residual at iteration 3:      0.000
+
+
+Largest absolute residual at iteration 4:      0.000
 
 
 
-Simulation concluded successfully after 1 iterations.
-Total time of simulation        :     56.270
+Simulation concluded successfully after 4 iterations.
+Total time of simulation        :    179.504
 Convergency obtained.
 -----------------------------------------------------
 
-Total computing time : 0h00m59s
+Total computing time : 0h03m03s
 Note: 1 warning(s) encountered in the preprocessor

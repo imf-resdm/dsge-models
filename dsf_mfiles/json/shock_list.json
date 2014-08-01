@@ -1,30 +1,54 @@
 {
 	"iz" : {
-		"desc" : "public investment",
+		"desc" : "public investment (% of GDP)",
 		"equations" : [27]
 	},
 	"d" : {
-		"desc" : "public domestic debt (de-trended)",
+		"desc" : "public concessional debt (% of GDP)",
 		"equations" : [30]
 	},
 	"dc" : {
-		"desc" : "public concessional debt",
+		"desc" : "public commercial debt (% of GDP)",
 		"equations" : [30]
+	},
+	"b" : {
+		"desc" : "public domestic debt (% of GDP)",
+		"equations" : [30]
+	},
+	"int" : {
+		"desc" : "interest repayments (% of GDP)",
+		"equations" : [1]
 	},
 	"grants" : {
-		"desc" : "grant revenue",
+		"desc" : "grant revenue (% of GDP)",
 		"equations" : [30]
 	},
+	"remit" : {
+		"desc" : "remittances (% of GDP)",
+		"equations" : [1]
+	},
 	"oilr" : {
-		"desc" : "oil revenue",
+		"desc" : "oil revenue (% of GDP)",
 		"equations" : [30]
 	},
 	"hbar" : {
-		"desc" : "VAT rate ceiling",
+		"desc" : "VAT ceiling (rate)",
 		"equations" : [38]
 	},
 	"Tbar" : {
-		"desc" : "government transfers floor",
+		"desc" : "government transfers floor (level)",
 		"equations" : [39]
+	},
+	"px" : {
+		"desc" : "price of traded goods (indexed to 1)",
+		"equations" : [1]
+	},
+	"pm" : {
+		"desc" : "price index of imported goods (indexed to 1)",
+		"equations" : [1]
+	},
+	"pmm" : {
+		"desc" : "price index of imported machines (indexed to 1)",
+		"equations" : [1]
 	}
 }
