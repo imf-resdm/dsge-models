@@ -1,6 +1,6 @@
 // declare endogenous variables
-var b bstar d dc e eh GAP grants h in ix iz kn kx L_n L_x oilr p pk pn pz 
-    px pm pmm qn qx r r_d remit rstar r_dc rn rx Rz T w ynom z ze;
+var b bstar d dc e eh GAP grants h int_repayment in ix iz kn kx L_n L_x oilr 
+    p pk pn pz px pm pmm qn qx r r_d remit rstar r_dc rn rx Rz T w ynom z ze;
 
 // declare exogenous variables
 varexo e_iz0 e_iz1 e_iz2             // public investment to GDP
@@ -164,7 +164,7 @@ oilr*uazuaz = oilro + e_oilr0 + e_oilr1 + e_oilr2;
 remit*uazuaz = remito + e_remit0 + e_remit1 + e_remit2;
 
 // define interest repayment on concessional debt
-#int_repayment = e_int0 + e_int1 + e_int2;
+int_repayment = e_int0 + e_int1 + e_int2;
 r_d*d(-1)/(1+g) = int_repayment/uazuaz;
 
 end;
