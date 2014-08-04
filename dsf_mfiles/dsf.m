@@ -657,7 +657,7 @@ M_.maximum_exo_lead = 0;
 oo_.exo_steady_state = zeros(74, 1);
 M_.params = NaN(76, 1);
 M_.NNZDerivatives = zeros(3, 1);
-M_.NNZDerivatives(1) = 252;
+M_.NNZDerivatives(1) = 248;
 M_.NNZDerivatives(2) = 0;
 M_.NNZDerivatives(3) = -1;
 load params.mat;          
@@ -723,7 +723,7 @@ oo_.dr.eigval = check(M_,options_,oo_);
 % SHOCKS instructions
 %
 make_ex_;
-set_shocks(0,1, 1, 1);
+set_shocks(0,1, 1, 0.5);
 set_shocks(0,2, 1, 0);
 set_shocks(0,3, 1, 0);
 set_shocks(0,4, 1, 0);

@@ -1,6 +1,6 @@
 Starting Dynare (version 4.4.1).
 Starting preprocessing of the model file ...
-WARNING: some exogenous (e_hbar0, e_hbar1, e_hbar2, e_hbar0_neg, e_hbar1_neg, e_hbar2_neg, e_Tbar0, e_Tbar1, e_Tbar2, e_Tbar0_neg, e_Tbar1_neg, e_Tbar2_neg) are declared but not used in the model. This may lead to crashes or unexpected behaviour.
+WARNING: some exogenous (e_hbar0, e_hbar1, e_hbar2, e_hbar0_neg, e_hbar1_neg, e_hbar2_neg, e_Tbar0, e_Tbar1, e_Tbar2, e_Tbar0_neg, e_Tbar1_neg, e_Tbar2_neg, int_repayment0, int_repayment1) are declared but not used in the model. This may lead to crashes or unexpected behaviour.
 Found 39 equation(s).
 Evaluating expressions...done
 Computing static model derivatives:
@@ -58,7 +58,7 @@ EIGENVALUES:
 
                0                0                0
                0                0                0
-       2.383e-16        2.383e-16                0
+       1.435e-16       -1.435e-16                0
         0.006415         0.006415                0
           0.2276          -0.2276                0
           0.8798           0.8798                0
@@ -70,10 +70,10 @@ EIGENVALUES:
            1.089            1.089                0
            1.231            1.231                0
            35.91            35.91                0
-       4.202e+16       -4.202e+16                0
-       3.548e+21       -3.548e+21                0
-       1.233e+22        1.233e+22                0
-       2.239e+23       -2.239e+23                0
+       3.255e+20       -3.255e+20                0
+       3.496e+22       -3.496e+22                0
+             Inf              Inf                0
+             Inf             -Inf                0
              Inf              Inf                0
 
 
@@ -85,10 +85,10 @@ The rank condition is verified.
 -----------------------------------------------------
 MODEL SIMULATION:
 
-Largest absolute residual at iteration 1:      0.500
+Largest absolute residual at iteration 1:      0.250
 
 
-Largest absolute residual at iteration 2:      0.003
+Largest absolute residual at iteration 2:      0.001
 
 
 Largest absolute residual at iteration 3:      0.000
@@ -96,9 +96,9 @@ Largest absolute residual at iteration 3:      0.000
 
 
 Simulation concluded successfully after 3 iterations.
-Total time of simulation        :    197.243
+Total time of simulation        :    118.604
 Convergency obtained.
 -----------------------------------------------------
 
-Total computing time : 0h03m20s
+Total computing time : 0h02m02s
 Note: 1 warning(s) encountered in the preprocessor

@@ -14,8 +14,7 @@ varexo e_iz0     e_iz1     e_iz2     e_iz0_neg     e_iz1_neg     e_iz2_neg
        e_Tbar0   e_Tbar1   e_Tbar2   e_Tbar0_neg   e_Tbar1_neg   e_Tbar2_neg
        e_px0     e_px1     e_px2     e_px0_neg     e_px1_neg     e_px2_neg
        e_pm0     e_pm1     e_pm2     e_pm0_neg     e_pm1_neg     e_pm2_neg
-       e_pmm0    e_pmm1    e_pmm2    e_pmm0_neg    e_pmm1_neg    e_pmm2_neg
-       int_repayment0 int_repayment1;    
+       e_pmm0    e_pmm1    e_pmm2    e_pmm0_neg    e_pmm1_neg    e_pmm2_neg;
 
 // declare parameters
 parameters a_k a_n a_ratio a_x a_z alpha_k alpha_n alpha_x alpha_z beta beta_t
@@ -151,17 +150,15 @@ d = d_o*g/(1+g) + d(-1)/(1+g) + e_d0/uazuaz + e_d1/uazuaz + e_d2/uazuaz - e_d0_n
 
 // set exogenous path of public investment
 #uaz = pz/P_zo*yo/ynom;
-#iz_real = (e_iz0 + e_iz1 + e_iz2 - e_iz0_neg - e_iz1_neg - e_iz2_neg)/pz;
-iz*uaz = (delta_z+g)*zo + iz_real;
+iz*uaz = (delta_z+g)*zo + (e_iz0 + e_iz1 + e_iz2 - e_iz0_neg - e_iz1_neg - e_iz2_neg)/pz;
 
 // set exogenous path of grants and oil revenues
 grants*uazuaz = grantso + e_grants0 + e_grants1 + e_grants2 - e_grants0_neg - e_grants1_neg - e_grants2_neg;
 oilr*uazuaz = oilro + e_oilr0 + e_oilr1 + e_oilr2 - e_oilr0_neg - e_oilr1_neg - e_oilr2_neg;
 remit*uazuaz = remito + e_remit0 + e_remit1 + e_remit2 - e_remit0_neg - e_remit1_neg - e_remit2_neg;
 
-// define interest repayment on concessional debt
-#int_repayment = int_repayment0 + int_repayment1;
-r_d*d(-1)/(1+g) = int_repayment/uazuaz;
+// define interest repayment on concessional debt (i.e. no repayment shocks)
+r_d = 0;
 
 // exogenous price paths
 px = 1 + e_px0 + e_px1 + e_px2 - e_px0_neg - e_px1_neg - e_px2_neg;
