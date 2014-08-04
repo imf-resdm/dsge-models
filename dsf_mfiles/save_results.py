@@ -30,6 +30,7 @@ mat = loadmat(fpath + 'plot_vars.mat')
 plot_names = mat['plot_vars'].dtype.names
 plot_simul = mat['plot_vars'][0][0]
 for name, simul in zip(plot_names, plot_simul):
+    print 'name: ' + name
     json += '"' + name.strip() + '":'
     json += '[' + ','.join(['%2f' % jj for jj in simul[0:TT]]) + '],'
 

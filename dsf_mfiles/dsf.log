@@ -81,3 +81,14 @@ The rank condition is verified.
 -----------------------------------------------------
 MODEL SIMULATION:
 
+Largest absolute residual at iteration 1:      0.000
+
+
+
+Simulation concluded successfully after 1 iterations.
+Total time of simulation        :      6.905
+Convergency obtained.
+-----------------------------------------------------
+
+Total computing time : 0h00m09s
+Note: 1 warning(s) encountered in the preprocessor

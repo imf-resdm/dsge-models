@@ -54,74 +54,32 @@ $(function() {
     var loadFiscalSettings = function(fisc) {
 	
 	// set text boxes
-	$('#lambda-val').val(fisc.lambda);
-	$('#lambda1-val').val(fisc.lambda1);
-	$('#lambda2-val').val(fisc.lambda2);
-	$('#lambda3-val').val(fisc.lambda3);
-	$('#lambda4-val').val(fisc.lambda4);
-	$('#hbar-input').val(fisc.hbar);
-	$('#Tbar-input').val(fisc.Tbar);
+	$('#lam-box').val(fisc.lambda);
+	$('#lam1-box').val(fisc.lambda1);
+	$('#lam2-box').val(fisc.lambda2);
+	$('#lam3-box').val(fisc.lambda3);
+	$('#lam4-box').val(fisc.lambda4);
+	$('#hbar-box').val(fisc.hbar);
+	$('#Tbar-box').val(fisc.Tbar);
 
-	// set debt type and adjust tax settings
-	if (fisc.debt=='exog') {
-	    $('#debt-comm').attr('checked', false);
-	    $('#lab-comm').removeClass('active');
-	    $('#debt-dom').attr('checked', false);
-	    $('#lab-dom').removeClass('active');
-	    $('#debt-exog').attr('checked', true);
-	    $('#lab-exog').addClass('active');
-	    $(".tax-gp").addClass("disabled");
-            $(".trans-gp").addClass("disabled");
-            $("#Tbar-input").prop("disabled", true);
-            $("#hbar-input").prop("disabled", true);
-	}
-	else if (fisc.debt=='comm') {
-	    $('#debt-exog').attr('checked', false);
-	    $('#lab-exog').removeClass('active');
-	    $('#debt-dom').attr('checked', false);
-	    $('#lab-dom').removeClass('active');
-	    $('#debt-comm').attr('checked', true);
-	    $('#lab-comm').addClass('active');
-	    $(".tax-gp").removeClass("disabled");
-            $(".trans-gp").removeClass("disabled");
-            $("#Tbar-input").prop("disabled", TbarOFF);
-            $("#hbar-input").prop("disabled", hbarOFF);
-	}
-	else {
-	    $('#debt-comm').attr('checked', false);
-	    $('#lab-comm').removeClass('active');
-	    $('#debt-exog').attr('checked', false);
-	    $('#lab-exog').removeClass('active');
-	    $('#debt-dom').attr('checked', true);
-	    $('#lab-dom').addClass('active');
-	    $(".tax-gp").removeClass("disabled");
-            $(".trans-gp").removeClass("disabled");
-            $("#Tbar-input").prop("disabled", TbarOFF);
-            $("#hbar-input").prop("disabled", hbarOFF);
-	}
+	// select type of debt and tax/transfers with programmatic click
+	// this allows the fiscal-script logic to run and adjust 
+	// tax and transfer settings automatically
+	$('#lab-' + fisc.debt).click();
 	
-	// based on tax/trasnfer settings, activate/de-activate cap/floors
-	if (fisc.theta_hbar==1 && fisc.debt!='exog') {
-            hbarOFF = false;
-            $("#hbar-input").prop("disabled", hbarOFF);
-	    $("#hbar-lab").removeClass('disabled');
-	    $("#hstag-lab").addClass('disabled');
-	}
-	else if (fisc.theta_hbar==0 && fisc.debt!='exog') {
-	    hbarOFF = true;
-            $("#hbar-input").prop("disabled", hbarOFF);
-	    $("#hbar-lab").addClass('disabled');
-	    $("#hstag-lab").removeClass('disabled');   
-	}
+	if (fisc.theta_hbar==1) {
+	    $('#hbar-lab').click(); }
+	else if (fisc.theta_hbar==0) {
+	    $('#hstag-lab').click(); }
+	else {
+	    alert('theta_hbar is not 0 or 1'); }
 
 	if (fisc.theta_Tbar==1) {
-            TbarOFF = false;
-            $("#Tbar-input").prop("disabled", TbarOFF);
-	}
+	    $('#Tbar-lab').click(); }
+	else if (fisc.theta_Tbar==0) {
+	    $('#Tstag-lab').click(); }
 	else {
-            TbarOFF = true;
-            $("#Tbar-input").prop("disabled", TbarOFF);
-	}
+	    alert('theta_Tbar is not 0 or 1'); }
 
     };
     

@@ -8,10 +8,10 @@ rstarlag = [r_f+nu rstar(1:751)']';
 r_dclag  = [r_f+nug r_dc(1:751)']'; 
 rlag     = [ro r(1:751)']';
 bstarlag = [bstaro bstar(1:751)']'; 
-qxlag    = [qxo qx(1:751)']';
-qnlag    = [qno qn(1:751)']';
+qxlag    = [q_xo qx(1:751)']';
+qnlag    = [q_no qn(1:751)']';
 
-#growth = (qn-qnlag)/qnlag + (qx-qxlag)/qxlag + g;
+growth = (qn-qnlag)/qnlag + (qx-qxlag)/qxlag + g;
 cad = d + dc + bstar - (dlag + dclag + bstarlag)./(1+g);
 pfd = p.*(b-blag)+d-dlag+dc-dclag-(r_d-g).*dlag./(1+g)-(r_dclag-g).*dclag./(1+g)-(rlag-g).*p.*blag/(1+g);
 
@@ -34,10 +34,10 @@ eval([results '.dc = 100*dc./ynom;']);
 eval([results '.ddc = 100*(d+dc)./ynom;']);
 eval([results '.b = 100.*p.*b./ynom;']);
 eval([results '.totaldebt =' results '.b+' results '.ddc;']);
-eval([results '.rer = rer']);
-eval([results '.tot = tot']);
-eval([results '.totmm = totmm']);
-eval([results '.growth = growth']);
+#eval([results '.rer = rer']);
+#eval([results '.tot = tot']);
+#eval([results '.totmm = totmm']);
+#eval([results '.growth = growth;']);
 
 eval(['save ' results '.mat ' results ';']);
 

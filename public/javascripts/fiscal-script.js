@@ -1,6 +1,9 @@
-// variables to keep track of whether hbar and Tbar fiels are on or off
+// variables to keep track of whether hbar and Tbar fields are on or off
 var hbarOFF = false;
 var TbarOFF = false;
+var debtType = 'exog';
+var theta_hbar = 1; // cap on taxes
+var theta_Tbar = 1; // floor on transfers
 
 $(function() {
 
@@ -27,10 +30,14 @@ $(function() {
 	}
     }); 
 
+    
     // update enabled/disabled buttons when debt type is changed
-    $("#debt-btns").change(function() {
-	var debtVal = $("#debt-btns input:radio:checked").val();
-	if (debtVal == "exog") {
+    $('#debt-exog, #debt-comm, #debt-dom').change(function() {
+    
+	//var debtVal = this.id.replace('debt-','');
+	debtType = this.id.replace('debt-','');
+
+	if (debtType == "exog") {
 	    $(".tax-gp").addClass("disabled");
 	    $(".trans-gp").addClass("disabled");
 	    $("#Tbar-input").prop("disabled", true);
@@ -45,29 +52,27 @@ $(function() {
     });
 
     // update enabled/disabled buttons when tax settings are changed
-    $("#tax-btns").change(function() {
-	var taxVal = $("#tax-btns input:radio:checked").val();
-	if (taxVal=="hbar") {
+    $('#hbar-lab, #hstag-lab').change(function() {
+	if (this.id=='hbar-lab') {
+	    theta_hbar = 1;
 	    hbarOFF = false;
-	    $("#hbar-input").prop("disabled", hbarOFF);
-	}
+	    $('#hbar-input').prop('disabled', hbarOFF); }
 	else {
+	    theta_hbar = 0;
 	    hbarOFF = true;
-	    $("#hbar-input").prop("disabled", hbarOFF);
-	}
+	    $('#hbar-input').prop('disabled', hbarOFF); }
     });
 
     // update enabled/disabled buttons when transfer settings are changed
-    $("#trans-btns").change(function() {
-	var transVal = $("#trans-btns input:radio:checked").val();
-	if (transVal=="Tbar") {
+    $('#Tbar-lab, #Tstag-lab').change(function() {
+	if (this.id=='Tbar-lab') {
+	    theta_Tbar = 1;
 	    TbarOFF = false;
-	    $("#Tbar-input").prop("disabled", TbarOFF);
-	}
+	    $('#Tbar-input').prop('disabled', TbarOFF); }
 	else {
+	    theta_Tbar = 0;
 	    TbarOFF = true;
-	    $("#Tbar-input").prop("disabled", TbarOFF);
-	}
+	    $('#Tbar-input').prop('disabled', TbarOFF); }
     });
 
 });

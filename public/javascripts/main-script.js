@@ -240,17 +240,21 @@ $(function() {
 	var fiscalData = {};
 
 	// lambda values
-	fiscalData.lambda = $("#lambda-val").val();
-	fiscalData.lambda1 = $("#lambda1-val").val();
-	fiscalData.lambda2 = $("#lambda2-val").val();
-	fiscalData.lambda3 = $("#lambda3-val").val();
-	fiscalData.lambda4 = $("#lambda4-val").val();
+	fiscalData.lambda = $("#lam-box").val();
+	fiscalData.lambda1 = $("#lam1-box").val();
+	fiscalData.lambda2 = $("#lam2-box").val();
+	fiscalData.lambda3 = $("#lam3-box").val();
+	fiscalData.lambda4 = $("#lam4-box").val();
 
 	// 'exog', 'comm', or 'dom' debt
-	fiscalData.debt = $("#debt-btns input:radio:checked").val();
-	
+	fiscalData.debt = debtType;
+
 	// theta_hbar + hbar
 	fiscalData.hbar = $("#hbar-input").val();
+	fiscalData.theta_hbar = theta_hbar;
+	fiscalData.Tbar = $("#Tbar-input").val();
+	fiscalData.theta_Tbar = theta_Tbar;
+	/*fiscalData.hbar = $("#hbar-input").val();
 	if ($("#tax-btns input:radio:checked").val()=="hbar")
 	    fiscalData.theta_hbar = 1;
 	else
@@ -261,7 +265,7 @@ $(function() {
 	if ($("#trans-btns input:radio:checked").val()=="Tbar")
 	    fiscalData.theta_Tbar = 1;
 	else
-	    fiscalData.theta_Tbar = 0;
+	    fiscalData.theta_Tbar = 0;*/
 
 	return fiscalData;
     };

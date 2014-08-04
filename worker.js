@@ -13,9 +13,9 @@ oc_command.stdout.on('data', function (data) {
     process.send('' + data);
 });
 
-/*oc_command.stderr.on('data', function (data) {
+oc_command.stderr.on('data', function (data) {
   console.log('stderr: ' + data);
-  });*/
+  });
 
 oc_command.on('exit', function (code) {
 //    console.log('child process exited with code ' + code);*/

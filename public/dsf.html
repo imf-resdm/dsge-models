@@ -109,23 +109,22 @@
 		    <p>The government can pay for public investment with one of concessional, commercial, or domestic debt. If concessional, you must specify the path in the "Shocks" tab.</p>
 		    <div class="btn-group-vertical half-width" id="debt-btns"
 			 data-toggle="buttons">
-		      <label class="btn btn-default active" id="lab-exog">
-			<input type="radio" name="debt-options" 
-			       id="debt-exog" value="exog" checked>
+		      <label class="btn btn-default debt-lab active" 
+			     id="lab-exog">
+			<input type="radio" id="debt-exog" value="exog" 
+			       checked>
 			<div class="text-left">
 			  Concessional borrowing (exogenous)
 			</div>
 		      </label>
-		      <label class="btn btn-default" id="lab-comm">
-			<input type="radio" name="debt-options" 
-			       id="debt-comm" value="comm"> 
+		      <label class="btn btn-default debt-lab" id="lab-comm">
+			<input type="radio" id="debt-comm" value="comm"> 
 			<div class="text-left">
 			  Commercial borrowing (endogenous)
 			</div>
 		      </label>
-		      <label class="btn btn-default" id="lab-dom">
-			<input type="radio" name="debt-options" 
-			       id="debt-dom" value="dom"> 
+		      <label class="btn btn-default debt-lab" id="lab-dom">
+			<input type="radio" id="debt-dom" value="dom"> 
 			<div class="text-left">
 			  Domestic borrowing (endogenous)
 			</div>
@@ -138,7 +137,7 @@
 		    <div class="input-group" id="lambda-input">
 		      <span class="input-group-addon">\(\lambda\)</span>
 		      <input type="text" class="form-control" 
-			     id="lambda-val" value="0.50">
+			     id="lam-box" value="0.50">
 		    </div>
 		  </div>
 		</div>
@@ -146,29 +145,29 @@
               <div class="col-md-6">
 		<h4>Speed of adjustment</h4>
 		<p>The speed of the fiscal adjustment is governed by these four parameters (see equations below for details). PUT SOME INTUITION HERE.</p>
-		<div class="input-group lambda-div" id="lambda1-input">
+		<div class="input-group lambda-div">
 		  <span class="input-group-addon">
 		    \(\lambda_1\)</span>
-		  <input type="text" class="form-control" id="lambda1-val" 
-			 value="0.25">
+		  <input type="text" class="form-control" 
+			 id="lam1-box" value="0.25">
 		</div>
-		<div class="input-group lambda-div" id="lambda2-input">
+		<div class="input-group lambda-div">
 		  <span class="input-group-addon">
 		    \(\lambda_2\)</span>
-		  <input type="text" class="form-control" id="lambda2-val" 
-			 value="0.02">
+		  <input type="text" class="form-control" 
+			 id="lam2-box" value="0.02">
 		</div>
-		<div class="input-group lambda-div" id="lambda3-input">
+		<div class="input-group lambda-div">
 		  <span class="input-group-addon">
 		    \(\lambda_3\)</span>
-		  <input type="text" class="form-control" id="lambda3-val"
-			 value="0.25">
+		  <input type="text" class="form-control" 
+			 id="lam3-box" value="0.25">
 		</div>
-		<div class="input-group lambda-div" id="lambda4-input">
+		<div class="input-group lambda-div">
 		  <span class="input-group-addon">
 		    \(\lambda_4\)</span>
-		  <input type="text" class="form-control" id="lambda4-val"
-			 value="0.02">
+		  <input type="text" class="form-control" 
+			 id="lam4-box" value="0.02">
 		</div>
 	      </div>
 	    </div>
@@ -213,14 +212,16 @@
 		  <div class="col-md-6">
 		    <div class="btn-group-vertical half-width" id="trans-btns"
 			 data-toggle="buttons">
-		      <label class="btn btn-default active trans-gp disabled">
+		      <label class="btn btn-default active trans-gp disabled"
+			     id="Tbar-lab">
 			<input type="radio" name="trans-options" 
 			       id="trans-floor" value="Tbar" checked>
 			<div class="text-left">
 			  Hard floor on transfers
 			</div>
 		      </label>
-		      <label class="btn btn-default trans-gp disabled">
+		      <label class="btn btn-default trans-gp disabled"
+			     id="Tstag-lab">
 			<input type="radio" name="trans-options" 
 			       id="trans-stag" value="Tstag"> 
 			<div class="text-left">
