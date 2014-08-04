@@ -1,6 +1,6 @@
 Starting Dynare (version 4.4.1).
 Starting preprocessing of the model file ...
-WARNING: some exogenous (e_hbar0, e_hbar1, e_hbar2, e_hbar0_neg, e_hbar1_neg, e_hbar2_neg, e_Tbar0, e_Tbar1, e_Tbar2, e_Tbar0_neg, e_Tbar1_neg, e_Tbar2_neg, int_repayment0, int_repayment1) are declared but not used in the model. This may lead to crashes or unexpected behaviour.
+WARNING: some exogenous (e_hbar0, e_hbar1, e_hbar2, e_hbar0_neg, e_hbar1_neg, e_hbar2_neg, e_Tbar0, e_Tbar1, e_Tbar2, e_Tbar0_neg, e_Tbar1_neg, e_Tbar2_neg) are declared but not used in the model. This may lead to crashes or unexpected behaviour.
 Found 39 equation(s).
 Evaluating expressions...done
 Computing static model derivatives:
@@ -13,15 +13,15 @@ Starting MATLAB/Octave computing.
 
 STEADY-STATE RESULTS:
 
-b      		 20
-bstar  		 0
+b      		 40
+bstar  		 6.68719e-18
 d      		 50
 dc     		 0
-e      		 47.4461
-eh     		 35.7484
-GAP    		 0
+e      		 48.1895
+eh     		 35.0051
+GAP    		 1.67488
 grants 		 5
-h      		 0.15
+h      		 0.160066
 in     		 5.88683
 ix     		 4.38533
 iz     		 3
@@ -47,7 +47,7 @@ r_dc   		 0.06
 rn     		 0.3
 rx     		 0.3
 Rz     		 0.3
-T      		 11.9278
+T      		 11.0904
 w      		 1
 ynom   		 100
 z      		 46.1538
@@ -56,24 +56,24 @@ ze     		 27.6923
 EIGENVALUES:
          Modulus             Real        Imaginary
 
-               0                0                0
-               0                0                0
-       1.435e-16       -1.435e-16                0
-        0.006415         0.006415                0
-          0.2276          -0.2276                0
+               0               -0                0
+       4.122e-41       -4.122e-41                0
+        5.15e-17         5.15e-17                0
+        0.006095         0.006095                0
+          0.6128          -0.6128                0
           0.8798           0.8798                0
-          0.9325           0.9325                0
-          0.9792           0.9792                0
+          0.9323           0.9323                0
+          0.9785           0.9785                0
           0.9852           0.9852                0
           0.9852           0.9852                0
-          0.9852           0.9852                0
-           1.089            1.089                0
+          0.9856           0.9856                0
+           1.088            1.088                0
            1.231            1.231                0
-           35.91            35.91                0
-       3.255e+20       -3.255e+20                0
-       3.496e+22       -3.496e+22                0
+           29.16            29.16                0
              Inf              Inf                0
-             Inf             -Inf                0
+             Inf              Inf                0
+             Inf              Inf                0
+             Inf              Inf                0
              Inf              Inf                0
 
 
@@ -85,20 +85,26 @@ The rank condition is verified.
 -----------------------------------------------------
 MODEL SIMULATION:
 
-Largest absolute residual at iteration 1:      0.250
+Largest absolute residual at iteration 1:      5.000
 
 
-Largest absolute residual at iteration 2:      0.001
+Largest absolute residual at iteration 2:      1.644
 
 
-Largest absolute residual at iteration 3:      0.000
+Largest absolute residual at iteration 3:      0.022
+
+
+Largest absolute residual at iteration 4:      0.000
+
+
+Largest absolute residual at iteration 5:      0.000
 
 
 
-Simulation concluded successfully after 3 iterations.
-Total time of simulation        :    118.604
+Simulation concluded successfully after 5 iterations.
+Total time of simulation        :    264.178
 Convergency obtained.
 -----------------------------------------------------
 
-Total computing time : 0h02m02s
+Total computing time : 0h04m28s
 Note: 1 warning(s) encountered in the preprocessor

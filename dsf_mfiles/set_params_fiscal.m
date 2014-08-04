@@ -1,4 +1,4 @@
-lambda = 0.50;
+lambda = 0;
 lambda1 = 0.25;
 lambda2 = 0.02;
 lambda3 = 0.25;

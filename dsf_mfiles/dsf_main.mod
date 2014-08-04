@@ -202,11 +202,8 @@ Rz = R_z_ini;
 b = bo;
 d = d_o;
 dc = dco;
-//'Include the line below if you add exogenous domestic borrowing to this scenario.
-//'shock0_b = bo*g/(1+g);
-//e_b0 = bo*g/(1+g);
+e_b0 = P_ini*bo*g/(1+g);
 e_dc0 = dco*g/(1+g);
-//'shock0_d=do*g/(1+g);
 remit=remito;
 grants=grantso;
 oilr = oilro;

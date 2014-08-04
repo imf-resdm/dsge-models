@@ -200,7 +200,7 @@ lhs =y(35);
 rhs =1+x(it_, 67)+x(it_, 68)+x(it_, 69)-x(it_, 70)-x(it_, 71)-x(it_, 72);
 residual(39)= lhs-rhs;
 if nargout >= 2,
-  g1 = zeros(39, 132);
+  g1 = zeros(39, 130);
 
   %
   % Jacobian matrix
@@ -460,13 +460,13 @@ if nargout >= 3,
   % Hessian matrix
   %
 
-  g2 = sparse([],[],[],39,17424);
+  g2 = sparse([],[],[],39,16900);
 end
 if nargout >= 4,
   %
   % Third order derivatives
   %
 
-  g3 = sparse([],[],[],39,2299968);
+  g3 = sparse([],[],[],39,2197000);
 end
 end
