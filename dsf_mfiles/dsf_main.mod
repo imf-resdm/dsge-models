@@ -15,7 +15,7 @@ varexo e_iz0 e_iz1 e_iz2
        e_px0 e_px1 e_px2
        e_pm0 e_pm1 e_pm2
        e_pmm0 e_pmm1 e_pmm2
-       dc_target int_repayment0 int_repayment1;    
+       int_repayment0 int_repayment1;    
 
 // declare parameters
 parameters a_k a_n a_ratio a_x a_z alpha_k alpha_n alpha_x alpha_z beta beta_t
@@ -117,19 +117,19 @@ ynom = pn*qn + px*qx;
 #T_target = To - lambda*GAP;
 
 // define rule for tax and trasnfer pahts
-#T_rule = T(-1) + lambda3*(T_target-T(-1)) - lambda4*(dc(-1)-dc_target);
-#h_rule = h(-1) + lambda1*(h_target-h(-1)) + lambda2*(dc(-1)-dc_target)/(pn*qn + px*qx);
+#T_rule = T(-1) + lambda3*(T_target-T(-1)) - lambda4*(dc(-1)-dco);
+#h_rule = h(-1) + lambda1*(h_target-h(-1)) + lambda2*(dc(-1)-dco)/(pn*qn + px*qx);
 
 // specify rule for taxes and transfers based on debt type
 @#if exogenous
      T = T_target;
      h = h_target;
 @#else
-     #hbar_staggered = ho + e_hbar0 + e_hbar1 + e_hbar2;	
-     #h_capped = min(h_rule, hbar);   
+     #hbar_staggered = min(h_rule, ho + e_hbar0 + e_hbar1 + e_hbar2);	
+     #h_capped = min(h_rule, hbar);
      h = theta_hbar*h_capped + (1-theta_hbar)*hbar_staggered;
 
-     #Tbar_staggered = To + e_Tbar0 + e_Tbar1 + e_Tbar2;
+     #Tbar_staggered = max(T_rule, To + e_Tbar0 + e_Tbar1 + e_Tbar2);
      #T_capped = max(T_rule, Tbar);
      T = theta_Tbar*T_capped + (1-theta_Tbar)*Tbar_staggered;
 @#endif
@@ -220,8 +220,6 @@ pm=1;
 pmm=1;
 r_d=0;
 GAP=0;
-dc_target = dco;
-
 end;
 
 // solve for steady state

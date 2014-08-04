@@ -1,6 +1,6 @@
 Starting Dynare (version 4.4.1).
 Starting preprocessing of the model file ...
-WARNING: some exogenous (e_hbar0, e_hbar1, e_hbar2, e_Tbar0, e_Tbar1, e_Tbar2, dc_target) are declared but not used in the model. This may lead to crashes or unexpected behaviour.
+WARNING: some exogenous (e_hbar0, e_hbar1, e_hbar2, e_Tbar0, e_Tbar1, e_Tbar2) are declared but not used in the model. This may lead to crashes or unexpected behaviour.
 Found 39 equation(s).
 Evaluating expressions...done
 Computing static model derivatives:
@@ -90,9 +90,9 @@ Largest absolute residual at iteration 1:      0.000
 
 
 Simulation concluded successfully after 1 iterations.
-Total time of simulation        :     27.709
+Total time of simulation        :      7.169
 Convergency obtained.
 -----------------------------------------------------
 
-Total computing time : 0h00m31s
+Total computing time : 0h00m10s
 Note: 1 warning(s) encountered in the preprocessor
