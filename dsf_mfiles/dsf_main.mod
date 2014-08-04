@@ -3,18 +3,18 @@ var b bstar d dc e eh GAP grants h in ix iz kn kx L_n L_x oilr p pk pn pz
     px pm pmm qn qx r r_d remit rstar r_dc rn rx Rz T w ynom z ze;
 
 // declare exogenous variables
-varexo e_iz0 e_iz1 e_iz2
-       e_d0 e_d1 e_d2
-       e_dc0 e_dc1 e_dc2
-       e_b0 e_b1 e_b2
-       e_grants0 e_grants1 e_grants2
-       e_oilr0 e_oilr1 e_oilr2
-       e_remit0 e_remit1 e_remit2
-       e_hbar0 e_hbar1 e_hbar2
-       e_Tbar0 e_Tbar1 e_Tbar2
-       e_px0 e_px1 e_px2
-       e_pm0 e_pm1 e_pm2
-       e_pmm0 e_pmm1 e_pmm2
+varexo e_iz0     e_iz1     e_iz2     e_iz0_neg     e_iz1_neg     e_iz2_neg
+       e_d0      e_d1      e_d2      e_d0_neg      e_d1_neg      e_d2_neg
+       e_dc0     e_dc1     e_dc2     e_dc0_neg     e_dc1_neg     e_dc2_neg
+       e_b0      e_b1      e_b2      e_b0_neg      e_b1_neg      e_b2_neg
+       e_grants0 e_grants1 e_grants2 e_grants0_neg e_grants1_neg e_grants2_neg
+       e_oilr0   e_oilr1   e_oilr2   e_oilr0_neg   e_oilr1_neg   e_oilr2_neg
+       e_remit0  e_remit1  e_remit2  e_remit0_neg  e_remit1_neg  e_remit2_neg
+       e_hbar0   e_hbar1   e_hbar2   e_hbar0_neg   e_hbar1_neg   e_hbar2_neg
+       e_Tbar0   e_Tbar1   e_Tbar2   e_Tbar0_neg   e_Tbar1_neg   e_Tbar2_neg
+       e_px0     e_px1     e_px2     e_px0_neg     e_px1_neg     e_px2_neg
+       e_pm0     e_pm1     e_pm2     e_pm0_neg     e_pm1_neg     e_pm2_neg
+       e_pmm0    e_pmm1    e_pmm2    e_pmm0_neg    e_pmm1_neg    e_pmm2_neg
        int_repayment0 int_repayment1;    
 
 // declare parameters
@@ -125,47 +125,47 @@ ynom = pn*qn + px*qx;
      T = T_target;
      h = h_target;
 @#else
-     #hbar_staggered = min(h_rule, ho + e_hbar0 + e_hbar1 + e_hbar2);	
+     #hbar_staggered = min(h_rule, ho + e_hbar0 + e_hbar1 + e_hbar2 - e_hbar0_neg - e_hbar1_neg - e_hbar2_neg);	
      #h_capped = min(h_rule, hbar);
      h = theta_hbar*h_capped + (1-theta_hbar)*hbar_staggered;
 
-     #Tbar_staggered = max(T_rule, To + e_Tbar0 + e_Tbar1 + e_Tbar2);
+     #Tbar_staggered = max(T_rule, To + e_Tbar0 + e_Tbar1 + e_Tbar2 - e_Tbar0_neg - e_Tbar1_neg - e_Tbar2_neg);
      #T_capped = max(T_rule, Tbar);
      T = theta_Tbar*T_capped + (1-theta_Tbar)*Tbar_staggered;
 @#endif
 
 // set exogenous path of concessional borrowing (not dependent on debt type)
 #uazuaz = yo/ynom;
-d = d_o*g/(1+g) + d(-1)/(1+g) + e_d0/uazuaz + e_d1/uazuaz + e_d2/uazuaz;
+d = d_o*g/(1+g) + d(-1)/(1+g) + e_d0/uazuaz + e_d1/uazuaz + e_d2/uazuaz - e_d0_neg/uazuaz - e_d1_neg/uazuaz - e_d2_neg/uazuaz;
 
 // set exogenous path of domestic borrowing
 @#if exogenous || endogenous_commercial
      #uaz_b = p/1*yo/ynom;
-     b = bo*g/(1+g) + b(-1)/(1+g) + e_b0/uaz_b + e_b1/uaz_b + e_b2/uaz_b;
+     b = bo*g/(1+g) + b(-1)/(1+g) + e_b0/uaz_b + e_b1/uaz_b + e_b2/uaz_b - e_b0_neg/uaz_b - e_b1_neg/uaz_b - e_b2_neg/uaz_b;
 @#endif
 
 // set exogenous path of commercial borrowing
 @#if exogenous || endogenous_domestic
-     dc = dco*g/(1+g) + dc(-1)/(1+g) + e_dc0/uazuaz + e_dc1/uazuaz + e_dc2/uazuaz;
+     dc = dco*g/(1+g) + dc(-1)/(1+g) + e_dc0/uazuaz + e_dc1/uazuaz + e_dc2/uazuaz - e_dc0_neg/uazuaz - e_dc1_neg/uazuaz - e_dc2_neg/uazuaz;
 @#endif
 
 // set exogenous path of public investment
 #uaz = pz/P_zo*yo/ynom;
-iz*uaz = (delta_z+g)*zo + e_iz0 + e_iz1 + e_iz2;
+iz*uaz = (delta_z+g)*zo + e_iz0 + e_iz1 + e_iz2 - e_iz0_neg - e_iz1_neg - e_iz2_neg;
 
 // set exogenous path of grants and oil revenues
-grants*uazuaz = grantso + e_grants0 + e_grants1 + e_grants2;
-oilr*uazuaz = oilro + e_oilr0 + e_oilr1 + e_oilr2;
-remit*uazuaz = remito + e_remit0 + e_remit1 + e_remit2;
+grants*uazuaz = grantso + e_grants0 + e_grants1 + e_grants2 - e_grants0_neg - e_grants1_neg - e_grants2_neg;
+oilr*uazuaz = oilro + e_oilr0 + e_oilr1 + e_oilr2 - e_oilr0_neg - e_oilr1_neg - e_oilr2_neg;
+remit*uazuaz = remito + e_remit0 + e_remit1 + e_remit2 - e_remit0_neg - e_remit1_neg - e_remit2_neg;
 
 // define interest repayment on concessional debt
 #int_repayment = int_repayment0 + int_repayment1;
 r_d*d(-1)/(1+g) = int_repayment/uazuaz;
 
 // exogenous price paths
-px = 1 + e_px0 + e_px1 + e_px2;
-pm = 1 + e_pm0 + e_pm1 + e_pm2;
-pmm = 1 + e_pmm0 + e_pmm1 + e_pmm2;
+px = 1 + e_px0 + e_px1 + e_px2 - e_px0_neg - e_px1_neg - e_px2_neg;
+pm = 1 + e_pm0 + e_pm1 + e_pm2 - e_pm0_neg - e_pm1_neg - e_pm2_neg;
+pmm = 1 + e_pmm0 + e_pmm1 + e_pmm2 - e_pmm0_neg - e_pmm1_neg - e_pmm2_neg;
 
 end;
 
