@@ -32,6 +32,11 @@ $(function() {
     
     /* run model when button is clicked */
     $("#run-btn").click(function() {
+
+	// disable the dropdown menus for save scenario/download results
+	// don't want them to be clicked on until new results are up
+	$("#save-scen-li").addClass("disabled");
+	$("#download-li").addClass("disabled");
 	
 	// post the param, shock, etc. info first, then call runModel
 	$.when(
@@ -254,18 +259,6 @@ $(function() {
 	fiscalData.theta_hbar = theta_hbar;
 	fiscalData.Tbar = $("#Tbar-input").val();
 	fiscalData.theta_Tbar = theta_Tbar;
-	/*fiscalData.hbar = $("#hbar-input").val();
-	if ($("#tax-btns input:radio:checked").val()=="hbar")
-	    fiscalData.theta_hbar = 1;
-	else
-	    fiscalData.theta_hbar = 0;
-
-	// theta_Tbar + Tbar
-	fiscalData.Tbar = $("#Tbar-input").val();
-	if ($("#trans-btns input:radio:checked").val()=="Tbar")
-	    fiscalData.theta_Tbar = 1;
-	else
-	    fiscalData.theta_Tbar = 0;*/
 
 	return fiscalData;
     };
