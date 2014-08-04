@@ -34,6 +34,7 @@ eval([results '.dc = 100*dc./ynom;']);
 eval([results '.ddc = 100*(d+dc)./ynom;']);
 eval([results '.b = 100.*p.*b./ynom;']);
 eval([results '.totaldebt =' results '.b+' results '.ddc;']);
+eval([results '.iz_real = iz.*pz;']);
 #eval([results '.rer = rer']);
 #eval([results '.tot = tot']);
 #eval([results '.totmm = totmm']);

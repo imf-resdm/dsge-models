@@ -1,4 +1,4 @@
-# Created by Octave 3.8.1, Wed Jul 30 17:11:33 2014 UTC <ubuntu@ip-172-31-34-29>
+# Created by Octave 3.8.1, Mon Aug 04 19:22:12 2014 UTC <ubuntu@ip-172-31-34-29>
 # name: theta_k
 # type: scalar
 0.5
@@ -34,7 +34,7 @@
 0.5407761590338926
 
 
-# name: Abar
+# name: Abar_param
 # type: scalar
 0.8151387497267834
 
@@ -91,7 +91,7 @@
 
 # name: dbar
 # type: scalar
--0
+0
 
 
 # name: g_n
@@ -116,12 +116,12 @@
 
 # name: fvalue
 # type: scalar
-0
+-0
 
 
 # name: dvalue
 # type: scalar
--0
+0
 
 
 # name: kvalue
@@ -176,7 +176,7 @@
 
 # name: cavalue
 # type: scalar
-0
+-0
 
 
 # name: yvalue

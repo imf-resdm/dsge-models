@@ -1,1 +1,3 @@
-yoildata	Oil production shock	1
+yoil	oil production shock	1
+Abar	technology shock	1
+T	transfers shock		1

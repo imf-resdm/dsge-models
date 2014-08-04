@@ -5,4 +5,4 @@ function y = ca_set_auxiliary_variables(y, x, params)
 % Warning : this file is generated automatically by Dynare
 %           from model file (.mod)
 
-y(21)=y(1);
+y(22)=y(1);

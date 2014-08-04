@@ -1,7 +1,7 @@
 Starting Dynare (version 4.4.1).
 Starting preprocessing of the model file ...
 Substitution of endo leads >= 2: added 1 auxiliary variables and equations.
-Found 21 equation(s).
+Found 22 equation(s).
 Evaluating expressions...done
 Computing static model derivatives:
  - order 1
@@ -12,11 +12,6 @@ Preprocessing completed.
 Starting MATLAB/Octave computing.
 -----------------------------------------------------
 MODEL SIMULATION:
+warning: matrix singular to machine precision, rcond = 0
+warning: attempting to find minimum norm solution
 
-
-Simulation concluded successfully after 8 iterations.
-Total time of simulation        :    186.573
-Convergency obtained.
------------------------------------------------------
-
-Total computing time : 0h03m07s

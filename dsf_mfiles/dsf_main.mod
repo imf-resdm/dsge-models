@@ -151,7 +151,8 @@ d = d_o*g/(1+g) + d(-1)/(1+g) + e_d0/uazuaz + e_d1/uazuaz + e_d2/uazuaz - e_d0_n
 
 // set exogenous path of public investment
 #uaz = pz/P_zo*yo/ynom;
-iz*uaz = (delta_z+g)*zo + e_iz0 + e_iz1 + e_iz2 - e_iz0_neg - e_iz1_neg - e_iz2_neg;
+#iz_real = (e_iz0 + e_iz1 + e_iz2 - e_iz0_neg - e_iz1_neg - e_iz2_neg)/pz;
+iz*uaz = (delta_z+g)*zo + iz_real;
 
 // set exogenous path of grants and oil revenues
 grants*uazuaz = grantso + e_grants0 + e_grants1 + e_grants2 - e_grants0_neg - e_grants1_neg - e_grants2_neg;
