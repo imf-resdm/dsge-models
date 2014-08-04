@@ -1,6 +1,6 @@
 // declare endogenous variables
 var b bstar d dc e eh GAP grants h in ix iz kn kx L_n L_x oilr p pk pn pz 
-    qn qx r r_d rstar r_dc rn rx Rz T w ynom z ze;
+    px pm pmm qn qx r r_d remit rstar r_dc rn rx Rz T w ynom z ze;
 
 // declare exogenous variables
 varexo e_iz0 e_iz1 e_iz2
@@ -9,9 +9,13 @@ varexo e_iz0 e_iz1 e_iz2
        e_b0 e_b1 e_b2
        e_grants0 e_grants1 e_grants2
        e_oilr0 e_oilr1 e_oilr2
+       e_remit0 e_remit1 e_remit2
        e_hbar0 e_hbar1 e_hbar2
        e_Tbar0 e_Tbar1 e_Tbar2
-       remit px pm pmm dc_target int_repayment0 int_repayment1;    
+       e_px0 e_px1 e_px2
+       e_pm0 e_pm1 e_pm2
+       e_pmm0 e_pmm1 e_pmm2
+       dc_target int_repayment0 int_repayment1;    
 
 // declare parameters
 parameters a_k a_n a_ratio a_x a_z alpha_k alpha_n alpha_x alpha_z beta beta_t
@@ -152,10 +156,16 @@ iz*uaz = (delta_z+g)*zo + e_iz0 + e_iz1 + e_iz2;
 // set exogenous path of grants and oil revenues
 grants*uazuaz = grantso + e_grants0 + e_grants1 + e_grants2;
 oilr*uazuaz = oilro + e_oilr0 + e_oilr1 + e_oilr2;
+remit*uazuaz = remito + e_remit0 + e_remit1 + e_remit2;
 
 // define interest repayment on concessional debt
 #int_repayment = int_repayment0 + int_repayment1;
 r_d*d(-1)/(1+g) = int_repayment/uazuaz;
+
+// exogenous price paths
+px = 1 + e_px0 + e_px1 + e_px2;
+pm = 1 + e_pm0 + e_pm1 + e_pm2;
+pmm = 1 + e_pmm0 + e_pmm1 + e_pmm2;
 
 end;
 

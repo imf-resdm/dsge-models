@@ -1,7 +1,7 @@
 Starting Dynare (version 4.4.1).
 Starting preprocessing of the model file ...
 WARNING: some exogenous (e_hbar0, e_hbar1, e_hbar2, e_Tbar0, e_Tbar1, e_Tbar2, dc_target) are declared but not used in the model. This may lead to crashes or unexpected behaviour.
-Found 35 equation(s).
+Found 39 equation(s).
 Evaluating expressions...done
 Computing static model derivatives:
  - order 1
@@ -34,10 +34,14 @@ p      		 1
 pk     		 2
 pn     		 1
 pz     		 2
+px     		 1
+pm     		 1
+pmm    		 1
 qn     		 49.4
 qx     		 50.6
 r      		 0.1
 r_d    		 0
+remit  		 4
 rstar  		 0.1
 r_dc   		 0.06
 rn     		 0.3
@@ -54,22 +58,22 @@ EIGENVALUES:
 
                0                0                0
                0                0                0
-       1.319e-16       -1.319e-16                0
-        0.006254         0.006254                0
-           0.228           -0.228                0
-          0.8815           0.8815                0
+       2.383e-16        2.383e-16                0
+        0.006415         0.006415                0
+          0.2276          -0.2276                0
+          0.8798           0.8798                0
           0.9325           0.9325                0
-          0.9788           0.9788                0
+          0.9792           0.9792                0
           0.9852           0.9852                0
           0.9852           0.9852                0
           0.9852           0.9852                0
-           1.087            1.087                0
-           1.229            1.229                0
-           36.47            36.47                0
-       2.076e+21       -2.076e+21                0
-       3.581e+22        3.581e+22                0
-       7.328e+22       -7.328e+22                0
-             Inf              Inf                0
+           1.089            1.089                0
+           1.231            1.231                0
+           35.91            35.91                0
+       4.202e+16       -4.202e+16                0
+       3.548e+21       -3.548e+21                0
+       1.233e+22        1.233e+22                0
+       2.239e+23       -2.239e+23                0
              Inf              Inf                0
 
 
@@ -86,9 +90,9 @@ Largest absolute residual at iteration 1:      0.000
 
 
 Simulation concluded successfully after 1 iterations.
-Total time of simulation        :      6.905
+Total time of simulation        :     27.709
 Convergency obtained.
 -----------------------------------------------------
 
-Total computing time : 0h00m09s
+Total computing time : 0h00m31s
 Note: 1 warning(s) encountered in the preprocessor

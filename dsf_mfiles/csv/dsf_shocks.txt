@@ -3,6 +3,10 @@ d	public concessional debt (% of GDP)	30
 dc	public commercial debt (% of GDP)	30
 b	public domestic debt (% of GDP)	30
 grants	grant revenue (% of GDP)	30
+remit	remittances (% of GDP)		30
 oilr	oil revenue (% of GDP)	30
 hbar	VAT ceiling (rate)	38
 Tbar	government transfers floor (level)	39
+px	price of export goods (index)		1
+pm	price of import goods (index)		1
+pmm	price of import machines (index)	1

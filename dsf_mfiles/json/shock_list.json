@@ -19,6 +19,10 @@
 		"desc" : "grant revenue (% of GDP)",
 		"equations" : [30]
 	},
+	"remit" : {
+		"desc" : "remittances (% of GDP)",
+		"equations" : []
+	},
 	"oilr" : {
 		"desc" : "oil revenue (% of GDP)",
 		"equations" : [30]
@@ -30,5 +34,17 @@
 	"Tbar" : {
 		"desc" : "government transfers floor (level)",
 		"equations" : [39]
+	},
+	"px" : {
+		"desc" : "price of export goods (index)",
+		"equations" : []
+	},
+	"pm" : {
+		"desc" : "price of import goods (index)",
+		"equations" : []
+	},
+	"pmm" : {
+		"desc" : "price of import machines (index)",
+		"equations" : [1]
 	}
 }
