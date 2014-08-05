@@ -1,0 +1,13 @@
+body {
+  padding-top: 50px;
+}
+
+.model-box {
+    border: 1px dotted #999;
+}
+
+.goto-model {
+    border-left: 1px dotted #999;
+    background-color: blue;
+    height: auto;
+}
