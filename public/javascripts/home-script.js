@@ -1,7 +1,15 @@
 $(function() {
     
-    $('#ca-goto').height($('#ca-info').height());
-    $('#dig-goto').height($('#dig-info').height());
-    $('#dignar-goto').height($('#dignar-info').height());
+    // show/hide divs according to what was clicked
+    $('.nav-sidebar a').on('click', function() {
+	$('.content').hide();
+	$($(this).attr('href')).show();
+    });
+
+    // update active li element accordingly
+    $('.nav-sidebar li').on('click', function() {
+	$('.nav-sidebar li').removeClass('active');
+	$(this).addClass('active');
+    });
     
 });

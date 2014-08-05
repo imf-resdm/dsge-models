@@ -2,6 +2,10 @@ body {
     padding-top: 50px;
 }
 
+#action-btn {
+    text-align: left;
+}
+
 .lambda-div {
     margin-bottom: 10px;
 }
@@ -29,7 +33,6 @@ body {
 }
 
 .shock-header {
-    border-top: 1px #D3D3D3 dotted;
     padding: 10px 0px 10px 0px;
 }
 

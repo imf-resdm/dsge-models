@@ -13,6 +13,7 @@
     
     <!-- my css files -->
     <link href="css/style.css" rel="stylesheet">    
+    <link href="css/homepage.css" rel="stylesheet">
 
     <!-- declare model name -->
     <script>var whichModel = "nk";</script>
@@ -42,20 +43,68 @@
       <div class="row">
 	<div class="col-md-2 sidebar">
 	  <ul class="nav nav-sidebar">
-            <li class="active"><a href="#">Instructions</a></li>
-            <li><a href="#">Parameters</a></li>
-	    <li><a href="#">Shocks</a></li>
-            <li><a href="#">Results</a></li>
-            <li><a href="#">Console</a></li>
-          </ul>
+            <li class="active" id="link-instructions"><a href="#instructions">Instructions</a></li>
+            <li id="link-params"><a href="#params">Parameters</a></li>
+	    <li id="link-params"><a href="#init">Initial Conditions</a></li>
+	    <li id="link-shocks"><a href="#shocks">Shocks</a></li>
+            <li id="link-results"><a href="#results">Results</a></li>
+            <li id="link-console"><a href="#console">Console</a></li>
+	  </ul>
+	  
+	  <div class="btn-group btn-group-justified">
+	    <div class="btn-group">
+	      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" id="action-btn">Actions <span class="caret"></span>
+	      </button>
+	      <ul class="dropdown-menu" role="menu">
+		<li role="presentation" class="dropdown-header">Run/save</li>
+		<li><a href="#">Run simulation</a></li>
+		<li><a href="#">Save this scenario</a></li>
+		<li><a href="#">Download results</a></li>
+		<li role="presentation" class="divider"></li>
+		<li role="presentation" class="dropdown-header">Load a scenario</li>
+		<li><a href="#">From file</a></li>
+		<li><a href="#">Scaling up with concessional debt</a></li>
+		<li><a href="#">Scaling up with commercial debt</a></li>
+		<li><a href="#">Scaling up with domestic debt</a></li>
+	      </ul>
+	    </div>
+	  </div>
+	  
 	</div>
 	
 	<!-- MIDDLE CONTENT COLUMN -->
-	<div class="col-md-10">
-	  
-	  <h2>DSGE Modeling App</h2>
-	  
+	<div class="col-md-10 col-md-offset-2 tab-pane main">
+
+	  <div class="content" id="instructions">
+	    <h2>Instructions</h2>
+	    <p>Some instructions on how to use this tool.</p>
+	    <hr>
+	    <p>Step one, step one</p>
+	    <p>Mike Matheson joke goes here</p>
+	  </div>
+
+	  <div class="content" id="params" style="display:none">
+	    <h2>Parameters</h2>
+	  </div>
+
+	  <div class="content" id="init" style="display:none">
+	    <h2>Initial Conditions</h2>
+	  </div>
+
+	  <div class="content" id="shocks" style="display:none">
+	    <h2>Shocks</h2>
+	  </div>
+
+	  <div class="content" id="results" style="display:none">
+	    <h2>Results</h2>
+	  </div>
+
+	  <div class="content" id="console" style="display:none">
+	    <h2>Console</h2>
+	  </div>
+
 	</div>
+
       </div>
     </div>
     
@@ -82,6 +131,7 @@
     <script src="javascripts/shock-script.js"></script>
     <script src="javascripts/param-script.js"></script>
     <script src="javascripts/socket-script.js"></script>
+    <script src="javascripts/home-script.js"></script>
     
   </body>
 </html>

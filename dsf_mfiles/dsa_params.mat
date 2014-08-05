@@ -1,4 +1,4 @@
-# Created by Octave 3.8.1, Mon Aug 04 21:30:29 2014 UTC <ubuntu@ip-172-31-34-29>
+# Created by Octave 3.8.1, Tue Aug 05 19:26:18 2014 UTC <ubuntu@ip-172-31-34-29>
 # name: beta
 # type: scalar
 0.9497845182048766
@@ -261,7 +261,7 @@
 
 # name: lambda
 # type: scalar
-0
+0.5
 
 
 # name: lambda1

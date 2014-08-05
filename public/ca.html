@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     
-    <title>Current Account Model</title>
+    <title>Current Account Norm Model</title>
     
     <!-- jquery -->
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -13,122 +13,139 @@
     
     <!-- my css files -->
     <link href="css/style.css" rel="stylesheet">    
+    <link href="css/homepage.css" rel="stylesheet">
 
     <!-- declare model name -->
     <script>var whichModel = "ca";</script>
     
   </head>
- 
+  
+  
   <body>
-
-    <div class="container">
-      
-      <!-- LIST OF TABS -->
-      <ul class="nav nav-tabs" role="tablist" id="tabs">
-	<li class="active"><a href="#params" role="tab" data-toggle="tab">
-	    Parameters</a></li>
-	<li><a href="#shocks" role="tab" data-toggle="tab">Shocks</a></li>
-	<li><a id="res-tab-li" href="#results" role="tab" data-toggle="tab">
-	    Results</a></li>
-	<li class="dropdown">
-	  <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-	    Actions <span class="caret"></span>
-	  </a>
-	  <ul class="dropdown-menu" role="menu">
-	    <li role="presentation" class="drop-li">
-	      <a role="menuitem" id="run-btn">
-		Run model
-	    </a></li>
-	    <!-- cheap hack: I want the load div to act like a form, so I hide
-	      the form and make clicking on the div tigger a form click. this
-	      may not work in all browsers (but in works in Chrome!) -->
-	    <li role="presentation" class="drop-li" id="load-scen-btn">
-	      <a role="menuitem">Load a scenario</a></li>
-	    <form method="post" action="/uploadFile">
-	      <input type="file" name="myFile" id="myFile" 
-		     style="display:none">
-	    </form>
-	    <li role="presentation" class="disabled drop-li" 
-		id="save-scen-li">
-	      <a role="menuitem" href="scenarios/ca_scenario.json" 
-		 download="scenario.json">
-		Save this scenario
-	    </a></li>
-	    <li role="presentation" class="disabled drop-li" 
-		id="download-li">
-	      <a role="menuitem" href="nk_results.json" 
-		 download="results.json">
-		Download results
-	    </a></li>
-	  </ul>
-	</li>
-	<li><a href="#console" role="tab" data-toggle="tab">Console</a></li>
-      </ul>
-      
-      <!-- TAB CONTENT DIV -->
-      <div class="tab-content">
-	
-	<!-- PARAMS TAB -->
-	<div class="tab-pane active" id="params">
-	  <h3>Parameterize the model.</h3>
-            <p>Click on a parameter for more information and to see which model equations it appears in.</p>
-
-	  <div class="row">
-            <div class="col-md-6" id="param-tab-west">
-              <table id="param-table" class="table table-hover"></table>
-            </div>
-            <div class="col-md-6" id="param-tab-east">
-              Click on a parameter for more information.
-            </div>
-          </div>
-	</div>
-	
-	<!-- SHOCKS TAB -->
-	<div class="tab-pane" id="shocks">
-	  <h3>Specify shocks.</h3>
-          <p>Set the path of the model's exogenous variables.</p>
-	  <div id="shockTables"></div>
-	</div>
-	
-	<!-- RESULTS TAB -->
-	<div class="tab-pane" id="results">
-	  <h3>View results.</h3>
-          <p>Different series can be displayed by selecting them from the dropdown menu above each plot.</p>
-	  <div id="flot-grid"></div>
-	</div> <!-- close results -->
-
-	<!-- CONSOLE TAB -->
-	<div class="tab-pane" id="console">
-	  <h3>Take a look at the console.</h3>
-            <p>This can help debug any errors that you may have.</p>
-	    <div id="console-text"></div>
-	</div><!-- close console tab -->
-      </div> <!-- close tab-content -->
-    </div> <!-- close container -->
     
-     <!-- bootstrap -->
-     <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
-     
-     <!-- handsontable -->
-     <script src="jquery-handsontable/dist/jquery.handsontable.full.js"></script> 
-     <!-- flot -->
-     <script src="flot/jquery.flot.js"></script> 
-     
-     <!-- mathjax -->
-     <script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- FIXED TOP NAVBAR -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">DSGE Modeling App</a>
+        </div>
+	<ul class="nav navbar-nav navbar-right">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Feedback/Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <!-- MAIN CONTAINER -->
+    <div class="container-fluid">
 
-     <!-- socket.io -->
-     <script src="../socket.io/socket.io.js"></script>
+      <!-- SIDE NAVBAR COLUMN -->
+      <div class="row">
+	<div class="col-md-2 sidebar">
+	  <ul class="nav nav-sidebar">
+            <li class="active" id="link-instructions"><a href="#instructions">Instructions</a></li>
+            <li id="link-params"><a href="#params">Parameters</a></li>
+	    <li id="link-params"><a href="#init">Initial Conditions</a></li>
+	    <li id="link-shocks"><a href="#shocks">Shocks</a></li>
+            <li id="link-results"><a href="#results">Results</a></li>
+            <li id="link-console"><a href="#console">Console</a></li>
+	  </ul>
+	  
+	  <div class="btn-group btn-group-justified">
+	    <div class="btn-group">
+	      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" id="action-btn">Actions <span class="caret"></span>
+	      </button>
+	      <ul class="dropdown-menu" role="menu">
+		<li role="presentation" class="dropdown-header">Run/save</li>
+		<li><a role="menuitem" id="run-btn">Run simulation</a></li>
+		<li><a href="#">Save this scenario</a></li>
+		<li><a href="#">Download results</a></li>
+		<li role="presentation" class="divider"></li>
+		<li role="presentation" class="dropdown-header">Load a scenario</li>
+		<li><a href="#">From file</a></li>
+		<li><a href="#">Pre-loaded?</a></li>
+	      </ul>
+	    </div>
+	  </div>
+	  
+	</div>
+	
+	<!-- MIDDLE CONTENT COLUMN -->
+	<div class="col-md-10 col-md-offset-2 tab-pane main">
 
-     <!-- my own libraries -->
-     <script src="javascripts/plot-script.js"></script>
-     <script src="javascripts/main-script.js"></script> 
-     <script src="javascripts/fupload-script.js"></script>
-     <script src="javascripts/scroll-script.js"></script>
-     <script src="javascripts/fiscal-script.js"></script>
-     <script src="javascripts/shock-script.js"></script>
-     <script src="javascripts/param-script.js"></script>
-     <script src="javascripts/socket-script.js"></script>
+	  <div class="content" id="instructions">
+	    <h2>Instructions</h2>
+	    <p>Some instructions on how to use this tool.</p>
+	    <hr>
+	    <p>Step one, step one</p>
+	    <p>Mike Matheson joke goes here</p>
+	  </div>
 
+	  <div class="content" id="params" style="display:none">
+	    <h2>Parameters</h2>
+	    <hr>
+	    <div class="row">
+              <div class="col-md-6" id="param-tab-west">
+		<table id="param-table" class="table table-hover"></table>
+              </div>
+              <div class="col-md-6" id="param-tab-east">
+		Click on a parameter for more information.
+              </div>
+            </div>
+	    
+	  </div>
+
+	  <div class="content" id="init" style="display:none">
+	    <h2>Initial Conditions</h2>
+	  </div>
+
+	  <div class="content" id="shocks" style="display:none">
+	    <h2>Shocks</h2>
+	    <hr>
+	    <div id="shockTables"></div>
+	  </div>
+
+	  <div class="content" id="results" style="display:none">
+	    <h2>Results</h2>
+	    <hr>
+	    <div id="flot-grid"></div>
+	  </div>
+
+	  <div class="content" id="console" style="display:none">
+	    <h2>Console</h2>
+	    <hr>
+	    <div id="console-text"></div>
+	  </div>
+
+	</div>
+
+      </div>
+    </div>
+    
+    <!-- bootstrap -->
+    <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+    
+    <!-- handsontable -->
+    <script src="jquery-handsontable/dist/jquery.handsontable.full.js"></script> 
+    <!-- flot -->
+    <script src="flot/jquery.flot.js"></script> 
+    
+    <!-- mathjax -->
+    <script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <!-- socket.io -->
+    <script src="../socket.io/socket.io.js"></script>
+    
+    <!-- my own libraries -->
+    <script src="javascripts/plot-script.js"></script>
+    <script src="javascripts/main-script.js"></script> 
+    <script src="javascripts/fupload-script.js"></script>
+    <script src="javascripts/scroll-script.js"></script>
+    <script src="javascripts/fiscal-script.js"></script>
+    <script src="javascripts/shock-script.js"></script>
+    <script src="javascripts/param-script.js"></script>
+    <script src="javascripts/socket-script.js"></script>
+    <script src="javascripts/home-script.js"></script>
+    
   </body>
 </html>
