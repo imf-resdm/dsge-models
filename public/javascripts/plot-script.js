@@ -49,25 +49,6 @@ $(function() {
 	return menuHTML;
     }
 
-    /* when the results tab is clicked, draw flot charts 
-       IMPORTANT: charts can only be drawn when the tab is visible
-       otherwise, flot will have trouble aligning things correctly */
-    $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-	if ($(e.target).attr('href')=='#results'){
-	    if (hasRun == 0) {	    
-		var blank = [];
-		for (var i=0; i<=30; i++) {
-		    blank.push(null); }
-		for (var j=1; j<=9; j++) {
-		    $.plot("#plot"+j, [{ data : blank,
-					 color : "#008000" }]); }
-	    }	
-	    else {
-		updatePlots();
-	    }
-	}
-    }); 
-    
     /* call the helper function listed below
        I make this separate so that I can include an async ajax call
        and it only works if it is done inside a parent method*/
@@ -77,7 +58,7 @@ $(function() {
        the width is set by bootstrap .row class, so just set height 
        IMPORTANT: order matters now -- this call only makes sense after 
        $.fn.makePlotGrid() is called */
-    var side = $(".tab-content").width() / 3 - 30;
+    var side = $(".content").width() / 3 - 30;
     $(".plot-container").css("height", side);
     
     /* when a series dropdown menu is changed, updated the corresponding
@@ -122,8 +103,23 @@ $(function() {
 	    var rawData = results[selectedSeries];
 	    var plotData = makePlotData(rawData);
 	    $.plot($("#plot"+(i+1)), [{ data : plotData,
-					color : "#008000" }]);
+					color : "#46a546" }]);
 	}
+    };
+
+    /* can only paint plots once the tab is viewable */
+    window.showPlots = function() {
+	if (hasRun == 0) {	   
+		var blank = [];
+	    for (var i=0; i<=30; i++) {
+		blank.push(null); }
+	    for (var j=1; j<=9; j++) {
+		$.plot("#plot"+j, [{ data : blank,
+				     color : '#46a546' }]); }
+	}	
+	    else {
+		updatePlots();
+	    }
     };
     
     /* makes an array of x-y pairs that can be plotted */
