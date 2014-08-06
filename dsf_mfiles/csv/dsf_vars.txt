@@ -1,48 +1,43 @@
-b	"public domestic debt"
-bstar	"private commercial debt"
-c	"private consumption"
-cad	"current account deficit"
-d	"public concessional debt"
-dc	"public commercial debt"
-e	"consumption by savers"
-eh	"consumption by non-savers"
-GAP	"fiscal gap"
-grants	"grant revenue"
-growth	"real GDP growth"
-h	"VAT rate"
-in	"non-tradable sector investment"
-ix	"tradable sector investment"
-ixn	"private investment"
-iz_real	"public investment"
-kn	"non-tradable sector capital"
-kx	"tradable sector capital"
-L_n	"non-tradable sector labor"
-L_x	"tradable sector labor"
-oilr	"oil revenue"
-p	"aggregate price index"
-pfd	"primary fiscal deficit"
-pk	"price of private capital"
-pn	"price of non-tradable goods"
-pz	"price of public capital"
-px	"price of tradable goods"
-pm	"price of imported goods"
-pmm	"price of imported machines"
-qn	"non-tradable sector output"
-qx	"tradable sector output"
-r	"real interest rate on domestic debt"
-r_d	"real interest rate on concessional debt"
-rer	"real exchange rate"
-rstar	"real interest rate on private commercial debt"
-r_dc	"real interest rate on public commercial debt"
-rn	"non-tradable sector return on capital"
-rx	"tradable sector return on capital"
-Rz	"return on public investment"
-T	"government transfers"
-tot	"terms of trade"
-totaldebt	"total public debt"
-totmm	"terms of trade (imported machines)"
-w	"wage"
-wr	"real wage"
-ynom	"nominal GDP"
-z	"public capital"
-ze	"effective public capital"
+p	aggregate price index	index
+cad	current account deficit	percent of GDP
+ze	effective public capital	percent change
+T	government transfers	percent change
+grants	grant revenue	percent of GDP
+ynom	nominal GDP	index
+kn	non-tradable sector capital	percent change
+in	non-tradable sector investment	percent change
+L_n	non-tradable sector labor	percent change
+qn	non-tradable sector output	percent change
+rn	non-tradable sector return on capital	percent change
+oilr	oil revenue	percent of GDP
+pm	price of imported goods	index
+pmm	price of imported machines	index
+pn	price of non-tradable goods	index
+pk	price of private capital	index
+pz	price of public capital	index
+px	price of tradable goods	index
+pfd	primary fiscal deficit	percent of GDP
+bstar	private commercial debt	percent of GDP
+c	private consumption	percent of GDP
+ixn	private investment	percent change
+z	public capital	percent change
+dc	public commercial debt	percent of GDP
+d	public concessional debt	percent of GDP
+b	public domestic debt	percent of GDP
+iz	public investment	percent of GDP
+rer	real exchange rate	percent change
+growth	real GDP growth	percent
+r	real interest rate on domestic debt	percent
+rstar	real interest rate on private commercial debt	percent
+r_dc	real interest rate on public commercial debt	percent
+wr	real wage	percent change
+Rz	return on public investment	percent change
+tot	terms of trade	index
+totmm	terms of trade (imported machines)	index
+totaldebt	total public debt	percent of GDP
+kx	tradable sector capital	percent change
+ix	tradable sector investment	percent change
+L_x	tradable sector labor	percent change
+qx	tradable sector output	percent change
+rx	tradable sector return on capital	percent change
+h	VAT rate	percent

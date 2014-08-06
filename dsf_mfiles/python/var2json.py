@@ -8,7 +8,7 @@ output = '{\n'
 with open('../csv/dsf_vars.txt', 'rb') as fin:
     reader = csv.reader(fin, delimiter='\t')
     for row in reader:
-        output += ('\t"' + row[0] + '" : "' + row[1] + '",\n')
+        output += ('\t"' + row[0] + '" : "' + row[1] + ' [' + row[2] + ']",\n')
 output = output[:-2]
 output += '\n}';
 
