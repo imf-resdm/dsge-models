@@ -1,3 +1,7 @@
+// var to keep track of whether we drew the tables or not
+// only want to draw them once
+var drawTables = true;
+
 $(function() {
 
     // set the number of periods to fill the tables with
@@ -16,31 +20,12 @@ $(function() {
     });
 
     // make an accordion bin for each shock
-    var accord = '<div class="panel-group" id="accordion">';
-    var first = true;
-    for (shock in shockList) {
-	var id = 'collapse-' + shock;
-	accord += '<div class="panel panel-default">';
-	accord += '<div class="panel-heading">';
-	accord += '<h4 class="panel-title">';
-	accord += '<a data-toggle="collapse" data-parent="#accordion" href="#';
-	accord += id + '">';
-	accord += shockList[shock].desc;
-	accord += '</a></h4></div>';
-	if (first) {
-	    accord += '<div id="'+id+'" class="panel-collapse collapse in">';
-	    first = false; }
-	else {
-	    accord += '<div id="'+id+'" class="panel-collapse collapse">'; }
-	accord += '<div class="panel-body">';
-	accord += makeShockDivs(shock);
-	accord += '</div></div></div>';
-    }
-    accord += '</div>';
+    var accord = makeAccordion(shockList);
     $('#shockTables').append(accord);
    
-    // put the hands on table in each shock div
-    // if it is not the first shock, set display to none
+    /* put the hands on table in each shock div
+       if it is not the first shock, set display to none 
+       set the height (25px to a row) before each table is drawn */
     first = true;
     for (shock in shockList) {
 	
@@ -49,7 +34,7 @@ $(function() {
 	    .handsontable({
 		data       : [ makeZeroArray(T) ],
 		colHeaders : makeSeqArray(T),
-		colWidths  : 30	
+		colWidths  : colWidth()	
 	    });
 
 	for (var i=0; i<2; i++) {
@@ -60,7 +45,7 @@ $(function() {
 		    rowHeaders : [ ["start"],["end"], ["value"] ]
 		});
 	    $("#" + shock + "-perm-table-" + (i+1))
-		.css("padding-left",colWidth());
+		.css("padding-left", colWidth());
 	}	
 	
 	if (first) {
@@ -144,5 +129,32 @@ function makeSeqArray (n) {
 /* returns the larger of 30 or 1/30th of the available horizontal space 
    this ensures there is a minimum width if the view size is small */
 var colWidth = function() {
-    return Math.max(30, $('#shockTables').width() / 30);
+    //return Math.max(30, $('.temp-shock-holder').width() / 30);
+    return 33;
+}
+
+/* makes HTML code for accordion of shocks */
+var makeAccordion = function(shockList) {
+    var accord = '<div class="panel-group" id="accordion">';
+    var first = true;
+    for (shock in shockList) {
+	var id = 'collapse-' + shock;
+	accord += '<div class="panel panel-default">';
+	accord += '<div class="panel-heading">';
+	accord += '<h4 class="panel-title">';
+	accord += '<a data-toggle="collapse" data-parent="#accordion" href="#';
+	accord += id + '">';
+	accord += shockList[shock].desc;
+	accord += '</a></h4></div>';
+	if (first) {
+	    accord += '<div id="'+id+'" class="panel-collapse collapse in">';
+	    first = false; }
+	else {
+	    accord += '<div id="'+id+'" class="panel-collapse collapse">'; }
+	accord += '<div class="panel-body">';
+	accord += makeShockDivs(shock);
+	accord += '</div></div></div>';
+    }
+    accord += '</div>';
+    return accord;
 }

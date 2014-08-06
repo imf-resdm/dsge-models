@@ -7,7 +7,7 @@ var hasRun = 0;
 $(function() {
 
     alert("hasRun = " + hasRun); // DEBUGGING ONLY
-    
+
     /* a robust way to handle errors  */
     $.ajaxSetup({
         error: function(jqXHR, exception) {

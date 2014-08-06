@@ -8,7 +8,7 @@ $(function() {
 	// only show flots once results tab is visible
 	if ($(this).attr('href')=='#results') {
 	    showPlots(); }
-
+	
     });
 
     // update active li element accordingly
