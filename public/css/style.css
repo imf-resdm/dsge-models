@@ -2,6 +2,14 @@ body {
     padding-top: 50px;
 }
 
+.handsontable td {
+    line-height: 25px;
+}
+
+.handsontable th {
+    line-height: 25px;
+}
+
 #action-btn {
     text-align: left;
 }

@@ -1,3 +1,6 @@
 [submodule "public/flot"]
 	path = public/flot
 	url = https://github.com/flot/flot.git
+[submodule "public/jquery-handsontable"]
+	path = public/jquery-handsontable
+	url = https://github.com/handsontable/jquery-handsontable.git

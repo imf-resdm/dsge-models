@@ -40,14 +40,20 @@ $(function() {
     $('#shockTables').append(accord);
    
     // put the hands on table in each shock div
+    // if it is not the first shock, set display to none
+    first = true;
     for (shock in shockList) {
+	
+	$("#" + shock + "-temp-table").height(50);
 	$("#" + shock + "-temp-table")
 	    .handsontable({
 		data       : [ makeZeroArray(T) ],
-		colHeaders : makeSeqArray(T)
+		colHeaders : makeSeqArray(T),
+		colWidths  : 30	
 	    });
-	
+
 	for (var i=0; i<2; i++) {
+	    $("#" + shock + "-perm-table-" + (i+1)).height(75);
 	    $("#" + shock + "-perm-table-" + (i+1))
 		.handsontable({
 		    data       : [ [0], [0], [0] ],
@@ -56,6 +62,17 @@ $(function() {
 	    $("#" + shock + "-perm-table-" + (i+1))
 		.css("padding-left",colWidth());
 	}	
+	
+	if (first) {
+	    $("#" + shock + "-temp-table").css('display', 'block');
+	    $("#" + shock + "-perm-table-1").css('display', 'block');
+	    $("#" + shock + "-perm-table-2").css('display', 'block');
+	    first = false; }
+	else {
+	    $("#" + shock + "-temp-table").css('display', 'none');
+	    $("#" + shock + "-perm-table-1").css('display', 'none');
+	    $("#" + shock + "-perm-table-2").css('display', 'none'); }
+	
     }
     
     $('#accordion a').click(function(e) {
@@ -68,27 +85,23 @@ $(function() {
 	}
 	
 	// hide the table of the open shock
-	$("#" + open + "-temp-table").hide();
-	$("#" + open + "-perm-table-1").hide();
-	$("#" + open + "-perm-table-2").hide();
+	$("#" + open + "-temp-table").css('display', 'none');
+	$("#" + open + "-perm-table-1").css('display', 'none');
+	$("#" + open + "-perm-table-2").css('display', 'none');
 
     });
 
     $('#accordion').on('shown.bs.collapse', function(e) {
-	// e.g. e.target.id = collapse-iz
-
 	// see which shock table is visible (after opening)
 	var open = e.target.id.replace('collapse-', '');
-	/*$("#" + open + "-temp-table")
-	    .handsontable({
-		data       : [ makeZeroArray(T) ],
-		colHeaders : makeSeqArray(T)
-	    });*/
 
 	// show the table of the open shock
-	$("#" + open + "-temp-table").show();
-	$("#" + open + "-perm-table-1").show();
-	$("#" + open + "-perm-table-2").show();
+	$("#" + open + "-temp-table").css('display', 'block');
+	$("#" + open + "-perm-table-1").css('display', 'block');
+	$("#" + open + "-perm-table-2").css('display', 'block');
+	$("#" + open + "-temp-table").click();
+	$("#" + open + "-perm-table-1").click();
+	$("#" + open + "-perm-table-2").click();
 
     });
 
