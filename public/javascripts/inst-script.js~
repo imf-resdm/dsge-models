@@ -1,0 +1,47 @@
+$(function() {
+
+    $('#inst-main').append(main());
+    $('#inst-param').append('<p>' + param() + '</p>');
+    $('#inst-init').append('<p>' + init() + '</p>');
+    $('#inst-fiscal').append('<p>' + fiscal() + '</p>');
+    $('#inst-shocks').append('<p>' + shocks() + '</p>');
+    $('#inst-results').append('<p>' + results() + '</p>');
+    $('#inst-console').append('<p>' + console() + '</p>');
+
+});
+
+var main = function() {
+    var text = '';
+    text += '<p>Sing song in a nasal voice</p>';
+    return text
+}
+
+var param = function() {
+    var text = 'The model is calibrated to an average low-income country. You can change these deep parameters to run your own simulations.';
+    return text;
+};
+
+var init = function() {
+    var text = 'Set the initial macroeconomic conditions for a given economy. These will be the starting values for each simulation.';
+    return text;
+};
+
+var fiscal = function() {
+    var text = 'In the short run, investment scaling-up can be paid for with borrowing, but in the long run, the higher taxes or lower transfers must cover all costs. Choose what type and how fast the fiscal adjustment should be.';
+    return text;
+};
+
+var shocks = function() {
+    var text = 'Set the paths of exogenous variables below. These shocks are added to the initial levels for each corresponding variable.';
+    return text;
+};
+
+var results = function() {
+    var text = 'Take a look at the simulation results here. You can download the data as a CSV file in the <strong>Actions</strong> menu to the left.';
+    return text;
+};
+
+var console = function() {
+    var text = 'Take a look at the output of the Octave/Dynare code that solves the model and runs the simulation. You can use this to debug any errors that the model produces.';
+    return text;
+};

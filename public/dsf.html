@@ -27,7 +27,7 @@
     <div class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">DSGE Modeling App</a>
+          <a class="navbar-brand" href="/">DSGE Modeling App</a>
         </div>
 	<ul class="nav navbar-nav navbar-right">
           <li><a id="about-btn">About</a></li>
@@ -113,14 +113,13 @@
 
 	  <div class="content" id="instructions">
 	    <h2>Instructions</h2>
-	    <p>Some instructions on how to use this tool.</p>
 	    <hr>
-	    <p>Step one, step one</p>
-	    <p>Mike Matheson joke goes here</p>
+	    <div id="inst-main"></div>
 	  </div>
 
 	  <div class="content" id="params" style="display:none">
 	    <h2>Parameters</h2>
+	    <div id="inst-param"></div>
 	    <hr>
 	    <div class="row">
               <div class="col-md-6" id="param-tab-west">
@@ -136,6 +135,7 @@
 
 	  <div class="content" id="init" style="display:none">
 	    <h2>Initial Conditions</h2>
+	    <div id="inst-init"></div>
 	    <hr>
 	    <div class="row">
               <div class="col-md-6" id="init-tab-west">
@@ -151,6 +151,7 @@
 
 	  <div class="content" id="fiscal" style="display:none">
 	    <h2>Fiscal Settings</h2>
+	    <div id="inst-fiscal"></div>
 	    <hr>
 	    <div id="fiscal-div">
 	      <div class="row">
@@ -323,17 +324,21 @@
 
 	  <div class="content" id="shocks" style="display:none">
 	    <h2>Shocks</h2>
+	    <div id="inst-shocks"></div>
 	    <hr>
 	    <div id="shockTables"></div>
 	  </div>
 
 	  <div class="content" id="results" style="display:none">
 	    <h2>Results</h2>
+	    <div id="inst-results"></div>
+	    <hr>
 	    <div id="flot-grid"></div>
 	  </div>
 
 	  <div class="content" id="console" style="display:none">
 	    <h2>Console</h2>
+	    <div id="inst-console"></div>
 	    <hr>
 	    <div id="console-text"></div>
 	  </div>
@@ -366,6 +371,7 @@
     <script src="javascripts/shock-script.js"></script>
     <script src="javascripts/param-script.js"></script>
     <script src="javascripts/init-script.js"></script>
+    <script src="javascripts/inst-script.js"></script>
     <script src="javascripts/socket-script.js"></script>
     <script src="javascripts/home-script.js"></script>
     

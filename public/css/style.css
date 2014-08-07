@@ -2,6 +2,10 @@ body {
     padding-top: 50px;
 }
 
+ol li { 
+    margin-bottom: 1em; 
+}
+
 .handsontable td {
     line-height: 25px;
 }
