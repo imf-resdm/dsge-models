@@ -7,18 +7,19 @@ from json import load
 
 TT = 30 # how many periods of results to send
 
+model = argv[2]
+fpath = argv[1] + '/' + model + '_mfiles/'
+json = ''
+
 #### 1 - load model results
 
 # load results from mat file and convert to numpy lists
-#model = argv[2]
-#fpath = argv[1] + '/' + model + '_mfiles/';
 #mat = loadmat(fpath + model + '_results.mat')
 
 #endo_names = mat['M_']['endo_names'].tolist()[0][0]
 #endo_simul = mat['oo_']['endo_simul'].tolist()[0][0]
 
 # make string of JSON-looking data out of numpy lists
-#json = ''
 #for name, simul in zip(endo_names, endo_simul):
 #    json += '"' + name.strip() + '":'
 #    json += '[' + ','.join(['%2f' % jj for jj in simul[0:TT]]) + '],'

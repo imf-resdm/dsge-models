@@ -58,7 +58,7 @@ EIGENVALUES:
 
                0                0                0
                0                0                0
-       6.897e-17       -6.897e-17                0
+       1.435e-16       -1.435e-16                0
         0.006415         0.006415                0
           0.2276          -0.2276                0
           0.8798           0.8798                0
@@ -70,10 +70,10 @@ EIGENVALUES:
            1.089            1.089                0
            1.231            1.231                0
            35.91            35.91                0
-       7.406e+14       -7.406e+14                0
-       3.428e+21        3.428e+21                0
-       6.466e+22        6.466e+22                0
-       7.487e+22       -7.487e+22                0
+       3.255e+20       -3.255e+20                0
+       3.496e+22       -3.496e+22                0
+             Inf              Inf                0
+             Inf             -Inf                0
              Inf              Inf                0
 
 
@@ -96,9 +96,9 @@ Largest absolute residual at iteration 3:      0.000
 
 
 Simulation concluded successfully after 3 iterations.
-Total time of simulation        :    213.132
+Total time of simulation        :    111.269
 Convergency obtained.
 -----------------------------------------------------
 
-Total computing time : 0h03m36s
+Total computing time : 0h01m54s
 Note: 1 warning(s) encountered in the preprocessor

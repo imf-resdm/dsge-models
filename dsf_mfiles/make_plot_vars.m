@@ -42,7 +42,7 @@ plot_vars.totmm = 100 * (px./pmm);
 plot_vars.ynom  = ynom;
 
 # batch 3 = percent
-plot_vars.growth = 100 * (qn-qnlag)./qnlag + (qx-qxlag)./qxlag + g;
+plot_vars.growth = 100 * ((qn-qnlag)./qnlag + (qx-qxlag)./qxlag + g);
 plot_vars.h      = 100 * h;
 plot_vars.r      = 100 * r;
 plot_vars.rstar  = 100 * rstar;
@@ -69,4 +69,4 @@ plot_vars.qx  = 100 * (qx - qx(1)) / qx(1);
 plot_vars.rx  = 100 * (rx - rx(1)) / rx(1);
 
 # save
-save plot_vars.mat plot_vars
+save plot_vars.mat plot_vars;

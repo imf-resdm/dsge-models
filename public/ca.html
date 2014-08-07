@@ -30,9 +30,44 @@
           <a class="navbar-brand" href="#">DSGE Modeling App</a>
         </div>
 	<ul class="nav navbar-nav navbar-right">
-          <li><a href="#">About</a></li>
-          <li><a href="#">Feedback/Contact</a></li>
+          <li><a id="about-btn">About</a></li>
+          <li><a id="contact-btn">Contact</a></li>
         </ul>
+      </div>
+    </div>
+
+    <!-- about modal -->
+    <div class="modal fade" id="about-modal" tabindex="-1" role="dialog" 
+	 aria-labelledby="about-model-label" aria-hidden="true">
+      <div class="modal-dialog">
+	<div class="modal-content">
+	  <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title" id="about-modal-label">About</h4>
+	  </div>
+	  <div class="modal-body"></div>
+	  <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	  </div>
+	</div>
+      </div>
+    </div>
+    
+    <!-- contact modal -->
+    <div class="modal fade" id="contact-modal" tabindex="-1" role="dialog" 
+	 aria-labelledby="contact-model-label" aria-hidden="true">
+      <div class="modal-dialog">
+	<div class="modal-content">
+	  <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title" id="contact-modal-label">Contact</h4>
+	  </div>
+	  <div class="modal-body"></div>
+	  <div class="modal-footer">
+	    <button type="submit" class="btn btn-primary" id="contact-send">Send</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	  </div>
+	</div>
       </div>
     </div>
     
@@ -91,14 +126,24 @@
               <div class="col-md-6" id="param-tab-east">
 		Click on a parameter for more information.
               </div>
-            </div>
-	    
+            </div>	    
 	  </div>
 
 	  <div class="content" id="init" style="display:none">
 	    <h2>Initial Conditions</h2>
+	    <hr>
+	    <div class="row">
+              <div class="col-md-6" id="init-tab-west">
+		<table id="init-table" class="table table-hover"></table>
+              </div>
+              <div id="scroller-anchor">
+		<div class="col-md-6" id="init-tab-east">
+		  Click on a parameter for more information.
+		</div>
+	      </div>
+            </div>
 	  </div>
-
+	  
 	  <div class="content" id="shocks" style="display:none">
 	    <h2>Shocks</h2>
 	    <hr>
@@ -144,6 +189,7 @@
     <script src="javascripts/fiscal-script.js"></script>
     <script src="javascripts/shock-script.js"></script>
     <script src="javascripts/param-script.js"></script>
+    <script src="javascripts/init-script.js"></script>
     <script src="javascripts/socket-script.js"></script>
     <script src="javascripts/home-script.js"></script>
     

@@ -8,12 +8,22 @@ var modWriter    = require(__dirname + '/mod-writer.js');
 var app          = express();
 var http         = require('http').Server(app);
 var io           = require('socket.io')(http);
+var nodemailer   = require('nodemailer');
 
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', function(req, res){
   res.sendfile('index.html');
+});
+
+/* create reusable transporter object using SMTP transport */
+var transporter = nodemailer.createTransport({
+    service: 'Gmail',
+    auth: {
+        user: 'imf.resdm@gmail.com',
+        pass: 'andyberg'
+    }
 });
 
 /*************************************************************
@@ -36,6 +46,32 @@ app.get('/runWorker', function(req, res) {
 	io.emit('model complete', 'done');
     });
 
+});
+
+/* take contact form info and send email to a real person */
+app.post('/sendContactEmail', function(req, res) {
+
+    console.log(req.body);
+    
+    // setup e-mail data with unicode symbols
+    var mailOptions = {
+	replyTo: req.body.email, // original sender
+	to: 'wclark3@gmail.com, PGupta@imf.org, MAndreolli@imf.org',
+	subject: '[DSGE APP] ' + req.body.subject,
+	text: req.body.message
+    };
+    
+    // send mail with defined transport object
+    transporter.sendMail(mailOptions, function(error, info){
+	if(error){
+            console.log(error);
+	    res.send(500, {error : 'could not send message'});
+	} else {
+            console.log('Message sent: ' + info.response);
+	    res.send(200); // success
+	}
+    });    
+    
 });
 
 /* write parameters to file */
@@ -129,6 +165,18 @@ app.get('/getEqnList', function(req, res) {
 app.get('/getParamList', function(req, res) {
     var fname = __dirname + '/' + req.query.model
 	+ '_mfiles/json/param_list.json';
+    fs.readFile(fname, 'utf8', function (err, data) {
+	if (err) {
+	    console.log('error: ' = err); }
+	data = JSON.parse(data);
+	res.json(data);
+    });
+});
+
+/* give initial conditions json to client */
+app.get('/getInitList', function(req, res) {
+    var fname = __dirname + '/' + req.query.model
+	+ '_mfiles/json/init_list.json';
     fs.readFile(fname, 'utf8', function (err, data) {
 	if (err) {
 	    console.log('error: ' = err); }

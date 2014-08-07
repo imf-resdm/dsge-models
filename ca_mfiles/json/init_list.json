@@ -1,0 +1,72 @@
+{
+	"d_0": {
+		"latex": "d_{0}",
+		"val": "0.131",
+		"desc": "initial value of foreign debt (negative of NFA)",
+		"note": "initial value of net foreign debt in year 0",
+		"equations": [6]
+	},
+	"c_0": {
+		"latex": "c_{0}",
+		"val": "0.435",
+		"desc": "NCP in % of GDP in year 0",
+		"note": "initial value of NCP in % of GDP in year 0",
+		"equations": [8]
+	},
+	"inv_0": {
+		"latex": "inv_{0}",
+		"val": "0.305",
+		"desc": "Investment in % of GDP in year 0",
+		"note": "private gross fixed CF as % of GDP in year 0",
+		"equations": [8]
+	},
+	"gov_inv_0": {
+		"latex": "gov_{1}",
+		"val": "0.109",
+		"desc": "public investment in % of GDP in year 0",
+		"note": "gov gross fixed CF as % of GDP in year 0",
+		"equations": [8]
+	},
+	"ynon_0": {
+		"latex": "ynon_{0}",
+		"val": "0.587",
+		"desc": "non-oil GDP in % of GDP in year 0",
+		"note": "non-oil GDP in % of GDP in year 0",
+		"equations": [8]
+	},
+	"yoil_0": {
+		"latex": "yoil_{0}",
+		"val": "0.413",
+		"desc": "oil production in % of GDP in year 0",
+		"note": "oil production in % of GDP in year 0",
+		"equations": [8]
+	},
+	"ca_0": {
+		"latex": "ca_{0}",
+		"val": "0.138",
+		"desc": "current account in % of GDP in year 0",
+		"note": "current account in % of GDP in year 0",
+		"equations": [7]
+	},
+	"k_0": {
+		"latex": "k_{0}",
+		"val": "1.395",
+		"desc": "private capital to GDP ratio in year 0",
+		"note": "valued at 0.561 from Gupta et al. (2012), accumulated private fixed CF plus change in inventories",
+		"equations": [4]
+	},
+	"s_0": {
+		"latex": "s_{0}",
+		"val": "0.294",
+		"desc": "public capital in to GDP ratio in year 0",
+		"note": "valued at 0.828 from Gupta et al. (2012), accumulated public investment",
+		"equations": [3]
+	},
+	"gov_exp_0": {
+		"latex": "gov_exp_{0}",
+		"val": "0.383",
+		"desc": "gov total expenditure in % of GDP",
+		"note": "total public expediture as % of GDP in year 0",
+		"equations": [8]
+	}
+}

@@ -1,29 +1,19 @@
 theta_k	\\theta_{k}	0.5	ratio of private capital 	2	share of private gross fixed CF (assume total private and public CF=0.65=theta_k+theta_s)
 theta_s	\\theta_{s}	0.14	ratio of public capital 	2	share of public gross fixed CF (assume total private and public CF=0.65=theta_k+theta_s)
-gamma	\\gamma	1.33	risk aversion rate	1	van der Ploeg (2012), no need to change
-delta_k	\\delta_{k}	0.055	depreciation rate of private capital	4	van der Ploeg (2012), no need to change
-delta_s	\\delta_{s}	0.055	depreciation rate of public capital	3	van der Ploeg (2012), no need to change
+gamma	\\gamma	1.33	risk aversion rate	1	"van der Ploeg (2012), no need to change"
+delta_k	\\delta_{k}	0.055	depreciation rate of private capital	4	"van der Ploeg (2012), no need to change"
+delta_s	\\delta_{s}	0.055	depreciation rate of public capital	3	"van der Ploeg (2012), no need to change"
 rbar	\\bar{r}	0.055	world interest rate	6	world interest rate 
 g_n	g_{n}	0.016	population growth rate	2	average population growth (e.g. for the latest five years)
 g_a	g_{a}	0.021	technology growth rate	2	long-term growth rate minus population growth
 e_k	e_{k}	0.4	efficiency of private capital	3	Hulten (1996) and Pritchett (2000)
 e_s	e_{s}	0.4	efficiency of public capital	3	Hulten (1996) and Pritchett (2000)
 dbar	\\bar{d}	0	steady state debt	6	gross external debt (long-run average)
-xi	\\varkappa	0.7	habit persistence parameter	1	Christiano, Eichenbaum, Evans (2005)
+xi	\\varkappa	0.7	habit persistence parameter	1	"Christiano, Eichenbaum, Evans (2005)"
 rho1	\\rho_{1}	1.89	interest rate-debt elasticity	6	Regression coeffieicent from the paper; also van der Ploeg (2012)
 rho2	\\rho_{2}	0	additional parameter on risk-premium	6	Regression coeffieicent from the paper; also van der Ploeg (2012)
 psi	\\psi	0.13	between 0 and 1	6	Regression coeffieicent from the paper; also van der Ploeg (2012)
 yoilvalue	yoil_{ss}	0	steady state oil income	8	oil GDP as % of GDP (long-run average)
-d_0	d_{0}	0.131	initial value of foreign debt (negative of NFA)	6	initial value of net foreign debt in year 0
 omega	\\omega	0	leverage coefficient on oil reserves	6	leverage coefficient on oil reserves
-c_0	c_{0}	0.435	NCP in % of GDP in year 0	8	initial value of NCP in % of GDP in year 0
-inv_0	inv_{0}	0.305	Investment in % of GDP in year 0	8	private gross fixed CF as % of GDP in year 0
-gov_exp_0	gov_exp_{0}	0.383	gov total expenditure in % of GDP	8	total public expediture as % of GDP in year 0
-gov_inv_0	gov_{1}	0.109	public investment in % of GDP in year 0	8	gov gross fixed CF as % of GDP in year 0
-ynon_0	ynon_{0}	0.587	non-oil GDP in % of GDP in year 0	8	non-oil GDP in % of GDP in year 0
-yoil_0	yoil_{0}	0.413	oil production in % of GDP in year 0	8	oil production in % of GDP in year 0
-ca_0	ca_{0}	0.138	current account in % of GDP in year 0	7	current account in % of GDP in year 0
-k_0	k_{0}	1.395	private capital to GDP ratio in year 0	4	valued at 0.561 from Gupta et al. (2012), accumulated private fixed CF plus change in inventories
-s_0	s_{0}	0.294	public capital in to GDP ratio in year 0	3	valued at 0.828 from Gupta et al. (2012), accumulated public investment
 cost_k0	cosk_{k0}	0.4	cost overrun ratio of private investments	5	as in the paper; for CEMAC application
 cost_s0	cost_{s0}	0.4	cost overrun ratio of public investments	5	as in the paper; for CEMAC application

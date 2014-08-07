@@ -149,6 +149,46 @@ $(function() {
 		  MathJax.Hub.Queue(["Typeset",MathJax.Hub,"param-tab-east"]);
 	      });
     });
+
+    /* when a param table row is clicked, update the info div */
+    $('#init-table').on('click', 'tr', function() {
+	var rowIndex = this.rowIndex - 1; // account for zero-index
+	$.get("/getInitList", 
+	      { model : whichModel }, 
+	      function(initList) {
+		  
+		  // get data about params
+		  var inits = Object.keys(initList);
+		  var name = initList[inits[rowIndex]].name;
+		  var latex = initList[inits[rowIndex]].latex; 
+		  var val = initList[inits[rowIndex]].val;
+		  var note = initList[inits[rowIndex]].note;
+		  var eqnNums = initList[inits[rowIndex]].equations;
+		  
+		  // get list of equations
+		  var eqnJSON;
+		  $.ajax({
+		      url : "/getEqnList",
+		      data : { model : whichModel },
+		      async : false,
+		      success : function(eqnListJSON) {
+			  eqnJSON = eqnListJSON;
+		      }
+		  });
+		  var eqnLabels = Object.keys(eqnJSON);
+		  var eqns = [];
+		  for (var prop in eqnJSON){
+		      eqns.push(eqnJSON[prop]);}
+		  
+		  // update init info tab with init data
+		  $("#init-tab-east").
+		      html(makeParamInfo(latex, val, note, 
+					 eqns, eqnLabels, eqnNums));
+		  
+		  /* include this line so mathjax runs again */
+		  MathJax.Hub.Queue(["Typeset",MathJax.Hub,"init-tab-east"]);
+	      });
+    });
     
     /* helper function that creates text to put in the param info div */
     var makeParamInfo = function(latex, val, note, 
@@ -210,36 +250,46 @@ $(function() {
 	return shockData;
     };
     
-    /* when the shocks tab is shown, re-run Mathjax */
-    $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-	if ($(e.target).attr('href')=='#shocks'){
-	    MathJax.Hub.Queue(["Typeset",MathJax.Hub,"shockTables"]);	    
-	}
-    }); 
-
-
     /* make a data structure out of parameter values
        must use ajax (not get) so that the process can be asynchronous
        otherwise paramData cannot be filled inside the call */
     var getParamData = function() {
 	var paramData = {};
+
+	// get params and initial condition JSONs
+	var paramList = {};
+	var initList = {};
 	$.ajax({
 	    url: "/getParamList",
 	    data: { model : whichModel }, 
-	    success: function (paramList) {
-		for (param in paramList) {
-		    //var name = param;
-		    var val = $("#" + param + "-pbox").val();
-		    var command = 
-			"paramData." + param + "=" + val + ";";
-		    eval(command);
-		}	
-	    },
+	    success: function (res) {
+		paramList = res; },
 	    async: false
 	});
+	$.ajax({
+	    url: "/getInitList",
+	    data: { model : whichModel }, 
+	    success: function (res) {
+		initList = res; },
+	    async: false
+	});
+
+	// merge inits with params
+	for (init in initList) {
+	    paramList[init] = initList[init]; }
+
+	// collect data on params and inits
+	for (param in paramList) {
+	    //var name = param;
+	    var val = $("#" + param + "-pbox").val();
+	    var command = 
+		"paramData." + param + "=" + val + ";";
+	    eval(command);
+	}
+	
 	return paramData;
     };
-    
+
     /* make a data structure of out fiscal settings */
     var getFiscalData = function() {
 	var fiscalData = {};

@@ -1,0 +1,10 @@
+d_0	d_{0}	0.131	initial value of foreign debt (negative of NFA)	6	initial value of net foreign debt in year 0
+c_0	c_{0}	0.435	NCP in % of GDP in year 0	8	initial value of NCP in % of GDP in year 0
+inv_0	inv_{0}	0.305	Investment in % of GDP in year 0	8	private gross fixed CF as % of GDP in year 0
+gov_inv_0	gov_{1}	0.109	public investment in % of GDP in year 0	8	gov gross fixed CF as % of GDP in year 0
+ynon_0	ynon_{0}	0.587	non-oil GDP in % of GDP in year 0	8	non-oil GDP in % of GDP in year 0
+yoil_0	yoil_{0}	0.413	oil production in % of GDP in year 0	8	oil production in % of GDP in year 0
+ca_0	ca_{0}	0.138	current account in % of GDP in year 0	7	current account in % of GDP in year 0
+k_0	k_{0}	1.395	private capital to GDP ratio in year 0	4	"valued at 0.561 from Gupta et al. (2012), accumulated private fixed CF plus change in inventories"
+s_0	s_{0}	0.294	public capital in to GDP ratio in year 0	3	"valued at 0.828 from Gupta et al. (2012), accumulated public investment"
+gov_exp_0	gov_exp_{0}	0.383	gov total expenditure in % of GDP	8	total public expediture as % of GDP in year 0

@@ -1,0 +1,86 @@
+{
+	"r_dco": {
+		"latex": "\r_{dc,o}",
+		"val": "0.06",
+		"desc": "initial real interest rate on public commercial loans",
+		"note": "Ghana paid 8.7% on the $750 mn. Eurobond it floated in 2007. This is slightly above Gueye and Sy’s (2010) estimate of the average interest rate SSA pays (8.55%) on debt raised in external capital markets, excluding Seychelles and South Africa. The IMF-WB’s DSAs show an average interest rate of 2.3% on concessional loans taken out by LICs in 2009-2010. Assuming 2.5% inflation in world prices of traded goods, the corresponding (initial) real rates in dollars are about 6% for commercial debt and 0% for concessional debt. The latter is assumed to be constant through the analysis.",
+		"equations": []
+	},
+	"ro": {
+		"latex": "r_{o}",
+		"val": "0.1",
+		"desc": "initial real interest rate on domestic loans",
+		"note": "Real interest rate on domestic debt should match country-specific data.",
+		"equations": []
+	},
+	"R_zo": {
+		"latex": "R_o",
+		"val": "0.3",
+		"desc": "initial return on infrastructure",
+		"note": "Estimates of the return on infrastructure are all over the map, but the weight of the evidence in both micro and macro studies points to a high average return. The median rate of return on World Bank projects circa 2001 was 20% in SSA and 15-29% for various sub-categories of infrastructure investment. Foster and Briceño-Garmendia (2010) estimate returns for electricity, water and sanitation, irrigation, and roads range from 17% to 24%. Similarly, the macro-based estimates in Dalgaard and Hansen (2005) cluster between 15% and 30% for a wide array of different estimators. Hulten  et al. (2006), Escribano et al. (2008), Calderón et al. (2009), and Calderón and Servén (2010) supply additional evidence of high returns. All of this adds up to a presumption that high returns are the norm. We consider a high-return scenario as the base case by setting the return on infrastructure to 0.25 at the initial steady state.",
+		"equations": [0,1]
+	},
+	"share_b": {
+		"latex": "b_o",
+		"val": "0.2",
+		"desc": "initial public domestic debt-to-gdp ratio",
+		"note": "Different datasets give different numbers for the ratio of domestic debt to GDP in LICs. We settled on 20% by averaging the figures reported in IMF (2009a), Panizza (2008), and Arnone and Presbitero (2010).",
+		"equations": []
+	},
+	"share_bstar": {
+		"latex": "\\bar{b}^{\\mathfrak{s}\\ast}",
+		"val": "0",
+		"desc": "initial private external debt-to-gdp ratio",
+		"note": "We set concessional external debt equal to 50% of GDP at the initial equilibrium, given that the ratio of total public debt to GDP and the share of concessional loans in total debt were about 70% and 69%, respectively, for LICs during 2007-2008. As little is known about the likely value of private foreign debt (or assets) in LICs, we set this ratio to zero for the base case. We also assume that initially the economy has no access to external commercial loans implying that this value is zero as well.",
+		"equations": [17]
+	},
+	"share_d": {
+		"latex": "\\bar{d}",
+		"val": "0.5",
+		"desc": "initial public concessional debt-to-gdp ratio",
+		"note": "We set concessional external debt equal to 50% of GDP at the initial equilibrium, given that the ratio of total public debt to GDP and the share of concessional loans in total debt were about 70% and 69%, respectively, for LICs during 2007-2008. As little is known about the likely value of private foreign debt (or assets) in LICs, we set this ratio to zero for the base case. We also assume that initially the economy has no access to external commercial loans implying that this value is zero as well.",
+		"equations": [30]
+	},
+	"share_dc": {
+		"latex": "\\bar{d}_{c}",
+		"val": "0",
+		"desc": "initial public external commercial debt-to-gdp ratio",
+		"note": "We set concessional external debt equal to 50% of GDP at the initial equilibrium, given that the ratio of total public debt to GDP and the share of concessional loans in total debt were about 70% and 69%, respectively, for LICs during 2007-2008. As little is known about the likely value of private foreign debt (or assets) in LICs, we set this ratio to zero for the base case. We also assume that initially the economy has no access to external commercial loans implying that this value is zero as well.",
+		"equations": [30]
+	},
+	"share_remit": {
+		"latex": "\\mathcal{R}_o",
+		"val": "0.04",
+		"desc": "initial remittances-to-gdp ratio",
+		"note": "For the base case, remittances and grants are assumed to be 5% and 4% of GDP at their initial equilibrium, respectively. These are in line with averages for LICs in the last decade. For the baseline calibration we assume that the economy is not endowed with natural resources.",
+		"equations": [43]
+	},
+	"share_grants": {
+		"latex": "\\mathcal{G}_o",
+		"val": "0.05",
+		"desc": "initial grants-to-gdp ratio",
+		"note": "For the base case, remittances and grants are assumed to be 5% and 4% of GDP at their initial equilibrium, respectively. These are in line with averages for LICs in the last decade. For the baseline calibration we assume that the economy is not endowed with natural resources.",
+		"equations": [29,33,43]
+	},
+	"oilro": {
+		"latex": "\\mathcal{N}_o",
+		"val": "0",
+		"desc": "initial natural resource revenue-to-gdp ratio",
+		"note": "For the base case, remittances and grants are assumed to be 5% and 4% of GDP at their initial equilibrium, respectively. These are in line with averages for LICs in the last decade. For the baseline calibration we assume that the economy is not endowed with natural resources.",
+		"equations": [29,33,43]
+	},
+	"izy": {
+		"latex": "\\bar{\\imath}_{z}",
+		"val": "0.06",
+		"desc": "initial infrastructure investment-to-gdp ratio",
+		"note": "We set the initial infrastructure investment to be equal to 6% of GDP. This initial figure includes the net investment associated with trend growth and the outlays on operations and maintenance (O+M), which average about 3.4% of GDP for LICs in SSA. This figure is close to the average for LICs in SSA, which in 2008 corresponded to 6.09%, as suggested by Briceño-Garmendia et al. (2008)",
+		"equations": [28,31]
+	},
+	"ho": {
+		"latex": "h_o",
+		"val": "0.15",
+		"desc": "initial consumption vat",
+		"note": "The consumption VAT in the model proxies for the average indirect tax rate. Our rate is  15% at the initial steady state. This is comparable to the average VAT of LICs, which using 2005-06 data by the International Bureau of Fiscal Documentation is estimated to be close to 15.8%.",
+		"equations": [33,34,35]
+	}
+}
