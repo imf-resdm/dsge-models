@@ -30,6 +30,11 @@ $(function() {
         }
     });
     
+    /* remove highlighting when tab is clicked */
+    $('#link-console, #link-results').click(function() {
+	$(this).removeClass('highlighter');
+    });
+			     
     /* run model when button is clicked */
     $("#run-btn").click(function() {
 
@@ -76,9 +81,12 @@ $(function() {
 		url: "/runWorker",
 		type: "GET",
 		data: { model: whichModel },
-		success: function() {},
+		success: function() {
+		    $('#link-console').addClass('highlighter');
+		},
 		failure: function() { 
-		    alert('error while running model'); }
+		    
+		}
 	    });
 
 	});
@@ -104,7 +112,7 @@ $(function() {
 	    type: "POST",
 	    data: JSON.stringify(data),
 	    contentType: "application/json",
-	    success: function() { alert('scenario saved'); },
+	    success: function() {},
 	    failure: function() {}
 	});
 	

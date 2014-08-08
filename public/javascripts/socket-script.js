@@ -17,5 +17,8 @@ socket.on('model complete', function(msg) {
     
     $("#console-text").append(msg);
     $("#console-text").scrollTop($("#console-text")[0].scrollHeight);
-    
+
+    $('#link-console').removeClass('highlighter');
+    $('#link-results').addClass('highlighter');
+
 });

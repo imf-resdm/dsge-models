@@ -2,6 +2,33 @@ body {
     padding-top: 50px;
 }
 
+.highlighter {
+    background-color: #5cb85c;
+}
+
+.highlighter > a, 
+.highlighter > a:focus
+{
+    color: white;
+}
+
+.highlighter > a:hover {
+    color: #08c;
+}
+
+/* sticky footer to display alerts */
+#footer {
+    position: fixed;
+    margin: -15px;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+}
+
+.alert {
+    z-index: 100;
+}
+
 ol li { 
     margin-bottom: 1em; 
 }
