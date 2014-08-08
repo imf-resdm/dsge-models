@@ -5,7 +5,7 @@ rho3   = exp(-rho1*dbar)+rho2*dbar;
 beta   = 1/(1+rbar+(psi/rho1^2)*(1-rho3+dbar*(rho1-rho2)));
 g      = (1+g_n)*(1 + g_a)-1;
 y_0    = 1;
-To     = 0;
+T_0    = 0;
 vv_0   = 0; 
 gov_0  = gov_exp_0 - gov_inv_0;  
 invk_0 = inv_0 - gov_inv_0;     
@@ -33,4 +33,4 @@ save params.mat theta_k theta_s gamma delta_k delta_s beta kappa Abar ...
      e_k e_s phi_k phi_s rbar psi rho1 rho2 rho3 omega dbar g_n g_a g xi ...
      fvalue dvalue kvalue svalue ikvalue isvalue cvalue yoilvalue vvvalue ...
      govvalue ynonvalue tbvalue cavalue yvalue yoil_0 f_0 r_0 d_0 invk_0 ...
-     invs_0  k_0 s_0 c_0 ca_0 gov_0 To;
+     invs_0  k_0 s_0 c_0 ca_0 gov_0 T_0;

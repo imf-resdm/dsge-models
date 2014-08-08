@@ -8,7 +8,7 @@ varexo e_yoil0 e_yoil1 e_yoil2 e_yoil0_neg e_yoil1_neg e_yoil2_neg
 
 parameters theta_k theta_s gamma delta_k delta_s beta kappa e_k e_s phi_k
 	   phi_s rbar psi rho1 rho2 rho3 omega dbar g_n g_a g xi Abar 
-	   yoil_0 f_0 r_0 d_0 invk_0 invs_0 k_0 s_0 c_0 ca_0 gov_0 To;
+	   yoil_0 f_0 r_0 d_0 invk_0 invs_0 k_0 s_0 c_0 ca_0 gov_0 T_0;
 
 load params.mat;   
 for i=1:length(M_.params)
