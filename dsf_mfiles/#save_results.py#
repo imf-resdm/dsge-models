@@ -56,6 +56,5 @@ pub_fpath = fpath[:fpath[:-1].rfind('/')] + '/public/'
 # create csv file to write to
 f = open(pub_fpath + model + '_results.csv','w')
 for key in data.keys():
-    #f.write(str(key) + ', ' + str(data[key])[1:-1] + '\n')
     f.write(str(names[key]) + ', ' + str(data[key])[1:-1] + '\n')
 f.close()

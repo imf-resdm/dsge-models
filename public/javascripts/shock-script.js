@@ -1,7 +1,3 @@
-// var to keep track of whether we drew the tables or not
-// only want to draw them once
-var drawTables = true;
-
 $(function() {
 
     // set the number of periods to fill the tables with
@@ -34,7 +30,8 @@ $(function() {
 	    .handsontable({
 		data       : [ makeZeroArray(T) ],
 		colHeaders : makeSeqArray(T),
-		colWidths  : colWidth()	
+		colWidths  : colWidth(),
+		maxRows    : 1
 	    });
 
 	for (var i=0; i<2; i++) {
@@ -42,7 +39,9 @@ $(function() {
 	    $("#" + shock + "-perm-table-" + (i+1))
 		.handsontable({
 		    data       : [ [0], [0], [0] ],
-		    rowHeaders : [ ["start"],["end"], ["value"] ]
+		    rowHeaders : [ ["start"],["end"], ["value"] ],
+		    colWidths  : colWidth(),
+		    maxCols    : 1
 		});
 	    $("#" + shock + "-perm-table-" + (i+1))
 		.css("padding-left", colWidth());
@@ -129,8 +128,11 @@ function makeSeqArray (n) {
 /* returns the larger of 30 or 1/30th of the available horizontal space 
    this ensures there is a minimum width if the view size is small */
 var colWidth = function() {
-    //return Math.max(30, $('.temp-shock-holder').width() / 30);
-    return 33;
+    // padding of accordion boxes is 15px on each side
+    // take width of instructions div (same as shocks div, but visible) and 
+    // subtract padding on each side plus the fenceposts between columns
+    var divWidth = $('#instructions').width() - 30 - 31;
+    return Math.max(30, Math.floor(divWidth/30));
 }
 
 /* makes HTML code for accordion of shocks */

@@ -10,7 +10,7 @@ $(function() {
     /* set the size of all input elements to be the same as the debt button
        group. can only do this after the tab is visible, otherwise the width of
        the button group will appear to be 0 */
-    $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+    /*$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
 	if ($(e.target).attr('href')=='#fiscal') {
 
 	    // set height to match Tbar latex
@@ -28,7 +28,7 @@ $(function() {
 	    $(".lambda-div").css("width", width);
 	    $(".half-width").css("width", width);	    
 	}
-    }); 
+    });*/ 
 
     
     // update enabled/disabled buttons when debt type is changed
@@ -74,6 +74,24 @@ $(function() {
 	    TbarOFF = true;
 	    $('#Tbar-input').prop('disabled', TbarOFF); }
     });
+
+    window.setAlignment = function() {
+	// set height to match Tbar latex
+	var height = $("#Tbar-addon").height() + 
+	    parseInt($("#Tbar-addon").css("padding-top")) + 
+	    parseInt($("#Tbar-addon").css("padding-bottom")) + 
+	    parseInt($("#Tbar-addon").css("border-top")) + 
+	    parseInt($("#Tbar-addon").css("border-bottom"));
+	$("#Tbar-input").css("height", height);
+	$("#hbar-input").css("height", height);
+	
+	// set width of elements to match half of a column
+	var width = $("#tax-settings").width();
+	$("#lambda-input").css("width", Math.round(width*3/4));
+	$(".lambda-div").css("width", Math.round(width*3/4));
+	$('#debt-btns').css('width', Math.round(width*3/4));
+	$(".half-width").css("width", Math.round(width/2));
+    }
 
 });
 

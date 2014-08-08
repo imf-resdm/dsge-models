@@ -27,3 +27,24 @@ f = open(model + '_mfiles/' + model + '_results.json', 'w')
 f.write('{' + json[:-1] + '}')
 f.close()
 
+# pull JSON data into python dict                                              
+json_data = open(fpath + model + '_results.json')
+data = load(json_data)
+json_data.close()
+
+# pull JSON of short+long var names into python dict                           
+json_names = open(fpath + 'json/var_list.json')
+names = load(json_names)
+json_names.close()
+
+# make string of public directory                                              
+pub_fpath = fpath[:fpath[:-1].rfind('/')] + '/public/'
+
+# create csv file to write to                                                  
+f = open(pub_fpath + model + '_results.csv','w')
+for key in data.keys():
+    #f.write(str(key) + ', ' + str(data[key])[1:-1] + '\n')                    
+    f.write(str(names[key]) + ', ' + str(data[key])[1:-1] + '\n')
+f.close()
+
+

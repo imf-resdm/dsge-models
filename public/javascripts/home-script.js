@@ -8,6 +8,9 @@ $(function() {
 	// only show flots once results tab is visible
 	if ($(this).attr('href')=='#results') {
 	    showPlots(); }
+
+	if ($(this).attr('href')=='#fiscal') {
+	    setAlignment(); }
 	
     });
 
