@@ -8,7 +8,7 @@ varexo e_yoil0 e_yoil1 e_yoil2 e_yoil0_neg e_yoil1_neg e_yoil2_neg
 
 parameters theta_k theta_s gamma delta_k delta_s beta kappa e_k e_s phi_k
 	   phi_s rbar psi rho1 rho2 rho3 omega dbar g_n g_a g xi Abar 
-	   yoil_0 f_0 r_0 d_0 invk_0 invs_0 k_0 s_0 c_0 ca_0 gov_0 To;
+	   yoil_0 f_0 r_0 d_0 invk_0 invs_0 k_0 s_0 c_0 ca_0 gov_0 T_0;
 
 load params.mat;   
 for i=1:length(M_.params)
@@ -76,10 +76,10 @@ AC_s = (phi_s/2)*(s/s(-1)-1)^2*s(-1);
 0 = gov-(govh-xi*govh(-1));
 
 // 19. oil
-yoil = y * (e_yoil0 + e_yoil1 + e_yoil2 - e_yoil0_neg - e_yoil1_neg - e_yoil2_neg);
+yoil = yoil_0 + y * (e_yoil0 + e_yoil1 + e_yoil2 - e_yoil0_neg - e_yoil1_neg - e_yoil2_neg);
 
 // 20. Adjustment Variable (Transfers)
-T = y * (e_T0 + e_T1 + e_T2 - e_T0_neg - e_T1_neg - e_T2_neg);	  
+T = T_0 + y * (e_T0 + e_T1 + e_T2 - e_T0_neg - e_T1_neg - e_T2_neg);	  
 
 end;  
 
