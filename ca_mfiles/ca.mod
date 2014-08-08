@@ -105,7 +105,7 @@ govh = gov_0*y;
 gov  = (1-xi)*govh;
 ch   = c_0*y;
 c    = (1-xi)*ch;
-T    = To*y;
+T    = T_0*y;
 tb   = ca+r*d-T;
 A    = Abar;
 end;
