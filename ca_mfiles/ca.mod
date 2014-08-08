@@ -111,5 +111,5 @@ A    = Abar;
 end;
 
 // simulate model deterministically
-options_.debut=1;
+options_.debug=1;
 simul(periods=1000); 
