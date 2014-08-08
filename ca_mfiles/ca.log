@@ -1,0 +1,37 @@
+Starting Dynare (version 4.4.1).
+Starting preprocessing of the model file ...
+Substitution of endo leads >= 2: added 1 auxiliary variables and equations.
+Found 22 equation(s).
+Evaluating expressions...done
+Computing static model derivatives:
+ - order 1
+Computing dynamic model derivatives:
+ - order 1
+Processing outputs ...done
+Preprocessing completed.
+Starting MATLAB/Octave computing.
+-----------------------------------------------------
+MODEL SIMULATION:
+
+Largest absolute residual at iteration 1:      0.413
+
+
+Largest absolute residual at iteration 2:      0.414
+
+
+Largest absolute residual at iteration 3:      0.014
+
+
+Largest absolute residual at iteration 4:      0.000
+
+
+Largest absolute residual at iteration 5:      0.000
+
+
+
+Simulation concluded successfully after 5 iterations.
+Total time of simulation        :    228.109
+Convergency obtained.
+-----------------------------------------------------
+
+Total computing time : 0h03m50s
