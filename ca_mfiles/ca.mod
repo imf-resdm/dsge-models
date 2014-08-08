@@ -1,13 +1,13 @@
 // declare endogenous variables
-var c k s invk invs d f r ca tb ynon y vv gov AC_s AC_k  govh yoil ch T Abar; 
+var c k s invk invs d f r ca tb ynon y vv gov AC_s AC_k  govh yoil ch T A; 
 
 // declare exogenous variables
 varexo e_yoil0 e_yoil1 e_yoil2 e_yoil0_neg e_yoil1_neg e_yoil2_neg
-       e_Abar0 e_Abar1 e_Abar2 e_Abar0_neg e_Abar1_neg e_Abar2_neg
-       e_T0    e_T1    e_T2    e_T0_neg    e_T1_neg    e_T2_neg;
+       e_T0    e_T1    e_T2    e_T0_neg    e_T1_neg    e_T2_neg
+       e_Abar0 e_Abar1 e_Abar2 e_Abar0_neg e_Abar1_neg e_Abar2_neg;
 
 parameters theta_k theta_s gamma delta_k delta_s beta kappa e_k e_s phi_k
-	   phi_s rbar psi rho1 rho2 rho3 omega dbar g_n g_a g xi Abar_param 
+	   phi_s rbar psi rho1 rho2 rho3 omega dbar g_n g_a g xi Abar 
 	   yoil_0 f_0 r_0 d_0 invk_0 invs_0 k_0 s_0 c_0 ca_0 gov_0 To;
 
 load params.mat;   
@@ -18,20 +18,23 @@ end;
 
 model;
 
+// 0. technology (A)
+A = Abar + e_Abar0 + e_Abar1 + e_Abar2 - e_Abar0_neg - e_Abar1_neg - e_Abar2_neg;
+
 // 1. FOC to d(t)
 0 = (c^(-gamma)-beta*(1+g)*xi*c(+1)^(-gamma)) - beta*(c(+1)^(-gamma)-beta*(1+g)*xi*c(+2)^(-gamma))*(1+r+d*(psi/(rho1^2))*(rho1*exp(rho1*(d-dbar-omega*vv))-rho2)); 
 
 // 2. FOC to k(t)
-0 = -(c^(-gamma)-beta*(1+g)*xi*c(+1)^(-gamma))/e_k + beta*((c(+1)^(-gamma)-beta*(1+g)*xi*c(+2)^(-gamma))/e_k)*(1-delta_k) + beta*(c(+1)^(-gamma)-beta*(1+g)*xi*c(+2)^(-gamma))*(Abar)*theta_k*k^(theta_k-1)*s^(theta_s) - (1/(1+g))*(c^(-gamma)-beta*(1+g)*xi*c(+1)^(-gamma))*phi_k*(k/k(-1)-1) - beta*(c(+1)^(-gamma)-beta*(1+g)*xi*c(+2)^(-gamma))*(phi_k/2)*(k(+1)/k-1)^2 + beta*(c(+1)^(-gamma)-beta*(1+g)*xi*c(+2)^(-gamma))*phi_k*(k(+1)/k-1)*(k(+1)/k);
+0 = -(c^(-gamma)-beta*(1+g)*xi*c(+1)^(-gamma))/e_k + beta*((c(+1)^(-gamma)-beta*(1+g)*xi*c(+2)^(-gamma))/e_k)*(1-delta_k) + beta*(c(+1)^(-gamma)-beta*(1+g)*xi*c(+2)^(-gamma))*(A)*theta_k*k^(theta_k-1)*s^(theta_s) - (1/(1+g))*(c^(-gamma)-beta*(1+g)*xi*c(+1)^(-gamma))*phi_k*(k/k(-1)-1) - beta*(c(+1)^(-gamma)-beta*(1+g)*xi*c(+2)^(-gamma))*(phi_k/2)*(k(+1)/k-1)^2 + beta*(c(+1)^(-gamma)-beta*(1+g)*xi*c(+2)^(-gamma))*phi_k*(k(+1)/k-1)*(k(+1)/k);
 
 // 3. FOC to s(t)
-0 = -(c^(-gamma)-beta*(1+g)*xi*c(+1)^(-gamma))/e_s + beta*((c(+1)^(-gamma)-beta*(1+g)*xi*c(+2)^(-gamma))/e_s)*(1-delta_s) + beta*(c(+1)^(-gamma)-beta*(1+g)*xi*c(+2)^(-gamma))*(Abar)*theta_s*s^(theta_s-1)*k^(theta_k) - (1/(1+g))*(c^(-gamma)-beta*(1+g)*xi*c(+1)^(-gamma))*phi_s*(s/s(-1)-1) - beta*(c(+1)^(-gamma)-beta*(1+g)*xi*c(+2)^(-gamma))*(phi_s/2)*(s(+1)/s-1)^2 + beta*(c(+1)^(-gamma)-beta*(1+g)*xi*c(+2)^(-gamma))*phi_s*(s(+1)/s-1)*(s(+1)/s);
+0 = -(c^(-gamma)-beta*(1+g)*xi*c(+1)^(-gamma))/e_s + beta*((c(+1)^(-gamma)-beta*(1+g)*xi*c(+2)^(-gamma))/e_s)*(1-delta_s) + beta*(c(+1)^(-gamma)-beta*(1+g)*xi*c(+2)^(-gamma))*(A)*theta_s*s^(theta_s-1)*k^(theta_k) - (1/(1+g))*(c^(-gamma)-beta*(1+g)*xi*c(+1)^(-gamma))*phi_s*(s/s(-1)-1) - beta*(c(+1)^(-gamma)-beta*(1+g)*xi*c(+2)^(-gamma))*(phi_s/2)*(s(+1)/s-1)^2 + beta*(c(+1)^(-gamma)-beta*(1+g)*xi*c(+2)^(-gamma))*phi_s*(s(+1)/s-1)*(s(+1)/s);
 
 // 4. BC 
 0 = yoil + ynon + d*(1+g)-(1+r(-1))*d(-1)-ch - invk - invs - govh - AC_s - AC_k + T;
 
 // 5. production 
-0 = ynon - (Abar)*(k(-1)^(theta_k))*(s(-1)^(theta_s)) ;
+0 = ynon - (A)*(k(-1)^(theta_k))*(s(-1)^(theta_s)) ;
 
 // 6. private investment 
 0 = k*(1+g)-(1-delta_k)*k(-1)-e_k*invk;
@@ -78,9 +81,6 @@ yoil = y * (e_yoil0 + e_yoil1 + e_yoil2 - e_yoil0_neg - e_yoil1_neg - e_yoil2_ne
 // 20. Adjustment Variable (Transfers)
 T = y * (e_T0 + e_T1 + e_T2 - e_T0_neg - e_T1_neg - e_T2_neg);	  
 
-// 21. Technology (Abar)
-Abar = Abar_param + (1 + e_Abar0 + e_Abar1 + e_Abar2 - e_Abar0_neg - e_Abar1_neg - e_Abar2_neg);
-
 end;  
 
 // steady state (analytical solved)
@@ -89,7 +89,7 @@ options_.maxit = itermax;
 initval;
 s    = s_0;
 k    = k_0;
-ynon = Abar_param*(k^(theta_k))*(s^(theta_s));
+ynon = Abar*(k^(theta_k))*(s^(theta_s));
 yoil = yoil_0;
 y    = ynon + yoil;
 f    = f_0*y;
@@ -105,10 +105,11 @@ govh = gov_0*y;
 gov  = (1-xi)*govh;
 ch   = c_0*y;
 c    = (1-xi)*ch;
-Abar = 1;
 T    = To*y;
 tb   = ca+r*d-T;
+A    = Abar;
 end;
 
 // simulate model deterministically
+options_.debut=1;
 simul(periods=1000); 

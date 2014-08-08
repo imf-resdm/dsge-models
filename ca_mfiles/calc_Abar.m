@@ -44,5 +44,3 @@
       end # end convergence check
 
     end # end while loop
-
-Abar_param = Abar;
