@@ -12,3 +12,6 @@ set_params_imp;
 # run model
 itermax = 20;
 dynare ca.mod noclearall;
+
+# save plot vars
+make_plot_vars;
