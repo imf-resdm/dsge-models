@@ -76,10 +76,10 @@ AC_s = (phi_s/2)*(s/s(-1)-1)^2*s(-1);
 0 = gov-(govh-xi*govh(-1));
 
 // 19. oil
-yoil = y * (e_yoil0 + e_yoil1 + e_yoil2 - e_yoil0_neg - e_yoil1_neg - e_yoil2_neg);
+yoil = yoil_0 + y * (e_yoil0 + e_yoil1 + e_yoil2 - e_yoil0_neg - e_yoil1_neg - e_yoil2_neg);
 
 // 20. Adjustment Variable (Transfers)
-T = y * (e_T0 + e_T1 + e_T2 - e_T0_neg - e_T1_neg - e_T2_neg);	  
+T = T_0 + y * (e_T0 + e_T1 + e_T2 - e_T0_neg - e_T1_neg - e_T2_neg);	  
 
 end;  
 

@@ -1,12 +1,12 @@
-y 	total GDP
-ch	private consumption (w/ habit)
-k	private capital
-s	public capital
-f	foreign assets
-ynon	non-oil output
-invk	private investment
-invs	public investment
-r	interest rate
-tb	trade balance
-ca	current account
-govh	gov. consumption (w/ habit)
+y 	total GDP	share of initial GDP
+ch	private consumption (w/ habit)	 share of initial GDP
+k	private capital	 share of initial GDP
+s	public capital	 share of initial GDP
+f	foreign assets	 share of initial GDP
+ynon	non-oil output	 share of initial GDP
+invk	private investment	 share of initial GDP
+invs	public investment	 share of initial GDP
+r	interest rate	 percentage points
+tb	trade balance	 share of initial GDP
+ca	current account	 share of initial GDP
+govh	gov. consumption (w/ habit)	 share of initial GDP

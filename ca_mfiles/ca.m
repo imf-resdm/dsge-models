@@ -340,7 +340,7 @@ end;
 if M_.exo_det_nbr > 0;
 	oo_.exo_det_simul = [ones(M_.maximum_lag,1)*oo_.exo_det_steady_state'];
 end;
-options_.debut=1;
+options_.debug=1;
 options_.periods = 1000;
 simul();
 save('ca_results.mat', 'oo_', 'M_', 'options_');
