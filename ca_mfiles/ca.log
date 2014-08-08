@@ -10,40 +10,6 @@ Computing dynamic model derivatives:
 Processing outputs ...done
 Preprocessing completed.
 Starting MATLAB/Octave computing.
-error: 'To' undefined near line 333 column 47
-error: called from:
-error:   /home/ubuntu/dsge-models/ca_mfiles/ca.m at line 333, column 24
-error:   /usr/share/octave/site/m/dynare.m at line 182, column 1
-error:   /home/ubuntu/dsge-models/ca_mfiles/run_model.m at line 14, column 1
-octave:1> run_model
-
-Configuring Dynare ...
-[mex] Generalized QZ.
-[mex] Sylvester equation solution.
-[mex] Kronecker products.
-[mex] Sparse kronecker products.
-[mex] Local state space iteration (second order).
-[mex] Bytecode evaluation.
-[mex] k-order perturbation solver.
-[mex] k-order solution simulation.
-[mex] Quasi Monte-Carlo sequence (Sobol).
-[mex] Markov Switching SBVAR.
-
-Starting Dynare (version 4.4.1).
-Starting preprocessing of the model file ...
-Substitution of endo leads >= 2: added 1 auxiliary variables and equations.
-Found 22 equation(s).
-Evaluating expressions...done
-Computing static model derivatives:
- - order 1
-Computing dynamic model derivatives:
- - order 1
-Processing outputs ...done
-Preprocessing completed.
-Starting MATLAB/Octave computing.
-
 -----------------------------------------------------
 MODEL SIMULATION:
-
-octave:1> exit
 
