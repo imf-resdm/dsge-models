@@ -1,16 +1,14 @@
 {
-	"y " : "total GDP",
-	"c" : "private consumption",
+	"y" : "total GDP",
+	"ch" : "private consumption (w/ habit)",
 	"k" : "private capital",
 	"s" : "public capital",
 	"f" : "foreign assets",
 	"ynon" : "non-oil output",
 	"invk" : "private investment",
 	"invs" : "public investment",
-	"r" : "tnterest rate",
+	"r" : "interest rate",
 	"tb" : "trade balance",
 	"ca" : "current account",
-	"gov" : "government consumption",
-	"ch " : "private consumption (habit)",
-	"govh" : "government consumption (habit)"
+	"govh" : "gov. consumption (w/ habit)"
 }
