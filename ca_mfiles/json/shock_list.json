@@ -1,14 +1,14 @@
 {
 	"yoil" : {
-		"desc" : "oil production shock",
-		"equations" : [1]
-	},
-	"Abar" : {
-		"desc" : "technology shock",
+		"desc" : "oil production shock (percent of GDP)",
 		"equations" : [1]
 	},
 	"T" : {
-		"desc" : "transfers shock",
-		"equations" : []
+		"desc" : "transfers shock (percent of GDP) ",
+		"equations" : [1]
+	},
+	"Abar" : {
+		"desc" : "technology shock (percent change)",
+		"equations" : [1]
 	}
 }

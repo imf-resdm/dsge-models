@@ -1,12 +1,12 @@
-y 	total GDP
-ch	private consumption (w/ habit)
-k	private capital
-s	public capital
-f	foreign assets
-ynon	non-oil output
-invk	private investment
-invs	public investment
-r	interest rate
-tb	trade balance
-ca	current account
-govh	gov. consumption (w/ habit)
+y 	total GDP	percent change
+ch	private consumption (w/ habit)	percent of GDP
+k	private capital	    percent of GDP
+s	public capital	    percent of GDP
+f	foreign assets	    percent of GDP
+ynon	non-oil output	    percent of GDP
+invk	private investment  	    percent of GDP
+invs	public investment   	    percent of GDP
+r	interest rate	    percent
+tb	trade balance	    percent of GDP
+ca	current account	    percent of GDP
+govh	gov. consumption (w/ habit)	percent of GDP
