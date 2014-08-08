@@ -137,6 +137,19 @@ app.post('/saveScenario', function(req, res) {
     res.end();
 });
 
+/* give pre-loaded scenario to client
+   for now, this will only be DIG scenarios */
+app.get('/getScenario', function(req, res) {
+    var fname = __dirname + '/public/scenarios/dsf_' 
+	+ req.query.scenario + '.json';
+    fs.readFile(fname, 'utf8', function (err, data) {
+	if (err) {
+	    console.log('error: ' = err); }
+	data = JSON.parse(data);
+	res.json(data);
+    });
+});
+
 /* give variable json to client */
 app.get('/getVarList', function(req, res) {
     var fname = __dirname + '/' + req.query.model

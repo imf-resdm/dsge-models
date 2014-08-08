@@ -1,6 +1,6 @@
-@#define exogenous = 0
+@#define exogenous = 1
 @#define endogenous_domestic = 0
-@#define endogenous_commercial = 1
+@#define endogenous_commercial = 0
 
 @#include "dsf_main.mod"
 @#include "shocks.mod"

@@ -92,35 +92,41 @@
 	      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" id="action-btn">Actions <span class="caret"></span>
 	      </button>
 	      <ul class="dropdown-menu" role="menu">
-		<li role="presentation" class="dropdown-header">Run/save</li>
-		<li><a role="menuitem" id="run-btn">Run simulation</a></li>
-		<li role="presentation" class="disabled drop-li" 
+		<li role="presentation" class="dropdown-header hover-hand">Run/save</li>
+		<li><a role="menuitem" class="hover-hand" id="run-btn">Run simulation</a></li>
+		<li role="presentation" class="disabled hover-hand" 
 		    id="save-scen-li">
 		  <a role="menuitem" href="scenarios/dsf_scenario.json" 
 		     download="scenario.json">
 		    Save this scenario
 		</a></li>
-		<li role="presentation" class="disabled drop-li" 
+		<li role="presentation" class="disabled hover-hand" 
 		    id="download-li">
 		  <a role="menuitem" href="dsf_results.csv" 
 		     download="results.csv">
 		    Download results
 		</a></li>
 		<li role="presentation" class="divider"></li>
-		<li role="presentation" class="dropdown-header">Load a scenario</li>
+		<li role="presentation" class="dropdown-header hover-hand">Load a scenario</li>
 		<!-- cheap hack: I want the load div to act like a form, so I 
 		     hide the form and make clicking on the div tigger a form 
 		     click. this may not work in all browsers 
 		     (but in works in Chrome!) -->
-		<li role="presentation" id="load-scen-btn">
+		<li role="presentation" class="hover-hand" id="load-scen-btn">
 		  <a role="menuitem">From file</a></li>
 		<form method="post" action="/uploadFile">
 		  <input type="file" name="myFile" id="myFile"
 			 style="display:none">
 		</form>
-		<li><a href="#">Scaling up with concessional debt</a></li>
-		<li><a href="#">Scaling up with commercial debt</a></li>
-		<li><a href="#">Scaling up with domestic debt</a></li>
+		<li role="presentation" class="hover-hand" id="load-scen-exog">
+		  <a role="menuitem">Scaling up with concessional debt</a>
+		</li>
+		<li role="presentation" class="hover-hand" id="load-scen-comm">
+		  <a role="menuitem">Scaling up with commercial debt</a>
+		</li>
+		<li role="presentation" class="hover-hand" id="load-scen-dom">
+		  <a role="menuitem">Scaling up with domestic debt</a>
+		</li>
 	      </ul>
 	    </div>
 	  </div>

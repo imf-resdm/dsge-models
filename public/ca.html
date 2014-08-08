@@ -92,14 +92,14 @@
 	      </button>
 	      <ul class="dropdown-menu" role="menu">
 		<li role="presentation" class="dropdown-header">Run/save</li>
-		<li><a role="menuitem" id="run-btn">Run simulation</a></li>
-		<li role="presentation" class="disabled drop-li" 
+		<li><a role="menuitem" class="hover-hand" id="run-btn">Run simulation</a></li>
+		<li role="presentation" class="disabled hover-hand" 
 		    id="save-scen-li">
 		  <a role="menuitem" href="scenarios/ca_scenario.json" 
 		     download="scenario.json">
 		    Save this scenario
 		</a></li>
-		<li role="presentation" class="disabled drop-li" 
+		<li role="presentation" class="disabled hover-hand" 
 		    id="download-li">
 		  <a role="menuitem" href="ca_results.csv" 
 		     download="results.csv">
@@ -111,13 +111,13 @@
 		     hide the form and make clicking on the div tigger a form 
 		     click. this may not work in all browsers 
 		     (but in works in Chrome!) -->
-		<li role="presentation" id="load-scen-btn">
+		<li role="presentation" class="hover-hand" id="load-scen-btn">
 		  <a role="menuitem">From file</a></li>
 		<form method="post" action="/uploadFile">
 		  <input type="file" name="myFile" id="myFile"
 			 style="display:none">
 		</form>
-		<li><a href="#">Pre-loaded?</a></li>
+		<li class="hover-hand"><a href="#">Pre-loaded?</a></li>
 	      </ul>
 	    </div>
 	  </div>

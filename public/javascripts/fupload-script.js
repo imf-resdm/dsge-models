@@ -1,5 +1,20 @@
 $(function() {
 
+    /* for the DIG model, if the user clicks one of the pre-loaded scenarios,
+       read it from file and then proceed to use it */
+    $('#load-scen-exog, #load-scen-comm, #load-scen-dom').click(function(e) {
+	var debt = this.id.replace('load-scen-', '');
+	$.ajax({
+	    url: '/getScenario',
+	    type: 'GET',
+	    data: { scenario : debt },
+	    success: function(res) {
+		useNewScenario(res);
+	    },
+	    failure: function() { alert('could not load scenario'); }
+	});
+    });
+
     /* when the load scenario button gets clicked, trigger the (hidden!) file
        input so that it acts like it has been cliced. this allows us to have
        the behavior of a form with the UI of a dropdown menu */
@@ -39,8 +54,20 @@ $(function() {
 	// insert shocks
 	var shockList = fileJSON.shockData;
 	for (shock in shockList) {
+	    
 	    $("#" + shock + "-temp-table").data("handsontable")
 		.loadData([shockList[shock].tempVals]);
+	    
+	    $("#" + shock + "-perm-table-1").data("handsontable")
+		.loadData([ [shockList[shock].permPds1[0]], 
+			    [shockList[shock].permPds1[1]], 
+			    [shockList[shock].permVals[0]] ]);
+
+	    $("#" + shock + "-perm-table-2").data("handsontable")
+		.loadData([ [shockList[shock].permPds2[0]], 
+			    [shockList[shock].permPds2[1]], 
+			    [shockList[shock].permVals[1]] ]);
+
 	}
 
 	// for DSF model, insert fiscal data
